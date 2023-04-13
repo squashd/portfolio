@@ -30,13 +30,14 @@ const LightningFast = () => {
         >
           Jeg kan ta deg fra start til slutt
           <br />- fra{' '}
-          <span className="animate-[pulse_2500ms_ease-in-out_infinite] bg-gradient-to-br from-sky-300 to-blue-400 bg-clip-text px-1 font-normal text-transparent">
-            frontend
+          <span className="bg-gradient-to-br from-sky-300 to-blue-400 bg-clip-text px-1 font-normal text-transparent">
+            backend
           </span>{' '}
           til{' '}
-          <span className="animate-[pulse_2500ms_ease-in-out_1250ms_infinite] bg-gradient-to-br from-blue-400 to-blue-500 bg-clip-text px-1 font-normal text-transparent">
-            backend -
-          </span>
+          <span className="bg-gradient-to-br from-blue-400 to-blue-500 bg-clip-text px-1 font-normal text-transparent">
+            frontend
+          </span>{' '}
+          -
           <br />
           og sikre et helhetlig og godt resultat
         </p>

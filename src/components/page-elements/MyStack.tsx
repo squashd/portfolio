@@ -18,7 +18,7 @@ const MyStack = () => {
             <div
               className={`${
                 inView
-                  ? 'scale-y-100 lg:scale-x-100 '
+                  ? 'scale-y-100 lg:scale-x-100'
                   : 'scale-y-0 lg:scale-x-0 lg:scale-y-100'
               } transform-gpu border-b border-white bg-gradient-to-br from-sky-300 to-blue-700 bg-clip-text pb-4 text-center text-6xl font-black uppercase text-transparent transition-transform duration-[1200ms] lg:border-b-0 lg:border-r lg:pb-0 lg:pr-4 lg:text-left`}
             >

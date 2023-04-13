@@ -18,9 +18,9 @@ const ResponsiveDesign = () => {
             <div
               className={`${
                 inView
-                  ? 'flex delay-200 duration-[1200ms]'
-                  : '-translate-y-32 translate-x-0 opacity-0 lg:-translate-x-32 lg:translate-y-0'
-              } transform border-b bg-gradient-to-br from-sky-300 to-blue-700 bg-clip-text pb-4 text-5xl font-black uppercase text-transparent transition lg:border-b-0 lg:border-r lg:pb-0 lg:pr-4`}
+                  ? 'after:opacity-1 flex flex-col delay-200 duration-[1200ms] after:transition after:delay-[1200ms] after:duration-[800ms] after:ease-in'
+                  : '-translate-y-32 translate-x-0 opacity-0 after:opacity-0 lg:-translate-x-32 lg:translate-y-0'
+              } relative transform bg-gradient-to-br from-sky-300 to-blue-700 bg-clip-text pb-4 text-5xl font-black uppercase text-transparent transition after:fixed after:bottom-0 after:h-0 after:w-full after:transform-gpu after:border lg:border-b-0 lg:pb-0 lg:pr-4 lg:after:right-0 lg:after:h-full lg:after:w-0`}
             >
               Responsiv design
             </div>
