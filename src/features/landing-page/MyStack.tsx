@@ -67,25 +67,13 @@ const MyStack = () => {
               inView
                 ? 'opacity-100 delay-[3600ms] duration-[900ms]'
                 : 'opacity-0'
-            } hidden text-center text-2xl font-thin italic sm:block lg:text-3xl`}
+            } text-center text-xl font-thin italic sm:block sm:text-2xl lg:text-3xl`}
           >
-            Jeg bygger alle nettsider og applikasjoner <br />
-            med den mest robuste og moderne teknologi
-          </p>
-          <p
-            className={`${
-              inView
-                ? 'opacity-100 delay-[3600ms] duration-[900ms]'
-                : 'opacity-0'
-            } text-center text-2xl font-thin italic sm:hidden`}
-          >
-            Jeg bygger alle
+            Selv om jeg er glad i alt som er nytt,
             <br />
-            nettsider og applikasjoner
+            så er teknologien jeg bruker til vanlig
             <br />
-            med den mest robuste
-            <br />
-            og moderne teknologi
+            både veltestet og robust
           </p>
         </div>
       </section>

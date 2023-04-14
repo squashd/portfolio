@@ -1,11 +1,9 @@
-import Image from 'next/image';
-import logo from '/public/squashd.svg';
 import Link from 'next/link';
 const NavBar = () => (
   <>
-    <nav className="absolute z-10 px-8 p-4 flex justify-between w-screen items-center">
+    <nav className="absolute z-10 flex w-screen items-center justify-between p-4 px-8">
       <Link href="/">
-        <div className=" hover:animate-[spin_2000ms_ease-in-out_infinite] hover:text-sky-400 hover:transition hover:ease-in transition">
+        <div className=" transition hover:animate-[spin_2000ms_ease-in-out_infinite] hover:text-blue-400 hover:transition hover:ease-in">
           <svg
             version="1.1"
             id="Layer_1"
@@ -14,7 +12,7 @@ const NavBar = () => (
             y="0px"
             viewBox="0 0 129.5 129.5"
             enableBackground="new 0 0 129.5 129.5"
-            className="w-12 aspect-square"
+            className="aspect-square w-12"
             fill="currentColor"
           >
             <g>
@@ -35,13 +33,13 @@ const NavBar = () => (
         </div>
       </Link>
       <ul className="flex font-bold uppercase">
-        <li className="border-r px-2 hover:text-sky-400 hover:transition hover:ease-in-out transition">
+        <li className="border-r px-2 transition hover:text-sky-400 hover:transition hover:ease-in-out">
           <Link href={'/'}>Hjem</Link>
         </li>
-        <li className="border-r px-2 hover:text-sky-400 hover:transition hover:ease-in transition">
+        <li className="border-r px-2 transition hover:text-sky-400 hover:transition hover:ease-in">
           <Link href={'/prosjekter'}>Prosjekter</Link>
         </li>
-        <li className="pl-2 hover:text-sky-400 hover:transition hover:ease-in transition">
+        <li className="pl-2 transition hover:text-sky-400 hover:transition hover:ease-in">
           <Link href={'/kontakt'}>Kontakt</Link>
         </li>
       </ul>

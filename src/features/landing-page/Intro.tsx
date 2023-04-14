@@ -16,7 +16,7 @@ const Intro = () => {
         ref={ref}
         className={`${
           inView ? 'opacity-100' : 'opacity-0'
-        } flex max-h-screen min-h-screen max-w-screen transform snap-center flex-col items-center justify-center gap-4`}
+        } max-w-screen flex max-h-screen min-h-screen transform snap-center flex-col items-center justify-center gap-4`}
       >
         <div
           className={`${
@@ -46,12 +46,10 @@ const Intro = () => {
         <div
           className={`${
             inView ? 'translate-0 opacity-100' : 'translate-x-[25vw] opacity-0'
-          } mt-8 transform text-center text-lg whitespace-nowrap font-thin italic duration-[1300ms] ease-[cubic-bezier(0,0,0.5,1.5)] sm:text-2xl lg:text-3xl`}
+          } mt-8 transform whitespace-nowrap text-center text-lg font-thin italic duration-[1300ms] ease-[cubic-bezier(0,0,0.5,1.5)] sm:text-2xl lg:text-3xl`}
         >
           <p>
-            Jeg leverer effektive, skalerbare
-            <br />
-            og brukervennlige applikasjoner og nettsider
+            Jeg leverer applikasjoner og nettsider
             <br />
             tilpasset dine unike behov.
           </p>

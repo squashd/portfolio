@@ -26,12 +26,13 @@ const ScrollDownIndicator = () => {
     <>
       <div
         className={`${
-          isHidden ? 'opacity-0' : 'opacity-100'
-        } absolute bottom-4 flex w-full items-center justify-center `}
+          isHidden ? 'opacity-0' : 'opacity-1'
+        } duration-[1200ms] absolute bottom-4 flex w-full transform items-center justify-center transition-opacity ease-out`}
       >
         <div
-          className={`${isHidden ? 'opacity-0' : 'opacity-100'}
-      duration-5000 flex aspect-square w-12 transform animate-bounce items-center justify-center rounded-full border bg-blue-500 p-2 transition-opacity ease-out`}
+          className={
+            'flex aspect-square w-12  animate-bounce items-center justify-center rounded-full border bg-blue-500 p-2'
+          }
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

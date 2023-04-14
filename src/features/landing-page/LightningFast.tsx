@@ -29,7 +29,7 @@ const LightningFast = () => {
           } text-center text-xl font-thin italic sm:text-2xl lg:text-3xl`}
         >
           Jeg kan ta deg fra start til slutt
-          <br />- fra{' '}
+          <br />-{' '}
           <span className="bg-gradient-to-br from-sky-300 to-blue-400 bg-clip-text px-1 font-normal text-transparent">
             backend
           </span>{' '}
@@ -39,7 +39,7 @@ const LightningFast = () => {
           </span>{' '}
           -
           <br />
-          og sikre et helhetlig og godt resultat
+          for et best mulig sluttresultat
         </p>
       </section>
     </InView>
