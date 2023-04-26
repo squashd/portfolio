@@ -27,7 +27,7 @@ const ScrollDownIndicator = () => {
       <div
         className={`${
           isHidden ? 'opacity-0' : 'opacity-1'
-        } duration-[1200ms] absolute bottom-4 flex w-full transform items-center justify-center transition-opacity ease-out`}
+        } duration-[500ms] delay-300 absolute bottom-4 flex w-full transform items-center justify-center transition-opacity ease-out`}
       >
         <div
           className={

@@ -1,3 +1,4 @@
+const plugin = require('tailwindcss/plugin');
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -25,9 +26,24 @@ module.exports = {
             transform: 'translateX(-100vw)',
           },
         },
+        blink: {
+          '0%, 100%': {
+            opacity: 0,
+          },
+          '24%, 76%': {
+            opacity: 0,
+          },
+          '25%, 75%': {
+            opacity: 1,
+          },
+          '100%': {
+            opacity: 0,
+          },
+        },
       },
       animation: {
         lightning: 'lightning 1200ms cubic-bezier(0.45,-0.45,0.25,1.75)',
+        blink: 'blink 1300ms infinite',
       },
 
       backgroundImage: {
@@ -37,5 +53,9 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addVariant }) {
+      addVariant('not-last', '&:not(:last-child)');
+    }),
+  ],
 };

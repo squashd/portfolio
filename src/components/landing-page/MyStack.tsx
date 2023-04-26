@@ -71,7 +71,7 @@ const MyStack = () => {
           >
             Selv om jeg er glad i alt som er nytt,
             <br />
-            så er teknologien jeg bruker til vanlig
+            så bruker jeg teknologi som er
             <br />
             både veltestet og robust
           </p>

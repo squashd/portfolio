@@ -5,7 +5,7 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'squashd',
+  title: 'Hjartland | Fullstack utvikler',
   description: 'Fullstack utvikler',
 };
 
@@ -15,8 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.className}>
-      <body>
+    <html lang="en" className={`${inter.className} h-full`}>
+      <body className="h-full">
         <NavBar />
         {children}
       </body>

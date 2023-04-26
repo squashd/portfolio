@@ -21,7 +21,7 @@ const Intro = () => {
         <div
           className={`${
             inView ? 'translate-0' : '-translate-x-[25vw] opacity-0'
-          } aspect-square w-48 transform overflow-hidden rounded-full duration-[1400ms] ease-out`}
+          } aspect-square w-48 transform overflow-hidden rounded-full duration-[1200ms] ease-out`}
         >
           <Image src={profilePic} alt={'Profile picture'} />
         </div>
@@ -46,7 +46,7 @@ const Intro = () => {
         <div
           className={`${
             inView ? 'translate-0 opacity-100' : 'translate-x-[25vw] opacity-0'
-          } mt-8 transform whitespace-nowrap text-center text-lg font-thin italic duration-[1300ms] ease-[cubic-bezier(0,0,0.5,1.5)] sm:text-2xl lg:text-3xl`}
+          } mt-8 transform whitespace-nowrap text-center text-lg font-thin italic duration-[1200ms] ease-[cubic-bezier(0,0,0.5,1.5)] sm:text-2xl lg:text-3xl`}
         >
           <p>
             Jeg leverer applikasjoner og nettsider

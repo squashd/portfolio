@@ -1,9 +1,16 @@
-const Page = () => {
-  return (
-    <>
-      <main className="h-screen w-screen"></main>
-    </>
-  );
+import Contact from '@/components/Contact';
+
+export const metadata = {
+  title: 'Kontakt | Hjartland',
+  description: 'Ta kontakt med meg for å diskutere prosjektet ditt.',
 };
 
-export default Page;
+export default function ContactPage() {
+  return (
+    <>
+      <main className='min-h-screen'>
+        <Contact />
+      </main>
+    </>
+  );
+}

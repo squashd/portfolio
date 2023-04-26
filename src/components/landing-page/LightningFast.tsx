@@ -39,7 +39,7 @@ const LightningFast = () => {
           </span>{' '}
           -
           <br />
-          for et best mulig sluttresultat
+          for best mulig sluttresultat
         </p>
       </section>
     </InView>

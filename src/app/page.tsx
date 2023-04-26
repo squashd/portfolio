@@ -1,23 +1,21 @@
 'use client';
 
-import Intro from '@/features/landing-page/Intro';
-import ResponsiveDesign from '@/features/landing-page/ResponsiveDesign';
+import Intro from '@/components/landing-page/Intro';
+import ResponsiveDesign from '@/components/landing-page/ResponsiveDesign';
 import ScrollDownIndicator from '@/components/UI/ScrollDownIndicator';
-import LightningFast from '@/features/landing-page/LightningFast';
-import MyStack from '@/features/landing-page/MyStack';
-import Squashd from '@/features/landing-page/Squashd';
-import Kontakt from '@/features/landing-page/Kontakt';
+import LightningFast from '@/components/landing-page/LightningFast';
+import MyStack from '@/components/landing-page/MyStack';
+import Contact from '@/components/Contact';
 
 export default function Home() {
   return (
     <>
-      <main className="h-screen snap-y snap-mandatory overflow-scroll overflow-x-hidden scroll-smooth">
+      <main className="h-screen w-screen snap-y snap-mandatory overflow-scroll overflow-x-hidden scroll-smooth">
         <Intro />
         <MyStack />
         <ResponsiveDesign />
         <LightningFast />
-        {/* <Squashd /> */}
-        <Kontakt />
+        <Contact />
         <ScrollDownIndicator />
       </main>
     </>
