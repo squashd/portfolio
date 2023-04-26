@@ -1,3 +1,4 @@
+'use client'
 import { InView, useInView } from 'react-intersection-observer';
 
 const MyStack = () => {

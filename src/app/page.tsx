@@ -1,5 +1,3 @@
-'use client';
-
 import Intro from '@/components/landing-page/Intro';
 import ResponsiveDesign from '@/components/landing-page/ResponsiveDesign';
 import ScrollDownIndicator from '@/components/UI/ScrollDownIndicator';

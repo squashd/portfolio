@@ -34,13 +34,15 @@ function CloseIcon({ classNameString }: { classNameString: string }) {
 function MobileNavItem({
   href,
   children,
+  key,
 }: {
   href: string;
   children: React.ReactNode;
+  key: number;
 }) {
   return (
     <li>
-      <Popover.Button as={Link} href={href} className="block py-2">
+      <Popover.Button as={Link} key={key} href={href} className="block py-2">
         {children}
       </Popover.Button>
     </li>
@@ -93,8 +95,10 @@ export default function MobileNavigation({ className }: { className: string }) {
             </div>
             <nav className="mt-6">
               <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
-                {navigation.map((item) => (
-                  <MobileNavItem href={item.href}>{item.name}</MobileNavItem>
+                {navigation.map((item, index) => (
+                  <MobileNavItem href={item.href} key={index}>
+                    {item.name}
+                  </MobileNavItem>
                 ))}
               </ul>
             </nav>
