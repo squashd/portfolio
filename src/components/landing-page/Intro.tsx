@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import { InView, useInView } from 'react-intersection-observer';
 
-import profilePic from 'public/images/profile.jpg';
+import profilePicUnsaturated from 'public/images/profile.jpg';
+import profilePicColor from 'public/images/profile_colour.jpeg';
 
 const Intro = () => {
   const { ref, inView } = useInView({
@@ -21,9 +22,19 @@ const Intro = () => {
         <div
           className={`${
             inView ? 'translate-0' : '-translate-x-[25vw] opacity-0'
-          } aspect-square w-48 transform overflow-hidden rounded-full duration-[1200ms] ease-out`}
+          } group relative aspect-square w-48 transform overflow-hidden rounded-3xl duration-[1200ms] ease-out`}
         >
-          <Image src={profilePic} alt={'Profile picture'} />
+          <Image
+            src={profilePicUnsaturated}
+            alt={'Profile picture'}
+            className="opacity-100 absolute transition duration-500 group-hover:opacity-0"
+          />
+          <Image
+            src={profilePicColor}
+            alt={'Profile picture'}
+            className="opacity-0 absolute transition duration-500 group-hover:opacity-100"
+          />
+          
         </div>
 
         <div

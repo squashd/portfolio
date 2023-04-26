@@ -13,15 +13,16 @@ module.exports = {
         lightning: {
           '0%': {
             opacity: 0,
-            transform: 'translateX(-100vw)',
+            transform: 'translateX(-500vw)',
           },
           '1%': {
             opacity: 1,
           },
-          ' 30%': {
+          ' 20%': {
+            opacity: 1,
             transform: 'translateX(100vw)',
           },
-          ' 31%': {
+          ' 21%': {
             opacity: 0,
             transform: 'translateX(-100vw)',
           },
@@ -42,7 +43,7 @@ module.exports = {
         },
       },
       animation: {
-        lightning: 'lightning 1200ms cubic-bezier(0.45,-0.45,0.25,1.75)',
+        lightning: 'lightning 1900ms cubic-bezier(0.45,-0.45,0.25,1.75)',
         blink: 'blink 1300ms infinite',
       },
 

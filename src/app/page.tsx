@@ -15,7 +15,9 @@ export default function Home() {
         <MyStack />
         <ResponsiveDesign />
         <LightningFast />
-        <Contact />
+        <div className="snap-start">
+          <Contact />
+        </div>
         <ScrollDownIndicator />
       </main>
     </>

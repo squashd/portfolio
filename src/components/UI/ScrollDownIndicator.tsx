@@ -11,7 +11,7 @@ const ScrollDownIndicator = () => {
       if (element)
         bottom =
           element?.scrollHeight - element?.scrollTop <
-          element?.clientHeight + 300;
+          element?.clientHeight + 700;
 
       if (bottom) setIsHidden(true);
       else setIsHidden(false);

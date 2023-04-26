@@ -1,6 +1,11 @@
+import Image from 'next/image';
+import logoWhite from '../../public/hjartland_hvit.svg';
+import profilePicture from '../../public/images/profile.jpg';
+import Link from 'next/link';
+
 export default function Contact() {
   return (
-    <div className="relative isolate snap-start px-6 py-24 sm:py-32 lg:px-8">
+    <div className="relative isolate px-6 py-24 sm:py-32 lg:px-8">
       <div className="mx-auto max-w-xl lg:max-w-4xl">
         <h2 className="text-4xl font-bold tracking-tight text-neutral-200">
           Lyst til å prate om prosjektet ditt?
@@ -89,7 +94,7 @@ export default function Contact() {
                     id="message"
                     name="message"
                     rows={4}
-                    className="block w-full rounded-md border-0 px-3.5 py-2 bg-neutral-800 text-neutral-200 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 bg-neutral-800 px-3.5 py-2 text-neutral-200 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6"
                     defaultValue={''}
                   />
                 </div>
@@ -98,45 +103,47 @@ export default function Contact() {
             <div className="mt-10">
               <button
                 type="submit"
-                className="block w-full rounded-md bg-sky-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="block w-full rounded-md bg-sky-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm transition ease-out hover:bg-sky-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 La oss ta en prat
               </button>
             </div>
             <p className="mt-4 text-sm leading-6 text-gray-500">
-              By submitting this form, I agree to the{' '}
-              <a href="#" className="font-semibold text-indigo-600">
-                privacy&nbsp;policy
-              </a>
+              Ved å innsending av skjemaet godtar du&nbsp;
+              <Link href="/personvern" className="font-semibold text-sky-600">
+                personvern&nbsp;erklæringen
+              </Link>
               .
             </p>
           </form>
           <div className="text-white lg:mt-6 lg:w-80 lg:flex-none">
-            <img
+            <Image
               className="h-12 w-auto text-white"
-              src="/hjartland_hvit.svg"
-              alt=""
+              src={logoWhite}
+              alt="Hjartland logo"
             />
             <figure className="mt-10">
               <blockquote className="text-lg font-semibold leading-8 text-neutral-200">
                 <p>
-                  “Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
-                  expedita voluptas culpa sapiente alias molestiae. Numquam
-                  corrupti in laborum sed rerum et corporis.”
+                  “Jeg tar en helhetlig tilnærming når jeg utvikler, og sikter
+                  alltid mot å levere pålitelige og brukervennlige løsninger som
+                  gir kundene mine en fantastisk opplevelse.”
                 </p>
               </blockquote>
               <figcaption className="mt-10 flex gap-x-6">
-                <img
-                  src="/images/profile.jpg"
-                  alt=""
-                  className="h-12 w-12 flex-none rounded-full bg-gray-50"
-                />
-                <div>
-                  <div className="text-base font-semibold text-neutral-200">
-                    Daniel Hjartland
-                  </div>
-                  <div className="text-sm leading-6 text-gray-600">
-                    Fullstack utvikler
+                <div className="flex items-center gap-4">
+                  <Image
+                    src={profilePicture}
+                    alt=""
+                    className="h-16 w-16 flex-none rounded-full bg-gray-50"
+                  />
+                  <div>
+                    <div className="text-base font-semibold text-neutral-200">
+                      Daniel Hjartland
+                    </div>
+                    <div className="text-sm leading-6 text-gray-400">
+                      Fullstack utvikler
+                    </div>
                   </div>
                 </div>
               </figcaption>

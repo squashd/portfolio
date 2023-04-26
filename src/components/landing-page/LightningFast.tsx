@@ -24,7 +24,7 @@ const LightningFast = () => {
         <p
           className={`${
             inView
-              ? 'opacity-100 delay-[1200ms] duration-[400ms] ease-in'
+              ? 'opacity-100 delay-[1900ms] duration-[400ms] ease-in'
               : 'opacity-0'
           } text-center text-xl font-thin italic sm:text-2xl lg:text-3xl`}
         >
