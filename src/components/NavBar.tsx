@@ -78,10 +78,11 @@ const NavBar = () => {
           {/* Mobile Navigation */}
           <div
             className={`${
-              menuOpen ? 'translate-x-0' : 'invisible translate-x-[100vw]'
-            } absolute left-0 top-0 z-10 flex h-screen w-screen transform items-center justify-center bg-gradient-to-br from-neutral-800 to-neutral-900 text-xl duration-500 ease-out md:hidden`}
+              menuOpen ? 'w-screen backdrop-blur-lg backdrop-filter' : 'w-0 overflow-hidden'
+            } absolute right-0 top-0 z-10 flex h-screen transform items-center justify-center text-xl duration-500 ease-out md:hidden`}
           >
-            <ul className="flex flex-col">
+            <ul className={`${
+              menuOpen ? "scale-x-100" : "scale-x-0" } transition duration-500 flex flex-col`}>
               {navigation.map((item, index) => (
                 <li key={index} className="border-white py-2 not-last:border-b">
                   <Link href={item.href} onClick={toggleMenu}>
