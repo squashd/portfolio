@@ -111,7 +111,7 @@ export default function Contact() {
             <p className="mt-4 text-sm leading-6 text-gray-500">
               Ved å innsending av skjemaet godtar du&nbsp;
               <Link href="/personvern" className="font-semibold text-sky-600">
-                personvern&nbsp;erklæringen
+                personvernerklæringen
               </Link>
               .
             </p>
