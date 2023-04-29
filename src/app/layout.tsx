@@ -1,12 +1,12 @@
-import NavBar from '@/components/NavBar/NavBar';
-import './globals.css';
-import { Inter } from 'next/font/google';
+import NavBar from "@/components/NavBar/NavBar";
+import "./globals.css";
+import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: 'Hjartland | Fullstack utvikler',
-  description: 'Fullstack utvikler',
+  title: "Hjartland | Fullstack utvikler",
+  description: "Fullstack utvikler",
 };
 
 export default function RootLayout({
@@ -17,10 +17,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.className} h-full`}>
       <body className="flex h-full flex-col ">
-        <div className="relative">
-          <NavBar />
-          <main>{children}</main>
-        </div>
+        <NavBar />
+        {children}
       </body>
     </html>
   );
