@@ -21,13 +21,9 @@ const Intro = () => {
       <div
         className={`${
           inView ? "translate-0" : "-translate-x-[25vw] opacity-0"
-        } relative aspect-square w-48 transform overflow-hidden rounded-full duration-[1200ms] ease-out`}
+        } aspect-square w-48 transform overflow-hidden rounded-full duration-[1200ms] ease-out`}
       >
-        <Image
-          src={profilePicUnsaturated}
-          alt={"Profile picture"}
-          className="absolute"
-        />
+        <Image src={profilePicUnsaturated} alt={"Profile picture"} />
       </div>
 
       <div
