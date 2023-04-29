@@ -1,4 +1,5 @@
-export function MerkelappenMini(props: React.SVGProps<SVGSVGElement>) {
+export type SVGProps = React.SVGProps<SVGSVGElement>;
+export function MerkelappenMini(props: SVGProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -11,7 +12,7 @@ export function MerkelappenMini(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export function HjartlandMini(props: React.SVGProps<SVGSVGElement>) {
+export function HjartlandMini(props: SVGProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
