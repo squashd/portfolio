@@ -1,25 +1,53 @@
-import { SimpleLayout } from '@/components/SimpleLayout';
-import logoPlanetaria from '@/images/logos/planetaria.svg';
-import type { ClassNameProps } from '@/types/Props';
+import { SimpleLayout } from "@/components/SimpleLayout";
+import type { ClassNameProps } from "@/types/Props";
+import { cloneElement, ReactElement } from "react";
+import Link from "next/link";
+import { HjartlandMini, MerkelappenMini } from "@/images/logos/minilogos";
 
 export const metadata = {
-  title: 'Prosjekter - Hjartland',
-  description: 'Ting og tang jeg har laget.',
+  title: "Prosjekter - Hjartland",
+  description: "Ting og tang jeg har laget.",
 };
 
 type projects = {
-  name: string;
+  company: string;
+  title: string;
   description: string;
   link: { href: string; label: string };
-  logo: SVGElement;
+  logo: ReactElement<SVGSVGElement>;
 }[];
 
-const projects: projects = [
+const projectList: projects = [
   {
-    name: 'Merkelappen.no',
-    description: 'En nettside for å lage merkelapper.',
-    link: { href: 'https://merkelappen.no', label: 'merkelappen.no' },
-    logo: logoPlanetaria,
+    company: "Merkelappen.no",
+    title: "Butikksider",
+    description: "Nettbutikk integrert med Avarda Checkout.",
+    logo: <MerkelappenMini />,
+    link: {
+      href: "https://www.merkelappen.no",
+      label: "merkelappen.no",
+    },
+  },
+  {
+    company: "Merkelappen.no",
+    title: "Adminsider",
+    description:
+      "Adminsider for ordrebehandling og generering av trykkmateriale.",
+    logo: <MerkelappenMini />,
+    link: {
+      href: "https://www.merkelappen.no",
+      label: "merkelappen.no",
+    },
+  },
+  {
+    company: "Hjartland",
+    title: "Portefølje",
+    description: "Min personlige side, bygget med Next.js og TailwindCSS.",
+    logo: <HjartlandMini />,
+    link: {
+      href: "https://www.hjartland.dev/prosjekter/hjartland",
+      label: "hjartland.dev",
+    },
   },
 ];
 
@@ -34,14 +62,85 @@ function LinkIcon({ className }: ClassNameProps) {
   );
 }
 
-export default function Projects() {
+export default async function Projects() {
   return (
     <>
       <SimpleLayout
         title="Ting jeg har laget"
         intro="Jeg har jobbet på en masse prosjekter, både som freelancer og som student. Her er noen av de jeg er mest stolt av."
       >
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3"></div>
+        <section>
+          <h2 className="mb-4 text-3xl font-bold">Større prosjekter</h2>
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {projectList.map((project, index) => (
+              <div
+                key={project.company + index}
+                className="group relative flex flex-col gap-2 rounded-xl bg-zinc-800/40 p-6 transition ease-in-out hover:cursor-pointer hover:bg-zinc-800/80"
+              >
+                <div className="flex aspect-square h-12 w-12 items-center justify-center rounded-full border-2 border-zinc-700 bg-zinc-800 p-2">
+                  {cloneElement(project.logo, {
+                    className: "h-8",
+                  })}
+                </div>
+                <h2 className="font-light">
+                  {project.company}{" "}
+                  <span className="text-zinc-400 group-hover:text-sky-600">
+                    / {project.title}
+                  </span>
+                </h2>
+                <p className="text-sm leading-tight text-zinc-300">
+                  {project.description}
+                </p>
+                <div className="absolute -inset-1 flex items-center">
+                  <Link href={project.link.href}>
+                    <span className="absolute -inset-1"></span>
+                  </Link>
+                  <p></p>
+                </div>
+                <div className="flex items-center group-hover:text-sky-600">
+                  <LinkIcon className="inline-block aspect-square h-6" />
+                  <span>{project.link.label}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+        <section className="mt-16">
+          <h2 className="mb-4 text-3xl font-bold">Mindre prosjekter</h2>
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {projectList.map((project, index) => (
+              <div
+                key={project.company + index}
+                className="group relative flex flex-col gap-2 rounded-xl bg-zinc-800/40 p-6 transition ease-in-out hover:cursor-pointer hover:bg-zinc-800/80"
+              >
+                <div className="flex aspect-square h-12 w-12 items-center justify-center rounded-full border-2 border-zinc-700 bg-zinc-800 p-2">
+                  {cloneElement(project.logo, {
+                    className: "h-8",
+                  })}
+                </div>
+                <h2 className="font-light">
+                  {project.company}{" "}
+                  <span className="text-zinc-400 group-hover:text-sky-600">
+                    / {project.title}
+                  </span>
+                </h2>
+                <p className="text-sm leading-tight text-zinc-300">
+                  {project.description}
+                </p>
+                <div className="absolute -inset-1 flex items-center">
+                  <Link href={project.link.href}>
+                    <span className="absolute -inset-1"></span>
+                  </Link>
+                  <p></p>
+                </div>
+                <div className="flex items-center group-hover:text-sky-600">
+                  <LinkIcon className="inline-block aspect-square h-6" />
+                  <span>{project.link.label}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
       </SimpleLayout>
     </>
   );

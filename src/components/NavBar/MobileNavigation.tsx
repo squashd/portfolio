@@ -1,8 +1,8 @@
-'use client';
-import { Popover, Transition } from '@headlessui/react';
-import Link from 'next/link';
-import { Fragment } from 'react';
-import { navigation } from './NavBar';
+"use client";
+import { Popover, Transition } from "@headlessui/react";
+import Link from "next/link";
+import { Fragment } from "react";
+import { navigation } from "./NavBar";
 
 function ChevronDownIcon({ classNameString }: { classNameString: string }) {
   return (
@@ -56,7 +56,7 @@ export default function MobileNavigation({ className }: { className: string }) {
         Meny
         <ChevronDownIcon
           classNameString={
-            'ml-3 h-auto w-2 stroke-zinc-500 group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-400'
+            "ml-3 h-auto w-2 stroke-zinc-500 group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-400"
           }
         />
       </Popover.Button>
@@ -90,7 +90,7 @@ export default function MobileNavigation({ className }: { className: string }) {
                 <CloseIcon classNameString="h-6 w-6 text-zinc-500 dark:text-zinc-400" />
               </Popover.Button>
               <h2 className="text-sm font-medium text-zinc-600 dark:text-zinc-400">
-                Navigation
+                Navigasjon
               </h2>
             </div>
             <nav className="mt-6">
