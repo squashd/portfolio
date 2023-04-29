@@ -11,7 +11,7 @@ const LightningFast = () => {
   return (
     <section
       ref={ref}
-      className={`max-w-screen flex max-h-screen min-h-screen snap-center flex-col items-center justify-center gap-8`}
+      className={`max-w-screen flex max-h-screen min-h-full snap-center flex-col items-center justify-center gap-8`}
     >
       <div
         className={`${

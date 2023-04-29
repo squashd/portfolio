@@ -11,7 +11,7 @@ const MyStack = () => {
   return (
     <section
       ref={ref}
-      className={`max-w-screen flex max-h-screen min-h-screen snap-center flex-col items-center justify-center`}
+      className={`max-w-screen flex max-h-screen min-h-full snap-center flex-col items-center justify-center`}
     >
       <div className="flex flex-col items-center gap-8">
         <div className="flex flex-col items-center lg:flex-row">

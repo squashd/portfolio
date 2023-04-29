@@ -16,7 +16,7 @@ const Intro = () => {
       ref={ref}
       className={`${
         inView ? "opacity-100" : "opacity-0"
-      } max-w-screen flex max-h-screen min-h-screen transform snap-center flex-col items-center justify-center gap-4`}
+      } max-w-screen flex max-h-screen min-h-full transform snap-center flex-col items-center justify-center gap-4`}
     >
       <div
         className={`${
