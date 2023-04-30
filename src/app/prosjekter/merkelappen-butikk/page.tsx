@@ -1,8 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import forside from "@/assets/images/merkelappen/forside.webp";
-import navnelapper from "@/assets/images/merkelappen/navnelapper.webp";
-import checkout from "@/assets/images/merkelappen/checkout.webp";
 
 export default function Page() {
   return (
@@ -17,19 +14,20 @@ export default function Page() {
           </p>
           <p className="text-light text-sm text-sky-400">NOV 2022 - NÅ</p>
         </header>
-        <section className="my-12">
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
-            <div className="overflow-hidden rounded-lg">
-              <Image src={forside} alt="forsiden til merkelappen.no" />
-            </div>
-            <div className="overflow-hidden rounded-lg">
-              <Image src={navnelapper} alt="forhåndsvisning av navnelapper" />
-            </div>
-            <div className="hidden overflow-hidden rounded-lg sm:block">
-              <Image src={checkout} alt="integrert checkout" />
-            </div>
-          </div>
-        </section>
+        {/* TODO: Change image format to jp and implement external image serving */}
+        {/*<section className="my-12">*/}
+        {/*  <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">*/}
+        {/*    <div className="overflow-hidden rounded-lg">*/}
+        {/*      <Image src={forside} alt="forsiden til merkelappen.no" />*/}
+        {/*    </div>*/}
+        {/*    <div className="overflow-hidden rounded-lg">*/}
+        {/*      <Image src={navnelapper} alt="forhåndsvisning av navnelapper" />*/}
+        {/*    </div>*/}
+        {/*    <div className="hidden overflow-hidden rounded-lg sm:block">*/}
+        {/*      <Image src={checkout} alt="integrert checkout" />*/}
+        {/*    </div>*/}
+        {/*  </div>*/}
+        {/*</section>*/}
         <section className="flex flex-col gap-12 pb-16">
           <div className="flex flex-col gap-4">
             <h2 className="text-2xl font-bold text-zinc-100">Om prosjektet</h2>
