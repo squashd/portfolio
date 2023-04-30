@@ -31,6 +31,11 @@ export default function Home() {
     rootMargin: "0px",
     threshold: 0.1,
   });
+  const [projectsRef, projectsInView] = useInView({
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.1,
+  });
   const [toolsRef, toolsInView] = useInView({
     root: null,
     rootMargin: "0px",
@@ -39,20 +44,20 @@ export default function Home() {
 
   return (
     <>
-      <div className="scroll-smooth8 h-full w-screen snap-y snap-mandatory overflow-scroll overflow-x-hidden">
+      <div className="h-full w-screen snap-y snap-mandatory overflow-scroll overflow-x-hidden scroll-smooth">
         <section
           ref={introRef}
-          className={`lg:px- flex h-full snap-center flex-col items-center justify-center px-6 text-left`}
+          className={`lg:px- flex h-full snap-center flex-col items-center justify-center text-left`}
         >
           <div
             className={`${
-              introInView ? "opacity-100 delay-200 duration-1000 " : "opacity-0"
-            } flex w-full flex-col gap-1 sm:gap-2 md:max-w-4xl lg:max-w-5xl`}
+              introInView ? "opacity-100 delay-300 duration-1000 " : "opacity-0"
+            } flex w-full flex-col gap-1 px-6 sm:gap-2 md:max-w-4xl lg:max-w-5xl`}
           >
             <h1
               className={`${
                 introInView
-                  ? "translate-y-0 delay-200 duration-1000 "
+                  ? "translate-y-0 delay-300 duration-1000 "
                   : "translate-y-4"
               } transform font-mono text-xs text-sky-400 transition sm:text-sm md:text-base`}
             >
@@ -61,7 +66,7 @@ export default function Home() {
             <h2
               className={`${
                 introInView
-                  ? "translate-y-0 delay-200 duration-1000 "
+                  ? "translate-y-0 delay-300 duration-1000 "
                   : "translate-y-8"
               } text-4xl font-bold text-zinc-100 sm:text-6xl`}
             >
@@ -70,7 +75,7 @@ export default function Home() {
             <h3
               className={`${
                 introInView
-                  ? "translate-y-0 delay-200 duration-1000 "
+                  ? "translate-y-0 delay-300 duration-1000 "
                   : "translate-y-12"
               } text-4xl font-bold text-zinc-300 sm:text-6xl`}
             >
@@ -101,23 +106,26 @@ export default function Home() {
           <div
             className={`${
               introInView ? "opacity-100" : "opacity-0"
-            } absolute bottom-14 right-1/4 flex rotate-90 items-center transition duration-500 ease-in-out after:ml-2 after:h-0.5 after:h-[1px] after:w-12 after:bg-zinc-200 after:content-['']`}
+            } absolute bottom-12 right-1/4 flex animate-bounce items-center duration-200 ease-in-out`}
           >
-            Skroll videre
+            <span className="flex rotate-90 items-center gap-2 text-xs after:h-[1px] after:w-12 after:bg-zinc-200">
+              Skroll videre
+            </span>
           </div>
         </section>
         <section
+          id="mer-om-meg"
           ref={aboutRef}
-          className="lg:px- relative flex h-full w-screen snap-center flex-col items-center justify-center px-6 text-left"
+          className="lg:px- relative flex h-full w-screen snap-center flex-col items-center justify-center text-left"
         >
-          <div className="flex max-w-5xl flex-col items-center gap-8 md:flex-row">
+          <div className="flex max-w-5xl flex-col items-center gap-8 px-6 md:flex-row">
             <div className="flex w-full flex-col">
               <h2
                 className={`${
                   aboutInView
                     ? "translate-x-0 delay-200 duration-1000 ease-out after:w-full after:duration-[2000ms]"
-                    : "-translate-x-4 after:w-0"
-                } mb-2 flex max-w-xl items-center gap-3 whitespace-nowrap text-2xl font-semibold text-zinc-200 before:font-mono before:text-lg before:font-light before:text-sky-400 before:content-["01."] after:h-[0.25pt] after:bg-white after:content-[""] sm:text-3xl before:sm:text-2xl`}
+                    : "-translate-x-4 opacity-0 after:w-0"
+                } mb-2 flex max-w-2xl items-center gap-3 whitespace-nowrap text-2xl font-semibold text-zinc-100 before:font-mono before:text-lg before:font-light before:text-sky-400 before:content-["01."] after:h-[0.25pt] after:bg-white after:content-[""] sm:text-3xl before:sm:text-2xl`}
               >
                 Mer om meg
               </h2>
@@ -126,14 +134,14 @@ export default function Home() {
                   aboutInView
                     ? "opacity-100 delay-200 duration-[2000ms]"
                     : "opacity-0"
-                } max-w-xl text-sm leading-tight sm:text-base md:max-w-2xl`}
+                } flex max-w-2xl flex-col gap-4 text-justify text-sm leading-tight sm:text-base`}
               >
-                <p className="my-4">
-                  Hei, jeg heter Daniel. Jeg fikk min første PC allerede da jeg
-                  var 6 år gammel – det måtte riktignok ofres noen leker til
-                  garasjesalg, men jeg har vært interessert i teknologi siden.
+                <p className="">
+                  Jeg fikk min første PC allerede da jeg var 6 år gammel – det
+                  måtte riktignok ofres noen leker til garasjesalg, men jeg har
+                  vært interessert i teknologi siden.
                 </p>
-                <p className="my-4">
+                <p className="text-left">
                   Jeg har også vært{" "}
                   <button
                     onClick={() => setShowSquashImage(!showSquashImage)}
@@ -146,12 +154,12 @@ export default function Home() {
                   førstelaget ved Heriot-Watt University hvor jeg studerte
                   matematikk.
                 </p>
-                <p className="my-4">
+                <p className="text-left">
                   Jeg er alltid ivrig etter å lære og ta på meg nye
                   utfordringer. Hvis jeg ikke har erfaring med et spesifikt
                   teknologiområde, vil jeg gjøre alt jeg kan for å lære og bli
-                  komfortabel med det. Jeg spør aldri &quot;om jeg kan?&quot; ,
-                  jeg spør alltid &quot;hvordan kan jeg?&quot;
+                  komfortabel med det. Jeg spør aldri &quot;kan jeg
+                  dette?&quot;, jeg spør alltid &quot;hvordan kan jeg?&quot;
                 </p>
               </div>
             </div>
@@ -197,17 +205,84 @@ export default function Home() {
           </div>
         </section>
         <section
-          ref={toolsRef}
-          className="lg:px- relative flex h-full snap-center flex-col items-center justify-center px-6 text-left"
+          ref={projectsRef}
+          className="relative flex h-full snap-center flex-col items-center justify-center text-left"
         >
-          <div className="flex max-w-5xl flex-col items-center gap-8 lg:flex-row">
+          <div className="flex max-w-5xl flex-col items-center gap-8 px-6 lg:flex-row">
+            <div className="flex w-full flex-col">
+              <h2
+                className={`${
+                  projectsInView
+                    ? "translate-x-0 delay-200 duration-1000 ease-out after:w-full after:duration-[2000ms]"
+                    : "-translate-x-4 opacity-0 after:w-0"
+                } mb-2 flex max-w-2xl items-center gap-3 whitespace-nowrap text-2xl font-semibold text-zinc-100 before:font-mono before:text-lg before:font-light before:text-sky-400 before:content-["02."] after:h-[0.25pt] after:bg-white after:content-[""] sm:text-3xl before:sm:text-2xl`}
+              >
+                Mine prosjekter
+              </h2>
+              <div
+                className={`${
+                  projectsInView
+                    ? "text-justify opacity-100 delay-200 duration-[2000ms]"
+                    : "opacity-0"
+                } flex max-w-2xl flex-col gap-4 text-sm leading-tight sm:text-base`}
+              >
+                <p className="">
+                  Om du er nysgjerrig på hvilke prosjekter jeg har jobbet med,
+                  så anbefaler jeg deg å besøke{" "}
+                  <Link
+                    href={"/prosjekter"}
+                    className="group relative inline-block text-sky-400 transition duration-300"
+                  >
+                    prosjektsiden min
+                    <span className="relative bottom-1 block h-[1px] max-w-0 bg-sky-400 transition-all duration-500 group-hover:max-w-full"></span>
+                  </Link>{" "}
+                  . Der vil du finne en detaljert oversikt, inkludert
+                  beskrivelser, skjermbilder, prosess og noen ganger også koden
+                  jeg har skrevet.
+                </p>
+                <p className="text-left">
+                  Jeg har jobbet med alt fra{" "}
+                  <Link
+                    href={"/prosjekter/merkelappen-butikk"}
+                    className="group relative inline-block text-sky-400 transition duration-300"
+                  >
+                    nettbutikk
+                    <span className="relative bottom-1 block h-[1px] max-w-0 bg-sky-400 transition-all duration-500 group-hover:max-w-full"></span>
+                  </Link>{" "}
+                  til{" "}
+                  <Link
+                    href={"/prosjekter/merkelappen-admin"}
+                    className="group relative inline-block text-sky-400 transition duration-300"
+                  >
+                    admin og backend,
+                    <span className="relative bottom-1 block h-[1px] max-w-0 bg-sky-400 transition-all duration-500 group-hover:max-w-full"></span>
+                  </Link>{" "}
+                  jobbet med diverse integrasjoner, og til og med laget noen{" "}
+                  <Link
+                    href={"/spill/wordle"}
+                    className="group relative inline-block text-sky-400 transition duration-300"
+                  >
+                    spill
+                    <span className="relative bottom-1 block h-[1px] max-w-0 bg-sky-400 transition-all duration-500 group-hover:max-w-full"></span>
+                  </Link>
+                  , så det er mye spennende å utforske.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          ref={toolsRef}
+          className="lg:px- relative flex h-full snap-center flex-col items-center justify-center text-left"
+        >
+          <div className="flex max-w-5xl flex-col items-center gap-8 px-6 lg:flex-row">
             <div className="flex w-full flex-col">
               <h2
                 className={`${
                   toolsInView
                     ? "translate-x-0 delay-200 duration-1000 ease-out after:w-full after:duration-[2000ms]"
-                    : "-translate-x-4 after:w-0"
-                } mb-2 flex max-w-2xl items-center gap-3 whitespace-nowrap text-2xl font-semibold text-zinc-200 before:font-mono before:text-lg before:font-light before:text-sky-400 before:content-["02."] after:h-[0.25pt] after:bg-white after:content-[""] sm:text-3xl before:sm:text-2xl`}
+                    : "-translate-x-4 opacity-0 after:w-0"
+                } mb-2 flex max-w-2xl items-center gap-3 whitespace-nowrap text-2xl font-semibold text-zinc-100 before:font-mono before:text-lg before:font-light before:text-sky-400 before:content-["03."] after:h-[0.25pt] after:bg-white after:content-[""] sm:text-3xl before:sm:text-2xl`}
               >
                 Mine verktøy
               </h2>
@@ -216,27 +291,31 @@ export default function Home() {
                   toolsInView
                     ? "opacity-100 delay-200 duration-[2000ms]"
                     : "opacity-0"
-                } flex max-w-2xl flex-col gap-4 text-sm leading-tight sm:text-base`}
+                } flex max-w-2xl flex-col gap-4 text-justify text-sm leading-tight sm:text-base`}
               >
-                <p className="text-zinc-300">
+                <p className="">
                   Jeg har erfaring med ulike verktøy og teknologier innen
                   webutvikling, og jeg er alltid på utkikk etter nye måter å
                   lære og utfordre meg selv på. Når det er sagt, så er dette
                   teknologien jeg ofte først strekker meg etter.
                 </p>
-                <p className="text-zinc-300">
+                <p className="text-left">
                   Jeg starter alltid nye prosjekter i TypeScript og kvier meg
                   for bruk av integrasjoner uten TypeScript-støtte. Det gjør
                   koden min sikrere og mer forståelig for andre.
                 </p>
-                <p className="text-zinc-300">
+                <p className="text-left">
                   Med en rekke prosjekter så fungerer NextJS sine innebygde API
                   ruter utmerket som backend, og med Prisma som ORM og
                   MySQL/MongoDB som database, er det enkelt å sette opp en
-                  fullverdig fullstack applikasjon.
+                  fullverdig fullstack applikasjon. REST APIer er også enkelt å
+                  sette opp med Express.
                 </p>
-                <p className="text-zinc-300">
-                  REST APIer er også enkelt å sette opp med Express.
+                <p className="text-left">
+                  Er noen av disse teknologiene ukjente for deg, kan du lese mer
+                  om dem ved å trykke på ikonene{" "}
+                  <span className="hidden lg:inline-block">til høyre.</span>
+                  <span className="inline-block lg:hidden">under.</span>
                 </p>
               </div>
             </div>
@@ -245,26 +324,62 @@ export default function Home() {
                 toolsInView
                   ? "opacity-100 duration-[2200ms] ease-in-out"
                   : "opacity-0"
-              } flex w-full flex-col items-center gap-6 text-zinc-200 sm:flex-row lg:w-auto lg:flex-col`}
+              } flex w-full flex-col items-center gap-6 text-zinc-100 sm:flex-row lg:w-auto lg:flex-col`}
             >
-              <div className="flex w-full flex-col items-center gap-4 rounded-lg bg-zinc-800/40 px-4 py-2">
-                <h3 className="w-full border-b border-zinc-300 pb-2 text-center font-bold uppercase">
+              <div className="group flex w-full flex-col items-center gap-4 rounded-lg bg-zinc-800/40 px-4 py-2 hover:bg-zinc-800/80">
+                <h3 className="w-full border-b border-zinc-300 pb-2 text-center font-bold uppercase transition group-hover:text-sky-400">
                   Frontend
                 </h3>
                 <div className="flex gap-8">
-                  <TailwindLogo className="aspect-square h-16 sm:h-12 md:h-14" />
-                  <TypeScriptLogo className="aspect-square h-16 sm:h-12 md:h-14" />
-                  <NextJSLogo className="aspect-square h-16 sm:h-12 md:h-14" />
+                  <a
+                    href="https://tailwindcss.com/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <TailwindLogo className="aspect-square h-16 transition hover:text-sky-400 sm:h-12 md:h-14" />
+                  </a>
+                  <a
+                    href="https://www.typescriptlang.org/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <TypeScriptLogo className="aspect-square h-16 transition hover:text-sky-400 sm:h-12 md:h-14" />
+                  </a>
+                  <a
+                    href="https://nextjs.org/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <NextJSLogo className="aspect-square h-16 transition hover:text-sky-400 sm:h-12 md:h-14" />
+                  </a>
                 </div>
               </div>
-              <div className="flex w-full flex-col items-center gap-4 rounded-lg bg-zinc-800/40 px-4 py-2">
-                <h3 className="w-full border-b border-zinc-300 pb-2 text-center font-bold uppercase">
+              <div className="group flex w-full flex-col items-center gap-4 rounded-lg bg-zinc-800/40 px-4 py-2 hover:bg-zinc-800/80">
+                <h3 className="w-full border-b border-zinc-300 pb-2 text-center font-bold uppercase transition group-hover:text-sky-400">
                   Backend
                 </h3>
                 <div className="flex gap-8">
-                  <MongoDBLogo className="aspect-square h-16 sm:h-12 md:h-14" />
-                  <PrismaLogo className="aspect-square h-16 sm:h-12 md:h-14" />
-                  <MySQLLogo className="aspect-square h-16 sm:h-12 md:h-14" />
+                  <a
+                    href="https://www.mongodb.com/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <MongoDBLogo className="aspect-square h-16 transition hover:text-sky-400 sm:h-12 md:h-14" />
+                  </a>
+                  <a
+                    href="https://www.prisma.io/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <PrismaLogo className="aspect-square h-16 transition hover:text-sky-400 sm:h-12 md:h-14" />
+                  </a>
+                  <a
+                    href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <MySQLLogo className="aspect-square h-16 transition hover:text-sky-400 sm:h-12 md:h-14" />
+                  </a>
                 </div>
               </div>
             </div>

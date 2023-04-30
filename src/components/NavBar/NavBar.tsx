@@ -12,7 +12,7 @@ export const navigation: NavigationItem[] = [
   { name: "Prosjekter", href: "/prosjekter" },
   // { name: 'Galleri', href: '/galleri' },
   { name: "Kontakt", href: "/kontakt" },
-  { name: "Mer om meg", href: "/#info" },
+  { name: "Mer om meg", href: "/#mer-om-meg" },
 ];
 
 const NavBar = () => {
@@ -20,10 +20,10 @@ const NavBar = () => {
     <>
       <nav
         className="absolute z-10
-        flex w-full justify-center bg-gradient-to-b from-zinc-900/50 px-4 py-6 text-zinc-200"
+        flex w-full justify-center bg-gradient-to-b from-zinc-900/50 py-6 text-zinc-200"
       >
         {/* Logo */}
-        <div className="flex w-full max-w-5xl items-center justify-between">
+        <div className="flex w-full max-w-5xl items-center justify-between px-6">
           <Link href="/">
             <div className="relative z-50 transition ease-out hover:opacity-80 hover:transition hover:ease-in">
               <svg
@@ -55,23 +55,26 @@ const NavBar = () => {
           </Link>
           <MobileNavigation className="pointer-events-auto md:hidden" />
           {/* Desktop Navigation */}
+          {/* TODO: Change to map when scroll to has behaviour works as expected */}
           <ul className="hidden font-bold uppercase md:flex">
-            {navigation.map((item, index) => (
-              <li
-                key={index}
-                className="px-2 transition hover:opacity-80 hover:transition hover:ease-in-out not-last:border-r"
-              >
-                <Link scroll={false} href={item.href}>
-                  {item.name}
-                </Link>
-              </li>
-            ))}
+            <li className="border-r px-2 transition hover:opacity-80 hover:transition hover:ease-in-out">
+              <Link href={"/"}>Hjem</Link>
+            </li>
+            <li className="border-r px-2 transition hover:opacity-80 hover:transition hover:ease-in-out">
+              <Link href={"/prosjekter"}>Prosjekter</Link>
+            </li>
+            <li className="border-r px-2 transition hover:opacity-80 hover:transition hover:ease-in-out">
+              <Link href={"/kontakt"}>Kontakt</Link>
+            </li>
+            <li className="px-2 transition hover:opacity-80 hover:transition hover:ease-in-out">
+              <a href={"/#mer-om-meg"}>Mer om meg</a>
+            </li>
           </ul>
         </div>
       </nav>
       <nav>
-        <div className="absolute top-16 z-50 w-full px-4 text-zinc-100">
-          <div className="mx-auto max-w-5xl">
+        <div className="absolute top-16 z-50 w-full text-zinc-100">
+          <div className="mx-auto max-w-5xl px-6">
             <BreadCrumb />
           </div>
         </div>

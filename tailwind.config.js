@@ -41,10 +41,35 @@ module.exports = {
             opacity: 0,
           },
         },
+        flip: {
+          "0%": { transform: "scaleY(1)" },
+          "50%": { transform: "scaleY(0)" },
+          "100%": { transform: "scaleY(1)" },
+        },
+        shake: {
+          "0%": { transform: "translateX(0)" },
+          "25%": { transform: "translateX(-10px)" },
+          "75%": { transform: "translateX(10px)" },
+          "100%": { transform: "translateX(0)" },
+        },
+        fadeaway: {
+          "0%": {
+            opacity: 1,
+            transform: "translateY(0)",
+          },
+          "60%": { opacity: 1 },
+          "100%": {
+            opacity: 0,
+            transform: "translateY(-80px)",
+          },
+        },
       },
       animation: {
         lightning: "lightning 1900ms cubic-bezier(0.45,-0.45,0.25,1.75)",
         blink: "blink 1300ms infinite",
+        flip: "flip 600ms ease-in-out",
+        shake: "shake 140ms ease-in-out infinite",
+        fadeaway: "fadeaway 1500ms ease-out",
       },
 
       backgroundImage: {
