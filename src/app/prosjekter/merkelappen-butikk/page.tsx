@@ -1,9 +1,8 @@
-import OrderExample from "@/components/Projects/OrderExample";
 import Link from "next/link";
 import Image from "next/image";
-import forside from "/public/images/merkelappen/forside.webp";
-import navnelapper from "/public/images/merkelappen/navnelapper.webp";
-import checkout from "/public/images/merkelappen/checkout.webp";
+import forside from "public/images/merkelappen/forside.webp";
+import navnelapper from "public/images/merkelappen/navnelapper.webp";
+import checkout from "public/images/merkelappen/checkout.webp";
 
 export default function Page() {
   return (
