@@ -1,6 +1,6 @@
 import Image from "next/image";
 import logoWhite from "../../public/hjartland_hvit.svg";
-import profilePicture from "../../public/images/profile.jpg";
+import profilePicture from "../assets/images/profile.jpg";
 import Link from "next/link";
 
 export default function Contact() {

@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
-import forside from "public/images/merkelappen/forside.webp";
-import navnelapper from "public/images/merkelappen/navnelapper.webp";
-import checkout from "public/images/merkelappen/checkout.webp";
+import forside from "@/assets/images/merkelappen/forside.webp";
+import navnelapper from "@/assets/images/merkelappen/navnelapper.webp";
+import checkout from "@/assets/images/merkelappen/checkout.webp";
 
 export default function Page() {
   return (

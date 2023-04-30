@@ -3,10 +3,10 @@ import Image from "next/image";
 import Contact from "@/components/Contact";
 import { useInView } from "react-intersection-observer";
 
-import profilePicUnsaturated from "public/images/profile.jpg";
-import profilePicSaturated from "public/images/profile_colour.jpeg";
-import squashSaturated from "public/images/NM-vinner-farge.webp";
-import squashUnsaturated from "public/images/NM-vinner-sorthvit.webp";
+import profilePicUnsaturated from "@/assets/images/profile.jpg";
+import profilePicSaturated from "@/assets/images/profile_colour.jpeg";
+import squashSaturated from "@/assets/images/NM-vinner-farge.webp";
+import squashUnsaturated from "@/assets/images/NM-vinner-sorthvit.webp";
 
 import {
   MongoDBLogo,
