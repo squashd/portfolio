@@ -1,16 +1,14 @@
-import Contact from '@/components/Contact';
+import Contact from "@/components/Contact";
 
 export const metadata = {
-  title: 'Kontakt | Hjartland',
-  description: 'Ta kontakt med meg for å diskutere prosjektet ditt.',
+  title: "Kontakt | Hjartland",
+  description: "Ta kontakt med meg for å diskutere prosjektet ditt.",
 };
 
 export default function ContactPage() {
   return (
     <>
-      <main className='min-h-screen'>
-        <Contact />
-      </main>
+      <Contact />
     </>
   );
 }

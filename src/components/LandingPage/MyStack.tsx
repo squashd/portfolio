@@ -65,7 +65,7 @@ const MyStack = () => {
         <p
           className={`${
             inView ? "opacity-100 delay-[3600ms] duration-[900ms]" : "opacity-0"
-          } text-center text-xl font-thin italic sm:block sm:text-2xl lg:text-3xl`}
+          } text-center text-xl font-thin italic sm:block sm:text-2xl lg:text-3xl lg:tracking-tight`}
         >
           Selv om jeg er glad i alt som er nytt,
           <br />

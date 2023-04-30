@@ -2,7 +2,7 @@ import { SimpleLayout } from "@/components/SimpleLayout";
 import type { ClassNameProps } from "@/types/Props";
 import { cloneElement, ReactElement } from "react";
 import Link from "next/link";
-import { HjartlandMini, MerkelappenMini } from "@/images/logos/minilogos";
+import { HjartlandMini, MerkelappenMini } from "@/assets/logos/minilogos";
 
 export const metadata = {
   title: "Prosjekter - Hjartland",
@@ -24,7 +24,7 @@ const projectList: projects = [
     description: "Nettbutikk integrert med Avarda Checkout.",
     logo: <MerkelappenMini />,
     link: {
-      href: "https://www.merkelappen.no",
+      href: "/prosjekter/merkelappen-butikk",
       label: "merkelappen.no",
     },
   },
@@ -35,7 +35,7 @@ const projectList: projects = [
       "Adminsider for ordrebehandling og generering av trykkmateriale.",
     logo: <MerkelappenMini />,
     link: {
-      href: "https://www.merkelappen.no",
+      href: "/prosjekter/merkelappen-admin",
       label: "merkelappen.no",
     },
   },
@@ -67,7 +67,7 @@ export default async function Projects() {
     <>
       <SimpleLayout
         title="Ting jeg har laget"
-        intro="Jeg har jobbet på en masse prosjekter, både som freelancer og som student. Her er noen av de jeg er mest stolt av."
+        intro="Som freelancer og student – samt ellers i fritiden – har jeg har jobbet på en masse prosjekter. Her er noen av de jeg er mest stolt av."
       >
         <section>
           <h2 className="mb-4 text-3xl font-bold">Større prosjekter</h2>

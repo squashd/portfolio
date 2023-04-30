@@ -16,9 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.className} h-full`}>
-      <body className="flex h-full flex-col ">
+      <body className="h-full text-zinc-300">
         <NavBar />
-        {children}
+        <main className="h-full">{children}</main>
       </body>
     </html>
   );
