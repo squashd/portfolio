@@ -129,7 +129,7 @@ export default function Home() {
               <h2
                 className={`${
                   aboutInView
-                    ? "translate-x-0 delay-200 duration-1000 ease-out after:w-full after:duration-[2000ms]"
+                    ? "translate-x-0 delay-200 duration-1000 ease-out after:mr-8 after:w-full after:duration-[2000ms]"
                     : "-translate-x-4 opacity-0 after:w-0"
                 } mb-2 flex max-w-2xl items-center gap-3 whitespace-nowrap text-2xl font-semibold text-zinc-100 before:font-mono before:text-lg before:font-light before:text-sky-400 before:content-["01."] after:h-[1px] after:bg-white after:content-[""] sm:text-3xl before:sm:text-2xl`}
               >
@@ -219,7 +219,7 @@ export default function Home() {
               <h2
                 className={`${
                   projectsInView
-                    ? "translate-x-0 delay-200 duration-1000 ease-out after:w-full after:duration-[2000ms]"
+                    ? "translate-x-0 delay-200 duration-1000 ease-out after:mr-8 after:w-full after:duration-[2000ms]"
                     : "-translate-x-4 opacity-0 after:w-0"
                 } mb-2 flex max-w-2xl items-center gap-3 whitespace-nowrap text-2xl font-semibold text-zinc-100 before:font-mono before:text-lg before:font-light before:text-sky-400 before:content-["02."] after:h-[1px] after:bg-white after:content-[""] sm:text-3xl before:sm:text-2xl`}
               >
@@ -285,7 +285,7 @@ export default function Home() {
               <h2
                 className={`${
                   toolsInView
-                    ? "translate-x-0 delay-200 duration-1000 ease-out after:w-full after:duration-[2000ms]"
+                    ? "translate-x-0 delay-200 duration-1000 ease-out after:mr-8 after:w-full after:duration-[2000ms]"
                     : "-translate-x-4 opacity-0 after:w-0"
                 } mb-2 flex max-w-2xl items-center gap-3 whitespace-nowrap text-2xl font-semibold text-zinc-100 before:font-mono before:text-lg before:font-light before:text-sky-400 before:content-["03."] after:h-[1px] after:bg-white after:content-[""] sm:text-3xl before:sm:text-2xl`}
               >
@@ -393,7 +393,7 @@ export default function Home() {
               <h2
                 className={`${
                   contactInView
-                    ? "translate-x-0 delay-200 duration-1000 ease-out after:w-full after:duration-[2000ms]"
+                    ? "translate-x-0 delay-200 duration-1000 ease-out after:mr-8 after:w-full after:duration-[2000ms]"
                     : "-translate-x-4 opacity-0 after:w-0"
                 } mb-2 flex max-w-2xl items-center gap-3 whitespace-nowrap text-2xl font-semibold text-zinc-100 before:font-mono before:text-lg before:font-light before:text-sky-400 before:content-["04."] after:h-[1px] after:bg-white after:content-[""] sm:text-3xl before:sm:text-2xl`}
               >
