@@ -18,10 +18,10 @@ export default function Page() {
           <div className="flex flex-col gap-4">
             <h2 className="text-2xl font-bold text-zinc-100">Om prosjektet</h2>
             <p className="">
-              Likeså viktig som å lage en god nettside for kundene, er det å
-              lage en god løsning for de som skal håndtere ordrene. Når også
-              betaling må sjekkes gjennom et 3. parts API, så er det viktig å
-              enkelt kunne sjekke status på betaling.
+              Like viktig som å lage en god nettside for kundene, er det å lage
+              en god løsning for de som skal håndtere ordrene. Når også betaling
+              må sjekkes gjennom et tredjeparts API, så er det viktig å enkelt
+              kunne sjekke status på betaling.
             </p>
           </div>
           <div className="flex flex-col gap-4">
@@ -52,13 +52,13 @@ export default function Page() {
               <p className="">
                 I likhet med{" "}
                 <Link
-                  href={"/prosjekter/merkelappen-butikk"}
+                  href={"/portef%C3%B8lje/prosjekter/merkelappen-butikk"}
                   className="group relative inline-block text-sky-400 transition duration-300"
                 >
-                  butikk delen
+                  butikksidene
                   <span className="relative bottom-1 block h-[1px] max-w-0 bg-sky-400 transition-all duration-500 group-hover:max-w-full"></span>
                 </Link>{" "}
-                av merkelappen.no , så er adminsidene laget med NextJS. Det er
+                til merkelappen.no , så er adminsidene laget med NextJS. Det er
                 også lagt til bruk av tRPC for å enkelt kunne kommunisere med
                 backend og hente de nyeste ordrene og filtrere på status.
                 Kanskje når React Server Components&reg; er klar for produksjon
@@ -74,8 +74,18 @@ export default function Page() {
                 Jeg ønsket at ordrebehandling skulle være så enkelt som mulig,
                 og at det skulle være enkelt å se når prosesser for
                 ordrebehandling var iverksatt. Ordrene hentes inn og skytes inn
-                i ordrelinje komponenter, som uavhengig av hverandre kan
-                oppdatere seg selv.
+                i ordrelinje komponenter, som uavhengig av hverandre gjør kall
+                mot Avarda APIet dersom{" "}
+                <a
+                  href={"https://docs.avarda.com/checkout-3/confirmation/"}
+                  className="group relative inline-block text-sky-400 transition duration-300"
+                  rel="noreferrer noopener"
+                  target="_blank"
+                >
+                  betalingsstatus
+                  <span className="relative bottom-1 block h-[1px] max-w-0 bg-sky-400 transition-all duration-500 group-hover:max-w-full"></span>
+                </a>{" "}
+                ikke er ferdigstilt (finalized, timedout eller cancelled).
               </p>
             </div>
             <div className="flex flex-col gap-4">

@@ -1,13 +1,14 @@
-'use client';
-import { useEffect } from 'react';
+"use client";
+import { useEffect } from "react";
+import Link from "next/link";
 
 const WORDS_ARRAY = [
-  'Jeg skulle gjerne hatt en ny betalingsløsning. [Redacted] har økt prisene sine.',
-  'Vi trenger en ny nettside for bandet vårt.',
-  'Jeg vil ha hjelp med å sette opp en ny nettbutikk. Kan du fikse det?',
-  'Vi trenger en mobilapplikasjon for å...',
-  'Jeg skulle hatt en program som automatisk setter opp stigespill for klubben vår.',
-  'Vi sliter med å få til en god brukeropplevelse på nettsiden vår.',
+  "Jeg skulle gjerne hatt en ny betalingsløsning. [Redacted] har økt prisene sine.",
+  "Vi trenger en ny nettside for bandet vårt.",
+  "Jeg vil ha hjelp med å sette opp en ny nettbutikk. Kan du fikse det?",
+  "Vi trenger en mobilapplikasjon for å...",
+  "Jeg skulle hatt en program som automatisk setter opp stigespill for klubben vår.",
+  "Vi sliter med å få til en god brukeropplevelse på nettsiden vår.",
 ];
 const WRITING_ANIMATION_PAUSE = 50;
 const BACKSPACE_ANIMATION_PAUSE = 10;
@@ -21,11 +22,11 @@ export default function Page() {
   };
 
   useEffect(() => {
-    const container = document.querySelector('.typing')!;
+    const container = document.querySelector(".typing")!;
 
     const typeWord = async (word: string) => {
-      if (container.textContent) container.textContent = '';
-      const wordArray = word.split('');
+      if (container.textContent) container.textContent = "";
+      const wordArray = word.split("");
       for (let i = 0; i < wordArray.length; i++) {
         container.textContent = `${container.textContent}${wordArray[i]}`;
         await pause(WRITING_ANIMATION_PAUSE);
@@ -71,30 +72,31 @@ export default function Page() {
 
   return (
     <>
-      <main className="h-screen w-screen">
-        <div className="flex h-full flex-col items-center justify-center gap-8">
-          <h1>Skrivemaskin effekt</h1>
-          <div>
-            <p className="text-xl">
-              En effekt inspirert av{' '}
-              <a href="https://www.dintero.no" target="_blank">
-                <span className="bg-gradient-to-br from-sky-300 to-blue-500 bg-clip-text font-bold duration-300 ease-out hover:text-transparent">
-                  Dintero
-                </span>
-              </a>{' '}
-              sine sider
-            </p>
+      <div className="mx-auto max-w-5xl px-6">
+        <header className="max-w-2xl pt-48">
+          <h1 className="text-4xl font-bold tracking-tight text-zinc-100 sm:text-5xl">
+            Skrivemaskin effekt
+          </h1>
+          <p className="mt-6 text-base text-zinc-300">
+            Inspirert av nettsidene til{" "}
+            <a
+              href={"https://www.dintero.com/"}
+              className="group relative inline-block text-sky-400 transition duration-300"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              dintero
+              <span className="relative bottom-1 block h-[1px] max-w-0 bg-sky-400 transition-all duration-500 group-hover:max-w-full"></span>
+            </a>
+            .
+          </p>
+        </header>
+        <section className="py-12">
+          <div className="mx-auto max-w-5xl">
+            <div className="typing h-96 w-full rounded-lg border-2 border-zinc-600 bg-zinc-800 p-4 font-mono text-xl font-thin after:inline after:animate-blink after:content-['|']"></div>
           </div>
-          <div className="bg-gradient-to-br from-sky-300 to-blue-700 bg-clip-text text-5xl font-black uppercase text-transparent">
-            Hva kan jeg
-            <br />
-            hjelp deg med?
-          </div>
-          <div className="relative flex h-40 items-center justify-center rounded-xl bg-gradient-to-br from-sky-300 to-blue-700 p-1">
-            <div className="typing h-full w-96 whitespace-pre-wrap rounded-xl border-transparent bg-neutral-800 bg-clip-border p-4 font-mono text-xl font-thin after:inline after:animate-blink after:content-['|']"></div>
-          </div>
-        </div>
-      </main>
+        </section>
+      </div>
     </>
   );
 }

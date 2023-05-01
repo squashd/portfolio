@@ -1,17 +1,17 @@
-'use client';
-import { useEffect, useState } from 'react';
+"use client";
+import { useEffect, useState } from "react";
 
-import GuessRow from '@/features/Wordle/components/GuessRow';
-import Keyboard from './components/Keyboard';
-import useWordList from './hooks/useWordList';
-import Message from './components/Message';
+import GuessRow from "@/features/Wordle/components/GuessRow";
+import Keyboard from "./components/Keyboard";
+import useWordList from "./hooks/useWordList";
+import Message from "./components/Message";
 
-const VALID_LETTERS = 'abcdefghijklmnopqrstuvwxyz'.split('');
-const VALID_INPUTS = ['backspace', 'enter'];
+const VALID_LETTERS = "abcdefghijklmnopqrstuvwxyz".split("");
+const VALID_INPUTS = ["backspace", "enter"];
 const VALID_KEYS = [...VALID_LETTERS, ...VALID_INPUTS];
 
 const Wordle = () => {
-  const [guessArray, setGuessArray] = useState<string[]>(['', '', '', '', '']);
+  const [guessArray, setGuessArray] = useState<string[]>(["", "", "", "", ""]);
   const [currentGuessIndex, setCurrentGuessIndex] = useState(0);
   const [gameOver, setGameOver] = useState(false);
   const [paused, setPaused] = useState(false);
@@ -28,8 +28,8 @@ const Wordle = () => {
       if (gameOver) return;
       if (!VALID_KEYS.includes(key)) return;
 
-      if (key === 'enter') return handleSubmit();
-      if (key === 'backspace') return handleBackspace();
+      if (key === "enter") return handleSubmit();
+      if (key === "backspace") return handleBackspace();
       if (VALID_LETTERS.includes(key)) return handleValidLetter(key);
     };
 
@@ -63,13 +63,13 @@ const Wordle = () => {
     };
     const handleNotLongEnough = () => {
       let tempArray = messageStack.slice();
-      tempArray.push('Not long enough');
+      tempArray.push("Not long enough");
       setMessageStack(tempArray);
     };
 
     const handleInvalidWord = () => {
       let tempArray = messageStack.slice();
-      tempArray.push('Invalid word');
+      tempArray.push("Invalid word");
       setMessageStack(tempArray);
       handleShake();
     };
@@ -90,16 +90,16 @@ const Wordle = () => {
     };
     const startPause = async () => {
       setPaused(true);
-      await new Promise((resolve) => setTimeout(resolve, 4000));
+      await new Promise((resolve) => setTimeout(resolve, 3000));
     };
     const endPause = async () => {
       setPaused(false);
     };
 
-    window.addEventListener('keydown', handleKeyInput);
+    window.addEventListener("keydown", handleKeyInput);
 
     return () => {
-      window.removeEventListener('keydown', handleKeyInput);
+      window.removeEventListener("keydown", handleKeyInput);
     };
   }, [
     currentGuessIndex,
@@ -118,7 +118,7 @@ const Wordle = () => {
   };
   const startPause = async () => {
     setPaused(true);
-    await new Promise((resolve) => setTimeout(resolve, 4000));
+    await new Promise((resolve) => setTimeout(resolve, 3000));
   };
   const endPause = async () => {
     setPaused(false);
@@ -128,8 +128,8 @@ const Wordle = () => {
     if (gameOver) return;
     if (!VALID_KEYS.includes(key)) return;
 
-    if (key === 'enter') return handleSubmit();
-    if (key === 'backspace') return handleBackspace();
+    if (key === "enter") return handleSubmit();
+    if (key === "backspace") return handleBackspace();
     if (VALID_LETTERS.includes(key)) return handleValidLetter(key);
   };
 
@@ -165,13 +165,13 @@ const Wordle = () => {
   };
   const handleNotLongEnough = () => {
     let tempArray = messageStack.slice();
-    tempArray.push('Not long enough');
+    tempArray.push("Not long enough");
     setMessageStack(tempArray);
   };
 
   const handleInvalidWord = () => {
     let tempArray = messageStack.slice();
-    tempArray.push('Invalid word');
+    tempArray.push("Invalid word");
     setMessageStack(tempArray);
     handleShake();
   };
@@ -189,19 +189,19 @@ const Wordle = () => {
 
   return (
     <>
-      <section className="flex flex-col gap-4 items-center justify-center h-screen">
-        <div className="relative flex-col items-center justify-center h-2 w-40">
+      <section className="flex h-full flex-col items-center justify-center gap-4">
+        <div className="relative h-2 w-40 flex-col items-center justify-center">
           {messageStack.map((message, index) => {
             return <Message key={index} text={message} />;
           })}
         </div>
         <div className="flex flex-col items-center justify-center">
-          <h1 className="font-black capitalize text-4xl text-gray-200">
+          <h1 className="text-4xl font-black capitalize text-gray-200">
             Hello Wordle
           </h1>
           <h2 className="text-gray-200">Guess the 5-letter word</h2>
         </div>
-        <div className="flex flex-col gap-1 w-full">
+        <div className="flex w-full flex-col gap-1">
           {guessArray.map((value: string, index: number) => {
             return (
               <GuessRow

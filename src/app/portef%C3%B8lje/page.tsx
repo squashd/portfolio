@@ -1,96 +1,14 @@
-import type { ClassNameProps } from "@/types/Props";
-import { cloneElement, ReactElement } from "react";
+import { cloneElement } from "react";
 import Link from "next/link";
-import {
-  HjartlandMini,
-  MerkelappenMini,
-  SVGProps,
-  WordleMini,
-} from "@/assets/logos/minilogos";
-import { EyeIcon, InfoIcon, LightningIcon } from "@/assets/Icons";
+import type { SVGProps } from "@/assets/logos/minilogos";
+import { featuredGallery } from "@/app/portef%C3%B8lje/galleri/page";
+import { featuredGames } from "@/data/portfolio/games";
+import { featuredProjects } from "@/app/portef%C3%B8lje/prosjekter/page";
 
 export const metadata = {
-  title: "Prosjekter - Hjartland",
+  title: "Portefølje",
   description: "Ting og tang jeg har laget.",
 };
-
-type projects = {
-  company: string;
-  title: string;
-  description: string;
-  link: { href: string; label: string; icon: ReactElement<SVGSVGElement> };
-  logo: ReactElement<SVGSVGElement>;
-}[];
-
-type galleryItem = {
-  title: string;
-  category: string;
-  description: string;
-  link: { href: string; label: string; icon: ReactElement<SVGSVGElement> };
-  icon: ReactElement<SVGSVGElement>;
-};
-
-const projectList: projects = [
-  {
-    company: "Merkelappen.no",
-    title: "Butikksider",
-    description: "Nettbutikk integrert med Avarda Checkout.",
-    logo: <MerkelappenMini />,
-    link: {
-      href: "/prosjekter/merkelappen-butikk",
-      label: "Les mer om prosjektet",
-      icon: <InfoIcon />,
-    },
-  },
-  {
-    company: "Merkelappen.no",
-    title: "Adminsider",
-    description:
-      "Adminsider for ordrebehandling og generering av trykkmateriale.",
-    logo: <MerkelappenMini />,
-    link: {
-      href: "/prosjekter/merkelappen-admin",
-      label: "Les mer om prosjektet",
-      icon: <InfoIcon />,
-    },
-  },
-  {
-    company: "Hjartland",
-    title: "Portefølje",
-    description: "Min personlige side, bygget med Next.js og TailwindCSS.",
-    logo: <HjartlandMini />,
-    link: {
-      href: "/",
-      label: "Tilbake til forsiden?",
-      icon: <LinkIcon />,
-    },
-  },
-  {
-    company: "Wordle",
-    title: "Ordspill",
-    description: "Et forsøk på reverse-engineering av Wordle.",
-    logo: <WordleMini />,
-    link: {
-      href: "/prosjekter/wordle",
-      label: "Les mer om prosjektet",
-      icon: <InfoIcon />,
-    },
-  },
-];
-
-const galleryItemList = [
-  {
-    title: "Lynrask",
-    category: "Animasjon",
-    description: "Liten animasjon av tekst som løper verden rundt",
-    icon: <LightningIcon />,
-    link: {
-      href: "/prosjekter/lightning",
-      label: "Se animasjonen her",
-      icon: <EyeIcon />,
-    },
-  },
-];
 
 function LinkIcon(props: SVGProps) {
   return (
@@ -115,16 +33,24 @@ export default async function Projects() {
           </h1>
           <p className="mt-6 max-w-2xl text-base text-zinc-300">
             Som freelancer og student – samt ellers i fritiden – har jeg har
-            jobbet på en rekke prosjekter. Her er noen av de jeg er mest stolt
-            av.
+            jobbet på en rekke prosjekter. Her er noen av de.
           </p>
         </header>
         <section className="mx-auto max-w-5xl pb-12">
-          <h2 className="mb-4 text-3xl font-bold">
-            Prosjekter og applikasjoner
-          </h2>
+          <Link
+            href={"/portef%C3%B8lje/prosjekter"}
+            className="group relative inline-block transition duration-300"
+          >
+            <h2 className="mb-4 text-3xl font-bold">
+              Prosjekter{" "}
+              <span>
+                <LinkIcon className="inline-block w-6" />
+              </span>{" "}
+              <span className="relative bottom-1 block h-[1px] max-w-0 bg-current transition-all duration-500 group-hover:max-w-full"></span>
+            </h2>
+          </Link>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {projectList.map((project, index) => (
+            {featuredProjects.map((project, index) => (
               <div
                 key={project.company + index}
                 className="group relative flex flex-col gap-2 rounded-xl bg-zinc-800/40 p-6 transition ease-in-out hover:cursor-pointer hover:bg-zinc-800/80"
@@ -159,10 +85,71 @@ export default async function Projects() {
             ))}
           </div>
         </section>
+        {/* TODO: Add spill once polished */}
+        {/*<section className="mx-auto max-w-5xl pb-12">*/}
+        {/*  <Link*/}
+        {/*    href={"/portef%C3%B8lje/spill"}*/}
+        {/*    className="group relative inline-block transition duration-300"*/}
+        {/*  >*/}
+        {/*    <h2 className="mb-4 text-3xl font-bold">*/}
+        {/*      Spill (WIP){" "}*/}
+        {/*      <span>*/}
+        {/*        <LinkIcon className="inline-block w-6" />*/}
+        {/*      </span>{" "}*/}
+        {/*      <span className="relative bottom-1 block h-[1px] max-w-0 bg-current transition-all duration-500 group-hover:max-w-full"></span>*/}
+        {/*    </h2>*/}
+        {/*  </Link>*/}
+        {/*  <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">*/}
+        {/*    {featuredGames.map((game, index) => (*/}
+        {/*      <div*/}
+        {/*        key={game.title + index}*/}
+        {/*        className="group relative flex flex-col gap-2 rounded-xl bg-zinc-800/40 p-6 transition ease-in-out hover:cursor-pointer hover:bg-zinc-800/80"*/}
+        {/*      >*/}
+        {/*        <div className="flex aspect-square h-12 w-12 items-center justify-center rounded-full border-2 border-zinc-700 bg-zinc-800 p-2 text-xl font-bold">*/}
+        {/*          {cloneElement(game.logo, {*/}
+        {/*            className: "h-8",*/}
+        {/*          })}*/}
+        {/*        </div>*/}
+        {/*        <h2 className="font-light">*/}
+        {/*          {game.title}{" "}*/}
+        {/*          <span className="text-zinc-400 group-hover:text-sky-400">*/}
+        {/*            / {game.category}*/}
+        {/*          </span>*/}
+        {/*        </h2>*/}
+        {/*        <p className="text-sm leading-tight text-zinc-300">*/}
+        {/*          {game.description}*/}
+        {/*        </p>*/}
+        {/*        <div className="absolute -inset-1 flex items-center">*/}
+        {/*          <Link href={game.link.href}>*/}
+        {/*            <span className="absolute -inset-1"></span>*/}
+        {/*          </Link>*/}
+        {/*          <p></p>*/}
+        {/*        </div>*/}
+        {/*        <div className="flex items-center group-hover:text-sky-400">*/}
+        {/*          {cloneElement(game.link.icon, {*/}
+        {/*            className: "h-4 w-4 mr-2",*/}
+        {/*          })}*/}
+        {/*          <span>{game.link.label}</span>*/}
+        {/*        </div>*/}
+        {/*      </div>*/}
+        {/*    ))}*/}
+        {/*  </div>*/}
+        {/*</section>*/}
         <section className="mx-auto max-w-5xl pb-12">
-          <h2 className="mb-4 text-3xl font-bold">Effekter og animasjoner</h2>
+          <Link
+            href={"/portef%C3%B8lje/galleri"}
+            className="group relative inline-block transition duration-300"
+          >
+            <h2 className="mb-4 text-3xl font-bold">
+              Galleri{" "}
+              <span>
+                <LinkIcon className="inline-block w-6" />
+              </span>{" "}
+              <span className="relative bottom-1 block h-[1px] max-w-0 bg-current transition-all duration-500 group-hover:max-w-full"></span>
+            </h2>
+          </Link>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {galleryItemList.map((galleryItem, index) => (
+            {featuredGallery.map((galleryItem, index) => (
               <div
                 key={galleryItem.title + index}
                 className="group relative flex flex-col gap-2 rounded-xl bg-zinc-800/40 p-6 transition ease-in-out hover:cursor-pointer hover:bg-zinc-800/80"

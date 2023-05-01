@@ -1,11 +1,16 @@
 import Link from "next/link";
 import Image from "next/image";
 
+import mobile from "@/assets/images/merkelappen/merkelappen_(iPhone 12 Pro).jpg";
+import sm from "@/assets/images/merkelappen/merkelappen(Tailwind sm).jpg";
+import md from "@/assets/images/merkelappen/merkelappen(Tailwind md).jpg";
+import lg from "@/assets/images/merkelappen/merkelappen_(Tailwind lg).jpg";
+
 export default function Page() {
   return (
     <>
       <div className="mx-auto max-w-5xl px-6">
-        <header className="mb-24 max-w-2xl pt-48">
+        <header className="max-w-2xl pt-48">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-100 sm:text-5xl">
             Butikksider for Merkelappen.no
           </h1>
@@ -14,20 +19,26 @@ export default function Page() {
           </p>
           <p className="text-light text-sm text-sky-400">NOV 2022 - NÅ</p>
         </header>
-        {/* TODO: Change image format to jp and implement external image serving */}
-        {/*<section className="my-12">*/}
-        {/*  <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">*/}
-        {/*    <div className="overflow-hidden rounded-lg">*/}
-        {/*      <Image src={forside} alt="forsiden til merkelappen.no" />*/}
-        {/*    </div>*/}
-        {/*    <div className="overflow-hidden rounded-lg">*/}
-        {/*      <Image src={navnelapper} alt="forhåndsvisning av navnelapper" />*/}
-        {/*    </div>*/}
-        {/*    <div className="hidden overflow-hidden rounded-lg sm:block">*/}
-        {/*      <Image src={checkout} alt="integrert checkout" />*/}
-        {/*    </div>*/}
-        {/*  </div>*/}
-        {/*</section>*/}
+        <section className="py-12">
+          <div className="flex flex-wrap justify-center gap-8">
+            <div className="flex-shrink-0 overflow-hidden rounded-lg">
+              <Image
+                src={mobile}
+                alt="mobile view"
+                className="w-auto max-w-xl"
+              />
+            </div>
+            <div className="flex-shrink-0 overflow-hidden rounded-lg">
+              <Image src={sm} alt="small view" className="w-auto max-w-xl" />
+            </div>
+            <div className="flex-shrink-0 overflow-hidden rounded-lg">
+              <Image src={md} alt="medium view" className="w-auto max-w-xl" />
+            </div>
+            <div className="flex-shrink-0 overflow-hidden rounded-lg">
+              <Image src={lg} alt="large view" className="w-auto max-w-xl" />
+            </div>
+          </div>
+        </section>
         <section className="flex flex-col gap-12 pb-16">
           <div className="flex flex-col gap-4">
             <h2 className="text-2xl font-bold text-zinc-100">Om prosjektet</h2>
@@ -51,7 +62,7 @@ export default function Page() {
             <p className="">
               Sidene er live på{" "}
               <Link
-                href={"/prosjekter/merkelappen-butikk"}
+                href={"/portef%C3%B8lje/prosjekter/merkelappen-butikk"}
                 className="group relative inline-block text-sky-400 transition duration-300"
               >
                 merkelappen.no
@@ -70,17 +81,37 @@ export default function Page() {
               <p className="">
                 I likhet med{" "}
                 <Link
-                  href={"/prosjekter/merkelappen-butikk"}
+                  href={"/portef%C3%B8lje/prosjekter/merkelappen-admin"}
                   className="group relative inline-block text-sky-400 transition duration-300"
                 >
-                  admin delen
+                  adminsidene
                   <span className="relative bottom-1 block h-[1px] max-w-0 bg-sky-400 transition-all duration-500 group-hover:max-w-full"></span>
                 </Link>{" "}
-                av merkelappen.no så er frontend laget med NextJS og
+                til merkelappen.no så er frontend laget med NextJS og
                 TailwindCSS, og er koblet til backend med Prisma og API-rutene
-                til NextJS. Avarda Checkout er brukt som betalingsløsning og var
-                enkelt å integrere. Det er også integrert Mailchimp på backend –
-                ordrebehandling – og på frontend – nyhetsbrev/markedsføring.
+                til NextJS.{" "}
+                <a
+                  href={"https://docs.avarda.com/"}
+                  className="group relative inline-block text-sky-400 transition duration-300"
+                  rel="noreferrer noopener"
+                  target="_blank"
+                >
+                  Avarda checkout
+                  <span className="relative bottom-1 block h-[1px] max-w-0 bg-sky-400 transition-all duration-500 group-hover:max-w-full"></span>
+                </a>{" "}
+                er brukt som betalingsløsning og var enkelt å integrere. Det er
+                også integrert{" "}
+                <a
+                  href={"https://mailchimp.com/"}
+                  className="group relative inline-block text-sky-400 transition duration-300"
+                  rel="noreferrer noopener"
+                  target="_blank"
+                >
+                  Mailchimp
+                  <span className="relative bottom-1 block h-[1px] max-w-0 bg-sky-400 transition-all duration-500 group-hover:max-w-full"></span>
+                </a>{" "}
+                på backend – ordrebehandling – og på frontend –
+                nyhetsbrev/markedsføring.
               </p>
             </div>
             <div className="flex flex-col gap-4">
@@ -88,7 +119,7 @@ export default function Page() {
                 Hvorfor valgte jeg denne teknologien?
               </h3>
               <p className="">
-                Første mål med prosjektet var å få på plass forhåndsvisning av
+                Essensielt for prosjektet var å få på plass forhåndsvisning av
                 merkelapper til kunder. Litt undersøkelse ga flere muligheter,
                 men første tanke var at bruk av React og hooks basert på input
                 ville gi god respons og konsekvent resultat. Det viste seg å
@@ -96,13 +127,13 @@ export default function Page() {
               </p>
               <p className="">
                 I tilegg til å være en god løsning for forhåndsvisning av
-                merkelapper, så er NextJS en god løsning for å lage en rask og
-                responsiv nettside. NextJS egner seg også utmerket til å lage
-                statiske sider, og det er enkelt å legge til funksjonalitet som
-                dynamiske sider og API-ruter. Ved å tenke litt fremover om
-                ønsket om å kunne kontrollere innholdet på sidene selv og ha
-                flere interaktive komponenter, så var det også enkelt å velge
-                NextJS.
+                merkelapper, så er NextJS (et React rammeverk) en god løsning
+                for å lage en rask og responsiv nettside. Det egner seg også
+                utmerket til å lage statiske sider, og det er enkelt å legge til
+                funksjonalitet som dynamiske sider og API-ruter. Ved å tenke
+                litt fremover om ønsket om å kunne kontrollere innholdet på
+                sidene selv og ha flere interaktive komponenter, så var det
+                enkelt å velge NextJS.
               </p>
             </div>
             <div className="flex flex-col gap-4">
@@ -113,7 +144,7 @@ export default function Page() {
                 Neste steg for prosjektet er å integrere et CMS for å kunne
                 oppdatere innholdet på sidene. Produktsidene er allerede bygget
                 med komponenter – så klart – så det blir spennende å se hva
-                slags CMS som blir valgt.
+                slags CMS som blir valgt og koble det opp mot sidene.
               </p>
             </div>
           </div>

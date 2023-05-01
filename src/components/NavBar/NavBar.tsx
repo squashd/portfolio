@@ -9,8 +9,7 @@ type NavigationItem = {
 
 export const navigation: NavigationItem[] = [
   { name: "Hjem", href: "/" },
-  { name: "Prosjekter", href: "/prosjekter" },
-  // { name: 'Galleri', href: '/galleri' },
+  { name: "Portefølje", href: "/portef%C3%B8lje" },
   { name: "Kontakt", href: "/kontakt" },
   { name: "Mer om meg", href: "/#mer-om-meg" },
 ];
@@ -20,7 +19,7 @@ const NavBar = () => {
     <>
       <nav
         className="absolute z-10
-        flex w-full justify-center bg-gradient-to-b from-zinc-900/50 py-6 text-zinc-200"
+        flex w-full justify-center bg-gradient-to-b from-zinc-900/50 py-6 text-zinc-100"
       >
         {/* Logo */}
         <div className="flex w-full max-w-5xl items-center justify-between px-6">
@@ -61,19 +60,19 @@ const NavBar = () => {
               <Link href={"/"}>Hjem</Link>
             </li>
             <li className="border-r px-2 transition hover:opacity-80 hover:transition hover:ease-in-out">
-              <Link href={"/prosjekter"}>Prosjekter</Link>
+              <Link href={"/portef%C3%B8lje"}>Portefølje</Link>
             </li>
             <li className="border-r px-2 transition hover:opacity-80 hover:transition hover:ease-in-out">
               <Link href={"/kontakt"}>Kontakt</Link>
             </li>
             <li className="px-2 transition hover:opacity-80 hover:transition hover:ease-in-out">
-              <a href={"/#mer-om-meg"}>Mer om meg</a>
+              <a href={"/#about-me"}>Mer om meg</a>
             </li>
           </ul>
         </div>
       </nav>
       <nav>
-        <div className="absolute top-16 z-50 w-full text-zinc-100">
+        <div className="absolute top-16 z-10 w-full text-zinc-100">
           <div className="mx-auto max-w-5xl px-6">
             <BreadCrumb />
           </div>

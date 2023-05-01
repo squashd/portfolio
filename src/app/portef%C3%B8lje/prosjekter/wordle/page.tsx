@@ -20,18 +20,25 @@ export default function Page() {
           <div className="flex flex-col gap-4">
             <h2 className="text-2xl font-bold text-zinc-100">Om prosjektet</h2>
             <p className="">
-              Det er vel ingen som ikke kjenner til{" "}
               <Link
                 href={"https://www.nytimes.com/games/wordle/index.html"}
                 className="group relative inline-block text-sky-400 transition duration-300"
               >
-                wordle
+                Wordle
                 <span className="relative bottom-1 block h-[1px] max-w-0 bg-sky-400 transition-all duration-500 group-hover:max-w-full"></span>
               </Link>{" "}
-              . Som mange andre ble jeg hektet på spillet, og spilte det hver
-              dag. Jeg tenkte at det kunne være en morsom utfordring å prøve å
-              lage det selv, og også få lekt litt med Vue som jeg ikke hadde
-              brukt før.
+              er et spill som begår ut på å gjette seg frem til riktig ord på
+              fem bokstaver, hvor man får informasjon om bokstavene som er brukt
+              underveis. Er det riktig bokstav på riktig plass, så blir
+              bokstaven grønn, og er det riktig bokstav på feil plass, så blir
+              bokstaven gul, og er ikke bokstaven i ordet i det hele tatt, så
+              blir bokstaven grå.
+            </p>
+            <p>
+              Som mange andre ble jeg hektet på spillet, og spilte det hver dag.
+              Jeg tenkte at det kunne være en morsom utfordring å prøve å lage
+              det selv, og også få lekt litt med Vue som jeg ikke hadde brukt
+              før.
             </p>
           </div>
           <div className="flex flex-col gap-4">
@@ -41,7 +48,7 @@ export default function Page() {
             <p className="">
               Prøv{" "}
               <Link
-                href={"/spill/wordle"}
+                href={"/portef%C3%B8lje/spill/wordle"}
                 className="group relative inline-block text-sky-400 transition duration-300"
               >
                 wordle klonen

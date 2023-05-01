@@ -105,16 +105,18 @@ export default function Home() {
           </div>
           <div
             className={`${
-              introInView ? "opacity-100" : "opacity-0"
-            } absolute bottom-12 right-1/4 flex animate-bounce items-center duration-200 ease-in-out`}
+              introInView || aboutInView || projectsInView
+                ? "opacity-100"
+                : "opacity-0"
+            } absolute bottom-16 right-1/4 flex items-center duration-200 ease-in-out`}
           >
             <span className="flex rotate-90 items-center gap-2 text-xs after:h-[1px] after:w-12 after:bg-zinc-200">
-              Skroll videre
+              Det er mer å lese
             </span>
           </div>
         </section>
         <section
-          id="mer-om-meg"
+          id="about-me"
           ref={aboutRef}
           className="lg:px- relative flex h-full w-screen snap-center flex-col items-center justify-center text-left"
         >
@@ -125,7 +127,7 @@ export default function Home() {
                   aboutInView
                     ? "translate-x-0 delay-200 duration-1000 ease-out after:w-full after:duration-[2000ms]"
                     : "-translate-x-4 opacity-0 after:w-0"
-                } mb-2 flex max-w-2xl items-center gap-3 whitespace-nowrap text-2xl font-semibold text-zinc-100 before:font-mono before:text-lg before:font-light before:text-sky-400 before:content-["01."] after:h-[0.25pt] after:bg-white after:content-[""] sm:text-3xl before:sm:text-2xl`}
+                } mb-2 flex max-w-2xl items-center gap-3 whitespace-nowrap text-2xl font-semibold text-zinc-100 before:font-mono before:text-lg before:font-light before:text-sky-400 before:content-["01."] after:h-[1px] after:bg-white after:content-[""] sm:text-3xl before:sm:text-2xl`}
               >
                 Mer om meg
               </h2>
@@ -215,7 +217,7 @@ export default function Home() {
                   projectsInView
                     ? "translate-x-0 delay-200 duration-1000 ease-out after:w-full after:duration-[2000ms]"
                     : "-translate-x-4 opacity-0 after:w-0"
-                } mb-2 flex max-w-2xl items-center gap-3 whitespace-nowrap text-2xl font-semibold text-zinc-100 before:font-mono before:text-lg before:font-light before:text-sky-400 before:content-["02."] after:h-[0.25pt] after:bg-white after:content-[""] sm:text-3xl before:sm:text-2xl`}
+                } mb-2 flex max-w-2xl items-center gap-3 whitespace-nowrap text-2xl font-semibold text-zinc-100 before:font-mono before:text-lg before:font-light before:text-sky-400 before:content-["02."] after:h-[1px] after:bg-white after:content-[""] sm:text-3xl before:sm:text-2xl`}
               >
                 Mine prosjekter
               </h2>
@@ -228,12 +230,12 @@ export default function Home() {
               >
                 <p className="">
                   Om du er nysgjerrig på hvilke prosjekter jeg har jobbet med,
-                  så anbefaler jeg deg å besøke{" "}
+                  så anbefaler jeg deg å se{" "}
                   <Link
-                    href={"/prosjekter"}
+                    href={"/portef%C3%B8lje"}
                     className="group relative inline-block text-sky-400 transition duration-300"
                   >
-                    prosjektsiden min
+                    porteføljen min
                     <span className="relative bottom-1 block h-[1px] max-w-0 bg-sky-400 transition-all duration-500 group-hover:max-w-full"></span>
                   </Link>{" "}
                   . Der vil du finne en detaljert oversikt, inkludert
@@ -241,31 +243,32 @@ export default function Home() {
                   jeg har skrevet.
                 </p>
                 <p className="text-left">
-                  Jeg har jobbet med alt fra{" "}
+                  Jeg har jobbet med{" "}
                   <Link
-                    href={"/prosjekter/merkelappen-butikk"}
+                    href={"/portef%C3%B8lje/prosjekter/merkelappen-butikk"}
                     className="group relative inline-block text-sky-400 transition duration-300"
                   >
                     nettbutikk
                     <span className="relative bottom-1 block h-[1px] max-w-0 bg-sky-400 transition-all duration-500 group-hover:max-w-full"></span>
-                  </Link>{" "}
-                  til{" "}
+                  </Link>
+                  , satt opp{" "}
                   <Link
-                    href={"/prosjekter/merkelappen-admin"}
+                    href={"/portef%C3%B8lje/prosjekter/merkelappen-admin"}
                     className="group relative inline-block text-sky-400 transition duration-300"
                   >
-                    admin og backend,
+                    adminpanel for ordrebehandling,
                     <span className="relative bottom-1 block h-[1px] max-w-0 bg-sky-400 transition-all duration-500 group-hover:max-w-full"></span>
                   </Link>{" "}
-                  jobbet med diverse integrasjoner, og til og med laget noen{" "}
+                  jobbet med diverse integrasjoner, og til og med begynt smått
+                  med å lage noen{" "}
                   <Link
-                    href={"/spill/wordle"}
+                    href={"/portef%C3%B8lje/spill/wordle"}
                     className="group relative inline-block text-sky-400 transition duration-300"
                   >
                     spill
                     <span className="relative bottom-1 block h-[1px] max-w-0 bg-sky-400 transition-all duration-500 group-hover:max-w-full"></span>
                   </Link>
-                  , så det er mye spennende å utforske.
+                  .
                 </p>
               </div>
             </div>
@@ -282,7 +285,7 @@ export default function Home() {
                   toolsInView
                     ? "translate-x-0 delay-200 duration-1000 ease-out after:w-full after:duration-[2000ms]"
                     : "-translate-x-4 opacity-0 after:w-0"
-                } mb-2 flex max-w-2xl items-center gap-3 whitespace-nowrap text-2xl font-semibold text-zinc-100 before:font-mono before:text-lg before:font-light before:text-sky-400 before:content-["03."] after:h-[0.25pt] after:bg-white after:content-[""] sm:text-3xl before:sm:text-2xl`}
+                } mb-2 flex max-w-2xl items-center gap-3 whitespace-nowrap text-2xl font-semibold text-zinc-100 before:font-mono before:text-lg before:font-light before:text-sky-400 before:content-["03."] after:h-[1px] after:bg-white after:content-[""] sm:text-3xl before:sm:text-2xl`}
               >
                 Mine verktøy
               </h2>
@@ -294,28 +297,24 @@ export default function Home() {
                 } flex max-w-2xl flex-col gap-4 text-justify text-sm leading-tight sm:text-base`}
               >
                 <p className="">
-                  Jeg har erfaring med ulike verktøy og teknologier innen
-                  webutvikling, og jeg er alltid på utkikk etter nye måter å
-                  lære og utfordre meg selv på. Når det er sagt, så er dette
-                  teknologien jeg ofte først strekker meg etter.
+                  Jeg har erfaring med å utvikle nettapplikasjoner som er trygge
+                  og brukervennlige ved hjelp av moderne teknologier. En av mine
+                  favorittverktøy er TypeScript som gjøre koden min mer
+                  forståelig for andre og sannsynligheten for feil mindre.
                 </p>
                 <p className="text-left">
-                  Jeg starter alltid nye prosjekter i TypeScript og kvier meg
-                  for bruk av integrasjoner uten TypeScript-støtte. Det gjør
-                  koden min sikrere og mer forståelig for andre.
+                  Jeg bruker også verktøy som NextJS, Prisma, MySQL/MongoDB og
+                  Express for å sette opp fullverdige applikasjoner som fungerer
+                  godt og raskt. Disse teknologiene gjør det enkelt å lage sikre
+                  og stabile applikasjoner som gir god brukeropplevelse.
                 </p>
                 <p className="text-left">
-                  Med en rekke prosjekter så fungerer NextJS sine innebygde API
-                  ruter utmerket som backend, og med Prisma som ORM og
-                  MySQL/MongoDB som database, er det enkelt å sette opp en
-                  fullverdig fullstack applikasjon. REST APIer er også enkelt å
-                  sette opp med Express.
-                </p>
-                <p className="text-left">
-                  Er noen av disse teknologiene ukjente for deg, kan du lese mer
-                  om dem ved å trykke på ikonene{" "}
-                  <span className="hidden lg:inline-block">til høyre.</span>
-                  <span className="inline-block lg:hidden">under.</span>
+                  Hvis du vil vite mer om disse teknologiene, kan du trykke på
+                  ikonene{" "}
+                  <span className="hidden lg:inline-block">til høyre</span>
+                  <span className="inline-block lg:hidden">under</span>. Men vær
+                  trygg på at jeg vil bruke min erfaring og kunnskap til å skape
+                  en nettapplikasjon som passer dine behov og ønsker.
                 </p>
               </div>
             </div>
