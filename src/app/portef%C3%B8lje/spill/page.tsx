@@ -1,4 +1,4 @@
-import { cloneElement, ReactElement } from "react";
+import { cloneElement } from "react";
 import Link from "next/link";
 import { featuredGames } from "@/data/portfolio/games";
 
@@ -21,7 +21,7 @@ export default function GamesPage() {
             Jeg har et mål om å gjenskape populære
             &quot;Daily&nbsp;Challenge&quot;&nbsp;spill for så å samle de under
             et applikasjon. Prosjektet er nettopp startet, så det er ikke mye å
-            vise frem enda.
+            vise frem ennå.
           </p>
         </header>
         <section className="mx-auto max-w-5xl">
