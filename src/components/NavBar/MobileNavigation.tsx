@@ -37,7 +37,7 @@ function MobileNavItem({
 }: {
   href: string;
   children: React.ReactNode;
-  key: number;
+  key?: number;
 }) {
   return (
     <li>
@@ -92,12 +92,8 @@ export default function MobileNavigation({ className }: { className: string }) {
             </div>
             <nav className="mt-6">
               <ul className="-my-2 divide-y divide-zinc-100/5 text-base text-zinc-300">
-                <MobileNavItem href="/" key={1}>
-                  Hjem
-                </MobileNavItem>
-                <MobileNavItem href="/portefølje" key={2}>
-                  Portefølje
-                </MobileNavItem>
+                <MobileNavItem href="/">Hjem</MobileNavItem>
+                <MobileNavItem href="/portefølje">Portefølje</MobileNavItem>
                 <li>
                   <Popover.Button>
                     <a href="/#kontakt" className="block py-2">
