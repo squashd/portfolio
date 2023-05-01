@@ -2,7 +2,6 @@
 import { Popover, Transition } from "@headlessui/react";
 import Link from "next/link";
 import { Fragment } from "react";
-import { navigation } from "./NavBar";
 
 function ChevronDownIcon({ classNameString }: { classNameString: string }) {
   return (
@@ -93,12 +92,29 @@ export default function MobileNavigation({ className }: { className: string }) {
             </div>
             <nav className="mt-6">
               <ul className="-my-2 divide-y divide-zinc-100/5 text-base text-zinc-300">
-                {navigation.map((item, index) => (
-                  <MobileNavItem href={item.href} key={index}>
-                    {item.name}
-                  </MobileNavItem>
-                ))}
+                <MobileNavItem href="/" key={1}>
+                  Hjem
+                </MobileNavItem>
+                <MobileNavItem href="/portefølje" key={2}>
+                  Portefølje
+                </MobileNavItem>
+                <MobileNavItem href="/kontakt" key={3}>
+                  Kontakt
+                </MobileNavItem>
+                <Popover.Button>
+                  <a href="/#om-meg" className="block py-2">
+                    Mer om meg
+                  </a>
+                </Popover.Button>
               </ul>
+              {/* TODO: Change to map once link works to hash anchors */}
+              {/*<ul className="-my-2 divide-y divide-zinc-100/5 text-base text-zinc-300">*/}
+              {/*  {navigation.map((item, index) => (*/}
+              {/*    <MobileNavItem href={item.href} key={index}>*/}
+              {/*      {item.name}*/}
+              {/*    </MobileNavItem>*/}
+              {/*  ))}*/}
+              {/*</ul>*/}
             </nav>
           </Popover.Panel>
         </Transition.Child>

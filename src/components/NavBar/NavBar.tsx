@@ -66,7 +66,7 @@ const NavBar = () => {
               <Link href={"/kontakt"}>Kontakt</Link>
             </li>
             <li className="px-2 transition hover:opacity-80 hover:transition hover:ease-in-out">
-              <a href={"/#about-me"}>Mer om meg</a>
+              <a href={"/#om-meg"}>Mer om meg</a>
             </li>
           </ul>
         </div>

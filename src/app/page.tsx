@@ -116,7 +116,7 @@ export default function Home() {
           </div>
         </section>
         <section
-          id="about-me"
+          id="om-meg"
           ref={aboutRef}
           className="lg:px- relative flex h-full w-screen snap-center flex-col items-center justify-center text-left"
         >

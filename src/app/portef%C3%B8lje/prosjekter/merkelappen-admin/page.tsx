@@ -1,5 +1,4 @@
 import OrderExample from "@/components/Projects/OrderExample";
-import Link from "next/link";
 
 export default function Page() {
   return (
@@ -40,6 +39,14 @@ export default function Page() {
               knappen før ordren er ferdig behandlet.
             </p>
             <OrderExample />
+            <h3 className="text-lg font-semibold text-zinc-100">
+              Hvor kan jeg se siden?
+            </h3>
+            <p className="">
+              Dersom du ønsker å se siden, så kan jeg ordne en demo. På grunn av
+              sensitiv informasjon som kan vises på siden, så er det ikke mulig
+              å vise den offentlig.
+            </p>
           </div>
           {/*<div className="flex flex-col gap-8">*/}
           {/*  <h2 className="text-2xl font-bold text-zinc-100">*/}
