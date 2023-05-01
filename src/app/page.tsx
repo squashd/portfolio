@@ -238,9 +238,7 @@ export default function Home() {
                     porteføljen min
                     <span className="relative bottom-1 block h-[1px] max-w-0 bg-sky-400 transition-all duration-500 group-hover:max-w-full"></span>
                   </Link>{" "}
-                  . Der vil du finne en detaljert oversikt, inkludert
-                  beskrivelser, skjermbilder, prosess og noen ganger også koden
-                  jeg har skrevet.
+                  .
                 </p>
                 <p className="text-left">
                   Jeg har jobbet med{" "}
