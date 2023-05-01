@@ -404,11 +404,11 @@ export default function Home() {
                   contactInView
                     ? " opacity-100 delay-200 duration-[2000ms]"
                     : "opacity-0"
-                } flex max-w-2xl flex-col gap-4 text-justify text-sm leading-tight sm:text-base`}
+                } flex max-w-2xl flex-col gap-4 text-sm leading-tight sm:text-base`}
               >
                 <p className="">
                   Om du har et prosjekt du ønsker å gjennomføre, eller bare vil
-                  slå av en prat, kan du sende meg en e-post på:{" "}
+                  slå av en prat, kan du sende meg en epost på:{" "}
                   <a
                     href="mailto:daniel@hjartland.dev"
                     className="group relative inline-block text-sky-400 transition duration-300"
