@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 
 import mobile from "@/assets/images/merkelappen/merkelappen_(iPhone 12 Pro).jpg";
@@ -50,9 +49,10 @@ export default function Page() {
               og produksjonsklare trykkark.
             </p>
             <p className="">
-              Når det ble klart at det måtte lages et skreddersydd program så
-              ble jeg også bedt om å redesigne sidene. Sidene var bygget med
-              Wordpress og Woocommerce, men var både treg og ikke-responsiv.
+              Sidene var bygget med Wordpress og Woocommerce, men var både trege
+              og ikke-responsive. Når det ble klart at det måtte lages et nytt
+              og skreddersydd program så ble jeg også bedt om å redesigne
+              sidene. De er nå bygget med NextJS og er både raske og responsive.
             </p>
           </div>
           <div className="flex flex-col gap-4">

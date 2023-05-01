@@ -98,14 +98,20 @@ export default function MobileNavigation({ className }: { className: string }) {
                 <MobileNavItem href="/portefølje" key={2}>
                   Portefølje
                 </MobileNavItem>
-                <MobileNavItem href="/kontakt" key={3}>
-                  Kontakt
-                </MobileNavItem>
-                <Popover.Button>
-                  <a href="/#om-meg" className="block py-2">
-                    Mer om meg
-                  </a>
-                </Popover.Button>
+                <li>
+                  <Popover.Button>
+                    <a href="/#kontakt" className="block py-2">
+                      Kontakt
+                    </a>
+                  </Popover.Button>
+                </li>
+                <li>
+                  <Popover.Button>
+                    <a href="/#om-meg" className="block py-2">
+                      Mer om meg
+                    </a>
+                  </Popover.Button>
+                </li>
               </ul>
               {/* TODO: Change to map once link works to hash anchors */}
               {/*<ul className="-my-2 divide-y divide-zinc-100/5 text-base text-zinc-300">*/}

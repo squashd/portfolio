@@ -1,9 +1,23 @@
+"use client";
 import Image from "next/image";
 import logoWhite from "../../public/hjartland_hvit.svg";
 import profilePicture from "../assets/images/profile.jpg";
-import Link from "next/link";
 
 export default function Contact() {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const data = Object.fromEntries(formData);
+    const res = await fetch("/api/kontakt", {
+      method: "POST",
+      body: JSON.stringify(data),
+    });
+    if (res.ok) {
+      console.log("Success");
+    } else {
+      console.log("Error");
+    }
+  };
   return (
     <div className="relative isolate px-6 py-24 sm:py-32 lg:px-8">
       <div className="mx-auto max-w-xl lg:max-w-4xl">
@@ -14,7 +28,7 @@ export default function Contact() {
           Jeg hjelper til med det som trengs.
         </p>
         <div className="mt-16 flex flex-col gap-16 sm:gap-y-20 lg:flex-row">
-          <form action="#" method="POST" className="lg:flex-auto">
+          <form onSubmit={handleSubmit} className="lg:flex-auto">
             <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
               <div>
                 <label

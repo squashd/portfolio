@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import Contact from "@/components/Contact";
 import { useInView } from "react-intersection-observer";
 
 import profilePicUnsaturated from "@/assets/images/profile.jpg";
@@ -37,6 +36,11 @@ export default function Home() {
     threshold: 0.1,
   });
   const [toolsRef, toolsInView] = useInView({
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.1,
+  });
+  const [contactRef, contactInView] = useInView({
     root: null,
     rootMargin: "0px",
     threshold: 0.1,
@@ -379,8 +383,52 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="snap-start">
-          <Contact />
+        <section
+          id="kontakt"
+          ref={contactRef}
+          className="relative flex h-full snap-center flex-col items-center justify-center text-left"
+        >
+          <div className="flex max-w-5xl flex-col items-center gap-8 px-6 lg:flex-row">
+            <div className="flex w-full flex-col">
+              <h2
+                className={`${
+                  contactInView
+                    ? "translate-x-0 delay-200 duration-1000 ease-out after:w-full after:duration-[2000ms]"
+                    : "-translate-x-4 opacity-0 after:w-0"
+                } mb-2 flex max-w-2xl items-center gap-3 whitespace-nowrap text-2xl font-semibold text-zinc-100 before:font-mono before:text-lg before:font-light before:text-sky-400 before:content-["04."] after:h-[1px] after:bg-white after:content-[""] sm:text-3xl before:sm:text-2xl`}
+              >
+                Ta kontakt
+              </h2>
+              <div
+                className={`${
+                  contactInView
+                    ? " opacity-100 delay-200 duration-[2000ms]"
+                    : "opacity-0"
+                } flex max-w-2xl flex-col gap-4 text-justify text-sm leading-tight sm:text-base`}
+              >
+                <p className="">
+                  Om du har et prosjekt du ønsker å gjennomføre, eller bare vil
+                  slå av en prat, kan du sende meg en e-post på:{" "}
+                  <a
+                    href="mailto:daniel@hjartland.dev"
+                    className="group relative inline-block text-sky-400 transition duration-300"
+                  >
+                    daniel@hjartland.dev
+                    <span className="relative bottom-1 block h-[1px] max-w-0 bg-sky-400 transition-all duration-500 group-hover:max-w-full"></span>
+                  </a>
+                  , eller ring meg på telefon:{" "}
+                  <a
+                    href="tel:94174754"
+                    className="group relative inline-block text-sky-400 transition duration-300"
+                  >
+                    941 74 754
+                    <span className="relative bottom-1 block h-[1px] max-w-0 bg-sky-400 transition-all duration-500 group-hover:max-w-full"></span>
+                  </a>
+                  .
+                </p>
+              </div>
+            </div>
+          </div>
         </section>
       </div>
     </>

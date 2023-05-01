@@ -19,8 +19,8 @@ export default function Page() {
             <p className="">
               Like viktig som å lage en god nettside for kundene, er det å lage
               en god løsning for de som skal håndtere ordrene. Når også betaling
-              må sjekkes gjennom et tredjeparts API, så er det viktig å enkelt
-              kunne sjekke status på betaling.
+              må sjekkes gjennom et tredjeparts API, så er det viktig å kunne
+              enkelt sjekke status på betaling.
             </p>
           </div>
           <div className="flex flex-col gap-4">
