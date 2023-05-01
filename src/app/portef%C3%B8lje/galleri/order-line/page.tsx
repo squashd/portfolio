@@ -11,7 +11,7 @@ export default function Page() {
             Ordrelinje
           </h1>
           <p className="mt-6 text-base text-zinc-300">
-            Ordrelinje komponert som er tatt i bruk i{" "}
+            Ordrelinje komponent som er tatt i bruk i{" "}
             <Link
               href={"/portef%C3%B8lje/prosjekter/merkelappen-admin"}
               className="group relative inline-block text-sky-400 transition duration-300"
@@ -19,7 +19,7 @@ export default function Page() {
               adminsidene
               <span className="relative bottom-1 block h-[1px] max-w-0 bg-sky-400 transition-all duration-500 group-hover:max-w-full"></span>
             </Link>{" "}
-            til merkelappen.no .
+            til merkelappen.no.
           </p>
         </header>
         <section className="py-12">

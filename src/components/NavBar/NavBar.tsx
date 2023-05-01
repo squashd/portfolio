@@ -18,13 +18,13 @@ const NavBar = () => {
   return (
     <>
       <nav
-        className="absolute z-10
-        flex w-full justify-center bg-gradient-to-b from-zinc-900/50 py-6 text-zinc-100"
+        className="absolute
+        z-10 flex w-full justify-center py-6 text-zinc-100"
       >
         {/* Logo */}
         <div className="flex w-full max-w-5xl items-center justify-between px-6">
           <Link href="/">
-            <div className="relative z-50 transition ease-out hover:opacity-80 hover:transition hover:ease-in">
+            <div className="relative z-10 transition ease-out hover:opacity-80 hover:transition hover:ease-in">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 559.03 90"
@@ -72,7 +72,7 @@ const NavBar = () => {
         </div>
       </nav>
       <nav>
-        <div className="absolute top-16 z-10 w-full text-zinc-100">
+        <div className="absolute top-20 w-full text-zinc-100">
           <div className="mx-auto max-w-5xl px-6">
             <BreadCrumb />
           </div>

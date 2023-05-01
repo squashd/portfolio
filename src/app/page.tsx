@@ -108,7 +108,7 @@ export default function Home() {
               introInView || aboutInView || projectsInView
                 ? "opacity-100"
                 : "opacity-0"
-            } absolute bottom-16 right-1/4 flex items-center duration-200 ease-in-out`}
+            } absolute bottom-16 right-0 flex items-center duration-200 ease-in-out`}
           >
             <span className="flex rotate-90 items-center gap-2 text-xs after:h-[1px] after:w-12 after:bg-zinc-200">
               Det er mer å lese
@@ -136,7 +136,7 @@ export default function Home() {
                   aboutInView
                     ? "opacity-100 delay-200 duration-[2000ms]"
                     : "opacity-0"
-                } flex max-w-2xl flex-col gap-4 text-justify text-sm leading-tight sm:text-base`}
+                } flex max-w-2xl flex-col gap-4  text-sm leading-tight sm:text-base`}
               >
                 <p className="">
                   Jeg fikk min første PC allerede da jeg var 6 år gammel – det
@@ -224,7 +224,7 @@ export default function Home() {
               <div
                 className={`${
                   projectsInView
-                    ? "text-justify opacity-100 delay-200 duration-[2000ms]"
+                    ? " opacity-100 delay-200 duration-[2000ms]"
                     : "opacity-0"
                 } flex max-w-2xl flex-col gap-4 text-sm leading-tight sm:text-base`}
               >
@@ -294,27 +294,24 @@ export default function Home() {
                   toolsInView
                     ? "opacity-100 delay-200 duration-[2000ms]"
                     : "opacity-0"
-                } flex max-w-2xl flex-col gap-4 text-justify text-sm leading-tight sm:text-base`}
+                } flex max-w-2xl flex-col gap-4 text-sm leading-tight  sm:text-base`}
               >
                 <p className="">
-                  Jeg har erfaring med å utvikle nettapplikasjoner som er trygge
-                  og brukervennlige ved hjelp av moderne teknologier. En av mine
-                  favorittverktøy er TypeScript som gjøre koden min mer
-                  forståelig for andre og sannsynligheten for feil mindre.
+                  Jeg utvikler trygge og brukervennlige nettapplikasjoner ved
+                  hjelp av blant annet TypeScript, NextJS, Prisma, MySQL/MongoDB
+                  og Express. Disse verktøyene bidrar til å skape sikre og
+                  stabile applikasjoner som gir en god brukeropplevelse.
                 </p>
                 <p className="text-left">
-                  Jeg bruker også verktøy som NextJS, Prisma, MySQL/MongoDB og
-                  Express for å sette opp fullverdige applikasjoner som fungerer
-                  godt og raskt. Disse teknologiene gjør det enkelt å lage sikre
-                  og stabile applikasjoner som gir god brukeropplevelse.
+                  Jeg er alltid interessert i å høre om dine behov og ønsker, og
+                  vil bruke min erfaring og kunnskap til å skape en applikasjon
+                  som passer perfekt for deg.
                 </p>
                 <p className="text-left">
                   Hvis du vil vite mer om disse teknologiene, kan du trykke på
                   ikonene{" "}
-                  <span className="hidden lg:inline-block">til høyre</span>
-                  <span className="inline-block lg:hidden">under</span>. Men vær
-                  trygg på at jeg vil bruke min erfaring og kunnskap til å skape
-                  en nettapplikasjon som passer dine behov og ønsker.
+                  <span className="hidden lg:inline-block">til høyre.</span>
+                  <span className="inline-block lg:hidden">under.</span>
                 </p>
               </div>
             </div>
@@ -323,7 +320,7 @@ export default function Home() {
                 toolsInView
                   ? "opacity-100 duration-[2200ms] ease-in-out"
                   : "opacity-0"
-              } flex w-full flex-col items-center gap-6 text-zinc-100 sm:flex-row lg:w-auto lg:flex-col`}
+              } flex w-full max-w-xs flex-col items-center gap-6 text-zinc-100 sm:max-w-xl sm:flex-row lg:w-auto lg:flex-col`}
             >
               <div className="group flex w-full flex-col items-center gap-4 rounded-lg bg-zinc-800/40 px-4 py-2 hover:bg-zinc-800/80">
                 <h3 className="w-full border-b border-zinc-300 pb-2 text-center font-bold uppercase transition group-hover:text-sky-400">
@@ -335,21 +332,21 @@ export default function Home() {
                     rel="noopener noreferrer"
                     target="_blank"
                   >
-                    <TailwindLogo className="aspect-square h-16 transition hover:text-sky-400 sm:h-12 md:h-14" />
+                    <TailwindLogo className="aspect-square h-14 transition hover:text-sky-400 sm:h-12 md:h-14" />
                   </a>
                   <a
                     href="https://www.typescriptlang.org/"
                     rel="noopener noreferrer"
                     target="_blank"
                   >
-                    <TypeScriptLogo className="aspect-square h-16 transition hover:text-sky-400 sm:h-12 md:h-14" />
+                    <TypeScriptLogo className="aspect-square h-14 transition hover:text-sky-400 sm:h-12 md:h-14" />
                   </a>
                   <a
                     href="https://nextjs.org/"
                     rel="noopener noreferrer"
                     target="_blank"
                   >
-                    <NextJSLogo className="aspect-square h-16 transition hover:text-sky-400 sm:h-12 md:h-14" />
+                    <NextJSLogo className="aspect-square h-14 transition hover:text-sky-400 sm:h-12 md:h-14" />
                   </a>
                 </div>
               </div>
@@ -363,21 +360,21 @@ export default function Home() {
                     rel="noopener noreferrer"
                     target="_blank"
                   >
-                    <MongoDBLogo className="aspect-square h-16 transition hover:text-sky-400 sm:h-12 md:h-14" />
+                    <MongoDBLogo className="aspect-square h-14 transition hover:text-sky-400 sm:h-12 md:h-14" />
                   </a>
                   <a
                     href="https://www.prisma.io/"
                     rel="noopener noreferrer"
                     target="_blank"
                   >
-                    <PrismaLogo className="aspect-square h-16 transition hover:text-sky-400 sm:h-12 md:h-14" />
+                    <PrismaLogo className="aspect-square h-14 transition hover:text-sky-400 sm:h-12 md:h-14" />
                   </a>
                   <a
                     href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
                     rel="noopener noreferrer"
                     target="_blank"
                   >
-                    <MySQLLogo className="aspect-square h-16 transition hover:text-sky-400 sm:h-12 md:h-14" />
+                    <MySQLLogo className="aspect-square h-14 transition hover:text-sky-400 sm:h-12 md:h-14" />
                   </a>
                 </div>
               </div>

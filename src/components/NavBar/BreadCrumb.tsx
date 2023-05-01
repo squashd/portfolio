@@ -10,7 +10,7 @@ export default function BreadCrumb() {
   });
 
   return (
-    <ul className="flex items-center gap-1 text-sm uppercase">
+    <ul className="flex flex-wrap items-center gap-x-1 text-xs uppercase sm:text-sm">
       {segments.length > 0 ? (
         <li>
           <Link
