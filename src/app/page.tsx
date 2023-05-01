@@ -256,11 +256,11 @@ export default function Home() {
                     href={"/portef%C3%B8lje/prosjekter/merkelappen-admin"}
                     className="group relative inline-block text-sky-400 transition duration-300"
                   >
-                    adminpanel for ordrebehandling,
+                    adminpanel
                     <span className="relative bottom-1 block h-[1px] max-w-0 bg-sky-400 transition-all duration-500 group-hover:max-w-full"></span>
                   </Link>{" "}
-                  jobbet med diverse integrasjoner, og til og med begynt smått
-                  med å lage noen{" "}
+                  for ordrebehandling, jobbet med diverse integrasjoner, og til
+                  og med begynt smått med å lage noen{" "}
                   <Link
                     href={"/portef%C3%B8lje/spill/wordle"}
                     className="group relative inline-block text-sky-400 transition duration-300"
