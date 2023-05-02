@@ -330,6 +330,7 @@ export default function Home() {
                 </h3>
                 <div className="flex gap-8">
                   <a
+                    aria-label="Mer om tailwindcss"
                     href="https://tailwindcss.com/"
                     rel="noopener noreferrer"
                     target="_blank"
@@ -337,6 +338,7 @@ export default function Home() {
                     <TailwindLogo className="aspect-square h-14 transition hover:text-sky-400 sm:h-12 md:h-14" />
                   </a>
                   <a
+                    aria-label="Mer om Typescript"
                     href="https://www.typescriptlang.org/"
                     rel="noopener noreferrer"
                     target="_blank"
@@ -344,6 +346,7 @@ export default function Home() {
                     <TypeScriptLogo className="aspect-square h-14 transition hover:text-sky-400 sm:h-12 md:h-14" />
                   </a>
                   <a
+                    aria-label="Mer om NextJS"
                     href="https://nextjs.org/"
                     rel="noopener noreferrer"
                     target="_blank"
@@ -358,6 +361,7 @@ export default function Home() {
                 </h3>
                 <div className="flex gap-8">
                   <a
+                    aria-label="Mer om MongoDB"
                     href="https://www.mongodb.com/"
                     rel="noopener noreferrer"
                     target="_blank"
@@ -365,6 +369,7 @@ export default function Home() {
                     <MongoDBLogo className="aspect-square h-14 transition hover:text-sky-400 sm:h-12 md:h-14" />
                   </a>
                   <a
+                    aria-label="Mer om Prisma"
                     href="https://www.prisma.io/"
                     rel="noopener noreferrer"
                     target="_blank"
@@ -372,6 +377,7 @@ export default function Home() {
                     <PrismaLogo className="aspect-square h-14 transition hover:text-sky-400 sm:h-12 md:h-14" />
                   </a>
                   <a
+                    aria-label="Mer om MySQL"
                     href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
                     rel="noopener noreferrer"
                     target="_blank"

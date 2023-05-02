@@ -23,7 +23,7 @@ const NavBar = () => {
       >
         {/* Logo */}
         <div className="flex w-full max-w-5xl items-center justify-between px-6">
-          <Link href="/">
+          <Link href="/" aria-label="Hjem">
             <div className="relative z-10 transition ease-out hover:opacity-80 hover:transition hover:ease-in">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
