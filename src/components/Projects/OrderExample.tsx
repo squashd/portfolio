@@ -34,7 +34,7 @@ export default function OrderExample() {
         <tr>
           <th
             scope="col"
-            className="sticky top-0 z-10 border-b border-zinc-300 py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-zinc-100 sm:pl-6 lg:pl-8"
+            className="top-0 z-10 border-b border-zinc-300 py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-zinc-100 sm:pl-6 lg:pl-8"
           >
             <div className="flex w-32 items-center justify-center p-2">
               Print Status
@@ -42,31 +42,31 @@ export default function OrderExample() {
           </th>
           <th
             scope="col"
-            className="sticky top-0 z-10 table-cell border-b border-zinc-300 px-3 py-3.5 text-left text-sm font-semibold text-zinc-100"
+            className="top-0 z-10 table-cell border-b border-zinc-300 px-3 py-3.5 text-left text-sm font-semibold text-zinc-100"
           >
             ID
           </th>
           <th
             scope="col"
-            className="sticky top-0 z-10 hidden border-b border-zinc-300 px-3 py-3.5 text-left text-sm font-semibold text-zinc-100 lg:table-cell"
+            className="top-0 z-10 hidden border-b border-zinc-300 px-3 py-3.5 text-left text-sm font-semibold text-zinc-100 lg:table-cell"
           >
             Product
           </th>
           <th
             scope="col"
-            className="sticky top-0 z-10 hidden border-b border-zinc-300 px-3 py-3.5 text-left text-sm font-semibold text-zinc-100 md:table-cell"
+            className="top-0 z-10 hidden border-b border-zinc-300 px-3 py-3.5 text-left text-sm font-semibold text-zinc-100 md:table-cell"
           >
             Quantity
           </th>
           <th
             scope="col"
-            className="sticky top-0 z-10 hidden border-b border-zinc-300 px-3 py-3.5 text-left text-sm font-semibold text-zinc-100 md:table-cell"
+            className="top-0 z-10 hidden border-b border-zinc-300 px-3 py-3.5 text-left text-sm font-semibold text-zinc-100 md:table-cell"
           >
             Price
           </th>
           <th
             scope="col"
-            className="sticky top-0 z-10 border-b border-zinc-300 py-3.5 pl-3"
+            className="top-0 z-10 border-b border-zinc-300 py-3.5 pl-3"
           >
             <span className="sr-only">Edit</span>
           </th>
