@@ -25,16 +25,32 @@ export default function Page() {
                 src={mobile}
                 alt="mobile view"
                 className="w-auto max-w-xl"
+                loading="eager"
               />
             </div>
             <div className="flex-shrink-0 overflow-hidden rounded-lg">
-              <Image src={sm} alt="small view" className="w-auto max-w-xl" />
+              <Image
+                src={sm}
+                alt="small view"
+                className="w-auto max-w-xl"
+                loading="eager"
+              />
             </div>
             <div className="flex-shrink-0 overflow-hidden rounded-lg">
-              <Image src={md} alt="medium view" className="w-auto max-w-xl" />
+              <Image
+                src={md}
+                alt="medium view"
+                className="w-auto max-w-xl"
+                loading="eager"
+              />
             </div>
             <div className="flex-shrink-0 overflow-hidden rounded-lg">
-              <Image src={lg} alt="large view" className="w-auto max-w-xl" />
+              <Image
+                src={lg}
+                alt="large view"
+                className="w-auto max-w-xl"
+                loading="eager"
+              />
             </div>
           </div>
         </section>
