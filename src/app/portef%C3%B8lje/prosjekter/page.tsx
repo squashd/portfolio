@@ -63,9 +63,10 @@ export default async function Projects() {
                 </p>
                 <div className="absolute -inset-1 flex items-center">
                   <Link href={project.link.href}>
-                    <span className="absolute -inset-1"></span>
+                    <span className="absolute -inset-1">
+                      <span className="sr-only">{project.link.label}</span>
+                    </span>
                   </Link>
-                  <p></p>
                 </div>
                 <div className="flex items-center group-hover:text-sky-400">
                   {cloneElement(project.link.icon, {

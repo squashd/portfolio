@@ -48,7 +48,11 @@ export default function Page() {
                   </p>
                   <div className="absolute -inset-1 flex items-center">
                     <Link href={galleryItem.link.href}>
-                      <span className="absolute -inset-1"></span>
+                      <span className="absolute -inset-1">
+                        <span className="sr-only">
+                          {galleryItem.link.label}
+                        </span>
+                      </span>
                     </Link>
                     <p></p>
                   </div>
