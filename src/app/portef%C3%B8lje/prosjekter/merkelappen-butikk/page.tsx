@@ -31,6 +31,7 @@ export default function Page() {
                 alt="mobile view"
                 className="w-auto max-w-xl"
                 loading="eager"
+                priority={true}
               />
             </div>
             <div className="flex-shrink-0 overflow-hidden rounded-lg">
@@ -39,6 +40,7 @@ export default function Page() {
                 alt="small view"
                 className="w-auto max-w-xl"
                 loading="eager"
+                priority={true}
               />
             </div>
             <div className="flex-shrink-0 overflow-hidden rounded-lg">
@@ -47,6 +49,7 @@ export default function Page() {
                 alt="medium view"
                 className="w-auto max-w-xl"
                 loading="eager"
+                priority={true}
               />
             </div>
             <div className="flex-shrink-0 overflow-hidden rounded-lg">
@@ -55,6 +58,7 @@ export default function Page() {
                 alt="large view"
                 className="w-auto max-w-xl"
                 loading="eager"
+                priority={true}
               />
             </div>
           </div>
