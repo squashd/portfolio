@@ -1,6 +1,5 @@
-import { cloneElement } from "react";
-import Link from "next/link";
 import { featuredProjects } from "@/data/portfolio/projects";
+import ProjectCard from "@/components/ProjectCard";
 
 export const metadata = {
   title: "Prosjekter",
@@ -43,38 +42,14 @@ export default async function Projects() {
           </h2>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {projectsList.map((project, index) => (
-              <div
-                key={project.company + index}
-                className="group relative flex flex-col gap-2 rounded-xl bg-zinc-800/40 p-6 transition ease-in-out hover:cursor-pointer hover:bg-zinc-800/80"
-              >
-                <div className="flex aspect-square h-12 w-12 items-center justify-center rounded-full border-2 border-zinc-700 bg-zinc-800 p-2">
-                  {cloneElement(project.logo, {
-                    className: "h-8",
-                  })}
-                </div>
-                <h2 className="font-light">
-                  {project.company}{" "}
-                  <span className="text-zinc-400 group-hover:text-sky-400">
-                    / {project.title}
-                  </span>
-                </h2>
-                <p className="text-sm leading-tight text-zinc-300">
-                  {project.description}
-                </p>
-                <div className="absolute -inset-1 flex items-center">
-                  <Link href={project.link.href}>
-                    <span className="absolute -inset-1">
-                      <span className="sr-only">{project.link.label}</span>
-                    </span>
-                  </Link>
-                </div>
-                <div className="flex items-center group-hover:text-sky-400">
-                  {cloneElement(project.link.icon, {
-                    className: "h-4 w-4 mr-2",
-                  })}
-                  <span>{project.link.label}</span>
-                </div>
-              </div>
+              <ProjectCard
+                key={index}
+                title={project.company}
+                description={project.description}
+                descriptiveLabel={project.descriptiveLabel}
+                icon={project.logo}
+                link={project.link}
+              />
             ))}
           </div>
         </section>

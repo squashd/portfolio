@@ -6,7 +6,11 @@ type games = {
   title: string;
   category: string;
   description: string;
-  link: { href: string; label: string; icon: ReactElement<SVGSVGElement> };
+  link: {
+    href: string;
+    label: string;
+    descriptiveIcon: ReactElement<SVGSVGElement>;
+  };
   logo: ReactElement<SVGSVGElement>;
 }[];
 const featuredGames: games = [
@@ -18,7 +22,7 @@ const featuredGames: games = [
     link: {
       href: "/portef%C3%B8lje/spill/wordle",
       label: "Prøv spillet her",
-      icon: <LinkIcon />,
+      descriptiveIcon: <LinkIcon />,
     },
   },
 ];

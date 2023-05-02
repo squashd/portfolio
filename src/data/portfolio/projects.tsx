@@ -4,45 +4,49 @@ import { InfoIcon, LinkIcon } from "@/assets/Icons";
 
 export type project = {
   company: string;
-  title: string;
+  descriptiveLabel: string;
   description: string;
-  link: { href: string; label: string; icon: ReactElement<SVGSVGElement> };
+  link: {
+    href: string;
+    label: string;
+    descriptiveIcon: ReactElement<SVGSVGElement>;
+  };
   logo: ReactElement<SVGSVGElement>;
 };
 
 const featuredProjects: project[] = [
   {
     company: "Merkelappen.no",
-    title: "Butikksider",
+    descriptiveLabel: "Butikksider",
     description: "Nettbutikk integrert med Avarda Checkout.",
     logo: <MerkelappenMini />,
     link: {
       href: "/portef%C3%B8lje/prosjekter/merkelappen-butikk",
       label: "Les mer om prosjektet",
-      icon: <InfoIcon />,
+      descriptiveIcon: <InfoIcon />,
     },
   },
   {
     company: "Merkelappen.no",
-    title: "Adminsider",
+    descriptiveLabel: "Adminsider",
     description:
       "Adminsider for ordrebehandling og generering av trykkmateriale.",
     logo: <MerkelappenMini />,
     link: {
       href: "/portef%C3%B8lje/prosjekter/merkelappen-admin",
       label: "Les mer om prosjektet",
-      icon: <InfoIcon />,
+      descriptiveIcon: <InfoIcon />,
     },
   },
   {
     company: "Hjartland",
-    title: "Portefølje",
+    descriptiveLabel: "Portefølje",
     description: "Min personlige side, bygget med Next.js og TailwindCSS.",
     logo: <HjartlandMini />,
     link: {
       href: "/",
       label: "Tilbake til forsiden?",
-      icon: <LinkIcon />,
+      descriptiveIcon: <LinkIcon />,
     },
   },
 ];
