@@ -17,6 +17,8 @@ import {
 } from "@/assets/logos/logos";
 import Link from "next/link";
 import { useState } from "react";
+import { GitHubIcon, LinkedInIcon } from "@/components/SocialIcons";
+import { FrownIcon } from "@/assets/Icons";
 
 export default function Home() {
   const [showSquashImage, setShowSquashImage] = useState(false);
@@ -322,10 +324,10 @@ export default function Home() {
                 toolsInView
                   ? "opacity-100 duration-[2200ms] ease-in-out"
                   : "opacity-0"
-              } flex w-full max-w-xs flex-col items-center gap-6 text-zinc-100 sm:max-w-xl sm:flex-row lg:w-auto lg:flex-col`}
+              } flex w-full max-w-xs flex-col items-center gap-2 text-zinc-100 sm:max-w-xl sm:flex-row sm:gap-6 lg:w-auto lg:flex-col`}
             >
-              <div className="group flex w-full flex-col items-center gap-4 rounded-lg bg-zinc-800/40 px-4 py-2 hover:bg-zinc-800/80">
-                <h3 className="w-full border-b border-zinc-300 pb-2 text-center font-bold uppercase transition group-hover:text-sky-400">
+              <div className="group flex w-full flex-col items-center gap-4 rounded-lg bg-zinc-800/40 px-4 py-4 hover:bg-zinc-800/80 sm:py-2">
+                <h3 className="hidden w-full border-b border-zinc-300 pb-2 text-center font-bold uppercase transition group-hover:text-sky-400 sm:block">
                   Frontend
                 </h3>
                 <div className="flex gap-8">
@@ -335,7 +337,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     target="_blank"
                   >
-                    <TailwindLogo className="aspect-square h-14 transition hover:text-sky-400 sm:h-12 md:h-14" />
+                    <TailwindLogo className="aspect-square h-10 transition hover:text-sky-400 sm:h-12 md:h-14" />
                   </a>
                   <a
                     aria-label="Mer om Typescript"
@@ -343,7 +345,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     target="_blank"
                   >
-                    <TypeScriptLogo className="aspect-square h-14 transition hover:text-sky-400 sm:h-12 md:h-14" />
+                    <TypeScriptLogo className="aspect-square h-10 transition hover:text-sky-400 sm:h-12 md:h-14" />
                   </a>
                   <a
                     aria-label="Mer om NextJS"
@@ -351,12 +353,12 @@ export default function Home() {
                     rel="noopener noreferrer"
                     target="_blank"
                   >
-                    <NextJSLogo className="aspect-square h-14 transition hover:text-sky-400 sm:h-12 md:h-14" />
+                    <NextJSLogo className="aspect-square h-10 transition hover:text-sky-400 sm:h-12 md:h-14" />
                   </a>
                 </div>
               </div>
-              <div className="group flex w-full flex-col items-center gap-4 rounded-lg bg-zinc-800/40 px-4 py-2 hover:bg-zinc-800/80">
-                <h3 className="w-full border-b border-zinc-300 pb-2 text-center font-bold uppercase transition group-hover:text-sky-400">
+              <div className="sm group flex w-full flex-col items-center gap-4 rounded-lg bg-zinc-800/40 px-4 py-4 hover:bg-zinc-800/80 sm:py-2">
+                <h3 className="hidden w-full border-b border-zinc-300 pb-2 text-center font-bold uppercase transition group-hover:text-sky-400 sm:block">
                   Backend
                 </h3>
                 <div className="flex gap-8">
@@ -366,7 +368,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     target="_blank"
                   >
-                    <MongoDBLogo className="aspect-square h-14 transition hover:text-sky-400 sm:h-12 md:h-14" />
+                    <MongoDBLogo className="aspect-square h-10 transition hover:text-sky-400 sm:h-12 md:h-14" />
                   </a>
                   <a
                     aria-label="Mer om Prisma"
@@ -374,7 +376,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     target="_blank"
                   >
-                    <PrismaLogo className="aspect-square h-14 transition hover:text-sky-400 sm:h-12 md:h-14" />
+                    <PrismaLogo className="aspect-square h-10 transition hover:text-sky-400 sm:h-12 md:h-14" />
                   </a>
                   <a
                     aria-label="Mer om MySQL"
@@ -382,7 +384,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     target="_blank"
                   >
-                    <MySQLLogo className="aspect-square h-14 transition hover:text-sky-400 sm:h-12 md:h-14" />
+                    <MySQLLogo className="aspect-square h-10 transition hover:text-sky-400 sm:h-12 md:h-14" />
                   </a>
                 </div>
               </div>
@@ -430,8 +432,33 @@ export default function Home() {
                     941 74 754
                     <span className="relative bottom-1 block h-[1px] max-w-0 bg-sky-400 transition-all duration-500 group-hover:max-w-full"></span>
                   </a>
-                  .
                 </p>
+                <div className="flex flex-col items-center gap-4">
+                  <p className="w-full text-left">
+                    Ellers er jeg tilgjengelig på LinkedIn og GitHub – det meste
+                    av nytt arbeid er dessverre privat{" "}
+                    <FrownIcon className="inline-block w-4" /> Men ønsker du å
+                    se hva jeg har gjort tidligere kan jeg ordne tilgang.
+                  </p>
+                  <div className="flex gap-2">
+                    <a
+                      aria-label="LinkedIn"
+                      href="https://www.linkedin.com/in/daniel-hjartland-7745b81a/"
+                      target="_blank"
+                      className="group relative inline-block transition duration-300 hover:text-sky-400"
+                    >
+                      <LinkedInIcon className="aspect-square w-12" />{" "}
+                    </a>
+                    <a
+                      aria-label="GitHub"
+                      href="https://github.com/SQUASHD"
+                      target="_blank"
+                      className="group relative inline-block transition duration-300 hover:text-sky-400"
+                    >
+                      <GitHubIcon className="aspect-square w-12" />
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
