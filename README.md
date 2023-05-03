@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## My Personal Portfolio
 
-## Getting Started
+Made primarily with [Next.js](https://nextjs.org/) and [Tailwind CSS](https://tailwindcss.com/).
+Using some features that are experimental or that I haven't used before, because _"Hey, why not?"_
 
-First, run the development server:
+Also, clients don't really care about the tech stack, so I can do whatever I want.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+### Tested out
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. MDX to format articles and code blocks with [Tailwind typography](https://tailwindcss.com/docs/typography-plugin)
+2. Using the [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) to add some animations
+3. The [App directory](https://beta.nextjs.org/docs/getting-started) – vroom, vroom
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### To add at some point
+1. Some sort of CMS to add pages without having to redeploy the site
+   * [Sanity](https://www.sanity.io/) looks pretty cool
+2. A dark mode toggle – currently the site only has a dark mode
+   * Dangerously setting innerHTML with a script tag to set a class on the body may be a solution
+3. Internationalization – I'm Norwegian so right now the site is in Norwegian
+   > *Hvorfor skriver jeg da dokumentasjonen på engelsk?*
+4. More projects to show off
 
-[http://localhost:3000/api/hello](http://localhost:3000/api/hello) is an endpoint that uses [Route Handlers](https://beta.nextjs.org/docs/routing/route-handlers). This endpoint can be edited in `app/api/hello/route.ts`.
+### To change
+1. Use the Intersection Observer API without a library
+2. Replace anchor tags with Link components once it can handle hashes
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Neat things I learnt
+1. How to add breadcrumbs using the [useSelectedLayoutSegments](https://beta.nextjs.org/docs/api-reference/use-selected-layout-segments) hook
+2. Encoding/decoding URI components so I can have that beautiful **Ø** in portefølje
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Probably not the stack I'd use for a client project or someone else's portfolio, but it was/is fun to play around with.
