@@ -1,21 +1,28 @@
 import Link from "next/link";
+import Image from "next/image";
+import dog from "@/assets/images/dog.svg";
 
 export default function NotFound() {
   return (
     <>
       <main className="grid min-h-screen place-items-center px-6 py-24 sm:py-32 lg:px-8">
         <div className="text-center">
-          <p className="text-xl font-semibold text-sky-400">404</p>
-          <h1 className="mt-4 text-3xl font-bold tracking-tight text-gray-100 sm:text-5xl">
+          <p className="mt-4 text-xl font-light tracking-tight text-zinc-100">
             Fant ikke siden
-          </h1>
+          </p>
+          <h1 className="mb-6 text-7xl font-bold text-zinc-300">404</h1>
+          <Image
+            src={dog}
+            alt={"Dog standing outside with a smile"}
+            className="h-48"
+          />
           <p className="mt-6 text-base leading-7 text-gray-400">
             Beklager, men den siden finnes ikke
           </p>
           <div className="mt-10 flex items-center justify-center">
             <Link
               href="/"
-              className="rounded-md bg-sky-400 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm transition ease-out hover:bg-sky-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600"
+              className="rounded-md bg-sky-400 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm transition ease-out hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600"
             >
               Tilbake til forsiden
             </Link>
