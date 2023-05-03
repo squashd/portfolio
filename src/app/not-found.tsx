@@ -1,6 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
-import dog from "@/assets/images/dog.svg";
+import { Dog404 } from "@/assets/images/Illustrations";
 
 export default function NotFound() {
   return (
@@ -11,11 +10,7 @@ export default function NotFound() {
             Fant ikke siden
           </p>
           <h1 className="mb-6 text-7xl font-bold text-zinc-300">404</h1>
-          <Image
-            src={dog}
-            alt={"Dog standing outside with a smile"}
-            className="h-48"
-          />
+          <Dog404 className="text-zinc-300" />
           <p className="mt-6 text-base leading-7 text-gray-400">
             Beklager, men den siden finnes ikke
           </p>
