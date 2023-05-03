@@ -17,7 +17,7 @@ import {
 } from "@/assets/logos/logos";
 import Link from "next/link";
 import { useState } from "react";
-import { GitHubIcon, LinkedInIcon } from "@/components/SocialIcons";
+import { GitHubIcon, LinkedInIcon } from "@/assets/SocialIcons";
 import { FrownIcon } from "@/assets/Icons";
 
 export default function Home() {

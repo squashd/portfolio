@@ -1,4 +1,3 @@
-import type { ClassNameProps } from "@/types/Props";
 import { SVGProps } from "@/assets/logos/minilogos";
 
 export function GitHubIcon(props: SVGProps) {
