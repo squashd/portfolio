@@ -405,10 +405,10 @@ export default function Home() {
                   Om du har et prosjekt du ønsker å gjennomføre, eller bare vil
                   slå av en prat, kan du sende meg en epost på:{" "}
                   <a
-                    href="mailto:daniel@hjartland.dev"
+                    href="mailto:daniel@hjartland.com"
                     className="group relative inline-block text-sky-400 transition duration-300"
                   >
-                    daniel@hjartland.dev
+                    daniel@hjartland.com
                     <span className="relative bottom-1 block h-[1px] max-w-0 bg-sky-400 transition-all duration-500 group-hover:max-w-full"></span>
                   </a>
                   , eller ring meg på telefon:{" "}
