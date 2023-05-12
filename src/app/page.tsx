@@ -292,8 +292,6 @@ export default function Home() {
                 <p className="">
                   Jeg utvikler applikasjoner og nettsider ved hjelp av blant
                   annet TypeScript, NextJS, Prisma, MySQL/MongoDB og Express.
-                  Disse verktøyene bidrar til å skape sikre og stabile
-                  applikasjoner som gir en god brukeropplevelse.
                 </p>
                 <p className="text-left">
                   Jeg er alltid interessert i å høre om dine behov og ønsker, og
