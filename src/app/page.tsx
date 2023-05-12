@@ -64,36 +64,27 @@ export default function Home() {
               className={`${
                 introInView
                   ? "translate-y-0 delay-300 duration-1000 "
-                  : "translate-y-4"
-              } transform font-mono text-xs text-sky-400 transition sm:text-sm md:text-base`}
+                  : "translate-y-8"
+              } text-4xl font-bold tracking-tight text-zinc-100 sm:text-7xl`}
             >
-              Hei, jeg heter
+              Daniel Hjartland.
             </h1>
             <h2
               className={`${
                 introInView
                   ? "translate-y-0 delay-300 duration-1000 "
-                  : "translate-y-8"
-              } text-4xl font-bold text-zinc-100 sm:text-6xl`}
-            >
-              Daniel Hjartland.
-            </h2>
-            <h3
-              className={`${
-                introInView
-                  ? "translate-y-0 delay-300 duration-1000 "
                   : "translate-y-12"
-              } text-4xl font-bold text-zinc-300 sm:text-6xl`}
+              } text-4xl font-bold tracking-tight text-zinc-300 sm:text-7xl`}
             >
-              Jeg er fullstack utvikler.
-            </h3>
+              Fullstack utvikler.
+            </h2>
             <div>
               <p
                 className={`${
                   introInView
                     ? "translate-y-0 delay-200 duration-1000"
                     : "translate-y-16"
-                } relative my-4 max-w-md text-sm text-zinc-300 sm:max-w-lg sm:text-base md:max-w-xl`}
+                } relative my-4 max-w-md text-sm text-zinc-300 sm:max-w-lg sm:text-lg md:max-w-2xl`}
               >
                 Jeg er en utvikler som alltid er på jakt etter nye og innovative
                 måter å løse problemer på. Akkurat nå jobber jeg med spennende
@@ -145,12 +136,12 @@ export default function Home() {
                 } flex max-w-2xl flex-col gap-4  text-sm leading-tight sm:text-base`}
               >
                 <p className="">
-                  Jeg fikk min første PC allerede da jeg var 6 år gammel – det
-                  måtte riktignok ofres noen leker til garasjesalg, men jeg har
-                  vært interessert i teknologi siden.
+                  Det måtte ofres noen leker til garasjesalg, men jeg fikk min
+                  første PC allerede da jeg var 6 år gammel og jeg har vært
+                  interessert i teknologi siden.
                 </p>
                 <p className="text-left">
-                  Jeg har også vært{" "}
+                  Jeg har vært{" "}
                   <button
                     onClick={() => setShowSquashImage(!showSquashImage)}
                     className="group relative inline-block text-sky-400 transition duration-300"
@@ -163,11 +154,9 @@ export default function Home() {
                   matematikk.
                 </p>
                 <p className="text-left">
-                  Jeg er alltid ivrig etter å lære og ta på meg nye
-                  utfordringer. Hvis jeg ikke har erfaring med et spesifikt
-                  teknologiområde, vil jeg gjøre alt jeg kan for å lære og bli
-                  komfortabel med det. Jeg spør aldri &quot;kan jeg
-                  dette?&quot;, jeg spør alltid &quot;hvordan kan jeg?&quot;
+                  Jeg er alltid ivrig etter å lære noe nytt og ta på meg nye
+                  utfordringer. Jeg spør aldri &quot;kan jeg dette?&quot;, jeg
+                  spør alltid &quot;hvordan kan jeg?&quot;
                 </p>
               </div>
             </div>
@@ -301,15 +290,15 @@ export default function Home() {
                 } flex max-w-2xl flex-col gap-4 text-sm leading-tight  sm:text-base`}
               >
                 <p className="">
-                  Jeg utvikler trygge og brukervennlige nettapplikasjoner ved
-                  hjelp av blant annet TypeScript, NextJS, Prisma, MySQL/MongoDB
-                  og Express. Disse verktøyene bidrar til å skape sikre og
-                  stabile applikasjoner som gir en god brukeropplevelse.
+                  Jeg utvikler applikasjoner og nettsider ved hjelp av blant
+                  annet TypeScript, NextJS, Prisma, MySQL/MongoDB og Express.
+                  Disse verktøyene bidrar til å skape sikre og stabile
+                  applikasjoner som gir en god brukeropplevelse.
                 </p>
                 <p className="text-left">
                   Jeg er alltid interessert i å høre om dine behov og ønsker, og
-                  vil bruke min erfaring og kunnskap til å skape en applikasjon
-                  som passer perfekt for deg.
+                  vil bruke min erfaring og kunnskap til å lage noe som passer
+                  perfekt for deg.
                 </p>
                 <p className="text-left">
                   Hvis du vil vite mer om disse teknologiene, kan du trykke på
