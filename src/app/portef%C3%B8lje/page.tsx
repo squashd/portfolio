@@ -1,7 +1,6 @@
 import Link from "next/link";
 import type { SVGProps } from "@/assets/logos/minilogos";
 import { featuredGallery } from "@/app/portef%C3%B8lje/galleri/page";
-import { featuredGames } from "@/data/portfolio/games";
 import { featuredProjects } from "@/app/portef%C3%B8lje/prosjekter/page";
 import ProjectCard from "@/components/ProjectCard";
 

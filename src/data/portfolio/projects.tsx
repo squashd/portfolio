@@ -1,6 +1,11 @@
 import { ReactElement } from "react";
-import { HjartlandMini, MerkelappenMini } from "@/assets/logos/minilogos";
+import {
+  CoffeeIcon,
+  HjartlandMini,
+  MerkelappenMini,
+} from "@/assets/logos/minilogos";
 import { InfoIcon, LinkIcon } from "@/assets/Icons";
+import { GitHubIcon } from "@/assets/SocialIcons";
 
 export type project = {
   company: string;
@@ -47,6 +52,17 @@ const featuredProjects: project[] = [
       href: "/",
       label: "Tilbake til forsiden?",
       descriptiveIcon: <LinkIcon />,
+    },
+  },
+  {
+    company: "iRate",
+    descriptiveLabel: "Rating App",
+    description: "En app laget for min far å kunne rate kaffekapsler.",
+    logo: <CoffeeIcon />,
+    link: {
+      href: "https://github.com/SQUASHD/irate",
+      label: "Se mer på GitHub",
+      descriptiveIcon: <GitHubIcon />,
     },
   },
 ];

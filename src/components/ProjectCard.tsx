@@ -31,7 +31,7 @@ export default function ProjectCard(Project: ProjectCardProps) {
         {Project.description}
       </p>
       <div className="absolute -inset-1 flex items-center">
-        <Link href={Project.link.href}>
+        <Link href={Project.link.href} target="_blank">
           <span className="absolute -inset-1">
             <span className="sr-only">{Project.link.label}</span>
           </span>
