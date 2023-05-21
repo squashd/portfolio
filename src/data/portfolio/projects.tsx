@@ -4,7 +4,7 @@ import {
   HjartlandMini,
   MerkelappenMini,
 } from "@/assets/logos/minilogos";
-import { InfoIcon, LinkIcon } from "@/assets/Icons";
+import { InfoIcon, LinkIcon, OdinRevisited } from "@/assets/Icons";
 import { GitHubIcon } from "@/assets/SocialIcons";
 
 export type project = {
@@ -63,6 +63,18 @@ const featuredProjects: project[] = [
       href: "https://github.com/SQUASHD/irate",
       label: "Se mer på GitHub",
       descriptiveIcon: <GitHubIcon />,
+    },
+  },
+  {
+    company: "Odin Revisited",
+    descriptiveLabel: "Diverse",
+    description:
+      "En samling av mindre prosjekter fra The Odin Project gjort på nytt.",
+    logo: <OdinRevisited />,
+    link: {
+      href: "https://odin.hjartland.dev",
+      label: "Se siden",
+      descriptiveIcon: <LinkIcon />,
     },
   },
 ];
