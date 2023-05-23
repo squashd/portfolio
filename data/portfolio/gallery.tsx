@@ -1,55 +1,42 @@
-import { ReactElement } from "react";
-import {
-  EyeIcon,
-  LightningIcon,
-  ListIcon,
-  TypewriterIcon,
-} from "../../assets/Icons";
+import { Project } from "@/components/cards";
+import { Icons } from "@/components/icons";
 
-type galleryItem = {
-  title: string;
-  category: string;
-  description: string;
-  link: {
-    href: string;
-    label: string;
-    descriptiveIcon: ReactElement<SVGSVGElement>;
-  };
-  icon: ReactElement<SVGSVGElement>;
-};
-const featuredGallery: galleryItem[] = [
+const featuredGallery: Project[] = [
   {
     title: "Lynrask",
-    category: "Animasjon",
+    descriptiveLabel: "Animasjon",
     description: "Tekst som løper lynraskt hele verden rundt på få sekunder",
-    icon: <LightningIcon />,
+    icon: Icons.lightning,
     link: {
       href: "/portef%C3%B8lje/galleri/lightning",
       label: "Se animasjonen her",
-      descriptiveIcon: <EyeIcon />,
+      descriptiveIcon: Icons.eye,
     },
+    external: false,
   },
   {
     title: "Skrivemaskin",
-    category: "Animasjon",
+    descriptiveLabel: "Animasjon",
     description: "Animasjon som simulerer skrivemaskin med blinkende caret",
-    icon: <TypewriterIcon />,
+    icon: Icons.typewriter,
     link: {
       href: "/portef%C3%B8lje/galleri/typing-effect",
       label: "Se animasjonen her",
-      descriptiveIcon: <EyeIcon />,
+      descriptiveIcon: Icons.eye,
     },
+    external: false,
   },
   {
     title: "Ordrelinje",
-    category: "Komponent",
+    descriptiveLabel: "Komponent",
     description: "Komponent for visning og behandling av ordrelinje",
-    icon: <ListIcon />,
+    icon: Icons.list,
     link: {
       href: "/portef%C3%B8lje/galleri/order-line",
       label: "Se komponenten her",
-      descriptiveIcon: <EyeIcon />,
+      descriptiveIcon: Icons.eye,
     },
+    external: false,
   },
 ];
 

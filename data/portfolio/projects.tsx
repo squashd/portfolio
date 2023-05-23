@@ -1,81 +1,68 @@
-import { ReactElement } from "react";
-import {
-  CoffeeIcon,
-  HjartlandMini,
-  MerkelappenMini,
-} from "../../assets/logos/minilogos";
-import { InfoIcon, LinkIcon, OdinRevisited } from "../../assets/Icons";
-import { GitHubIcon } from "../../assets/SocialIcons";
+import { Project } from "@/components/cards";
+import { Icons } from "@/components/icons";
 
-export type project = {
-  company: string;
-  descriptiveLabel: string;
-  description: string;
-  link: {
-    href: string;
-    label: string;
-    descriptiveIcon: ReactElement<SVGSVGElement>;
-  };
-  logo: ReactElement<SVGSVGElement>;
-};
-
-const featuredProjects: project[] = [
+const featuredProjects: Project[] = [
   {
-    company: "Merkelappen.no",
+    title: "Merkelappen.no",
     descriptiveLabel: "Butikksider",
     description: "Nettbutikk integrert med Avarda Checkout.",
-    logo: <MerkelappenMini />,
+    icon: Icons.merkelappen,
     link: {
       href: "/portef%C3%B8lje/prosjekter/merkelappen-butikk",
       label: "Les mer om prosjektet",
-      descriptiveIcon: <InfoIcon />,
+      descriptiveIcon: Icons.info,
     },
+    external: false,
   },
   {
-    company: "Merkelappen.no",
+    title: "Merkelappen.no",
     descriptiveLabel: "Adminsider",
     description:
       "Adminsider for ordrebehandling og generering av trykkmateriale.",
-    logo: <MerkelappenMini />,
+    icon: Icons.merkelappen,
     link: {
       href: "/portef%C3%B8lje/prosjekter/merkelappen-admin",
       label: "Les mer om prosjektet",
-      descriptiveIcon: <InfoIcon />,
+      descriptiveIcon: Icons.info,
     },
+    external: false,
   },
   {
-    company: "Hjartland",
+    title: "Hjartland",
     descriptiveLabel: "Portefølje",
     description: "Min personlige side, bygget med Next.js og TailwindCSS.",
-    logo: <HjartlandMini />,
+    icon: Icons.miniLogo,
     link: {
       href: "/",
       label: "Tilbake til forsiden?",
-      descriptiveIcon: <LinkIcon />,
+      descriptiveIcon: Icons.link,
     },
+    external: false,
   },
   {
-    company: "iRate",
+    title: "iRate",
     descriptiveLabel: "Rating App",
     description: "En app laget for min far å kunne rate kaffekapsler.",
-    logo: <CoffeeIcon />,
+    icon: Icons.coffee,
     link: {
       href: "https://github.com/SQUASHD/irate",
       label: "Se mer på GitHub",
-      descriptiveIcon: <GitHubIcon />,
+      descriptiveIcon: Icons.github,
     },
+    external: true,
   },
   {
-    company: "Odin Revisited",
+    title: "Odin Revisited",
     descriptiveLabel: "Diverse",
     description:
       "En samling av mindre prosjekter fra The Odin Project gjort på nytt.",
-    logo: <OdinRevisited />,
+    icon: Icons.odin,
     link: {
       href: "https://odin.hjartland.dev",
       label: "Se siden",
-      descriptiveIcon: <LinkIcon />,
+      descriptiveIcon: Icons.link,
     },
+    external: true,
   },
 ];
 
