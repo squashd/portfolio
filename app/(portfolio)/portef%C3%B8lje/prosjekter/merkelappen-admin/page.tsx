@@ -10,7 +10,7 @@ export default function Page() {
         projectInfo={[
           "Like viktig som å lage en god nettside for kundene, er det å lage en god løsning for de som skal håndtere ordrene. Når også betaling må sjekkes gjennom et tredjeparts API, så er det viktig å kunne enkelt sjekke status på betaling.",
         ]}
-        liveUrl={{ isLive: false }}
+        url={{ type: "private" }}
       >
         <section className="py-12">
           <div className="flex flex-col gap-4">

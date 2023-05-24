@@ -4,6 +4,7 @@ import { Icons } from "@/components/icons";
 import { siteConfig } from "@/config/site";
 import Link from "next/link";
 import { WidthWrapperFlex } from "@/components/layouts";
+import * as React from "react";
 
 export default function LandingLayout({
   children,
@@ -13,7 +14,13 @@ export default function LandingLayout({
   return (
     <>
       <WidthWrapperFlex className="fixed z-50 flex h-20 w-full max-w-5xl items-center justify-between py-6">
-        <Link href="/" className="hidden items-center space-x-2 md:flex">
+        <Link
+          href={
+            layoutConfig.mainNav.find((nav) => nav.title === "Hjem")?.href ??
+            "/"
+          }
+          className="hidden items-center space-x-2 md:flex"
+        >
           <Icons.logo className="h-8" />
           <span className="sr-only">{siteConfig.name}</span>
         </Link>

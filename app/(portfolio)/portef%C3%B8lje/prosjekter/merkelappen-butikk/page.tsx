@@ -5,6 +5,7 @@ import sm from "@/assets/images/merkelappen/merkelappen(Tailwind sm).jpg";
 import md from "@/assets/images/merkelappen/merkelappen(Tailwind md).jpg";
 import lg from "@/assets/images/merkelappen/merkelappen_(Tailwind lg).jpg";
 import ProjectPage from "@/components/project-page";
+import { Separator } from "@/components/layouts";
 
 export default function Page() {
   return (
@@ -13,17 +14,17 @@ export default function Page() {
         header="Butikksider for Merkelappen.no"
         subheader="Et moderne design for en moderne butikk."
         projectInfo={[
-          "Høsten 2022 kom merkelappen.no søkende etter hjelp i å fikse en bug i programmet som lager trykkark. Det viste seg imidlertid at løsningen de hadde fått av tidligere utvikler ikke hadde detnødvendige funksjonaliteten som trengtes for å generere estetisk og produksjonsklare trykkark.",
+          "Høsten 2022 kom merkelappen.no søkende etter hjelp i å fikse en bug i programmet som lager trykkark. Det viste seg imidlertid at løsningen de hadde fått av tidligere utvikler ikke hadde den nødvendige funksjonaliteten som trengtes for å generere estetisk og produksjonsklare trykkark.",
           "Sidene var bygget med Wordpress og Woocommerce, men var både trege og ikke-responsive. Når det ble klart at det måtte lages et nytt og skreddersydd program så ble jeg også bedt om å redesigne sidene. De er nå bygget med NextJS og er både raske og responsive.",
         ]}
-        liveUrl={{
-          isLive: true,
-          url: "https://merkelappen.no",
+        url={{
+          type: "live",
+          href: "https://merkelappen.no",
           label: "merkelappen.no",
         }}
         duration="NOV 2022 - NÅ"
       >
-        <section className="py-12">
+        <Separator>
           <div className="flex flex-wrap justify-center gap-8">
             <div className="flex-shrink-0 overflow-hidden rounded-lg">
               <Image
@@ -62,7 +63,7 @@ export default function Page() {
               />
             </div>
           </div>
-        </section>
+        </Separator>
       </ProjectPage>
     </>
   );

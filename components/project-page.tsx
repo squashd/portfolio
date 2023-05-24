@@ -7,18 +7,18 @@ interface SimpleProjectPageProps {
   duration?: string;
   children: React.ReactNode;
   projectInfo: string[];
-  liveUrl: {
-    isLive: boolean;
-    url?: string;
-    label?: string;
-  };
+  url:
+    | { type: "live"; label: string; href: string }
+    | {
+        type: "private";
+      };
 }
 export default function ProjectPage({
   header,
   subheader,
   children,
   projectInfo,
-  liveUrl,
+  url,
 }: SimpleProjectPageProps) {
   return (
     <>
@@ -36,16 +36,16 @@ export default function ProjectPage({
           </div>
           <div className="flex flex-col gap-4">
             <h3 className="text-lg font-semibold">Hvor kan jeg se siden?</h3>
-            {liveUrl.isLive ? (
+            {url.type === "live" ? (
               <p className="">
                 Sidene er live på{" "}
                 <a
-                  href={liveUrl.url}
+                  href={url.href}
                   className="group relative inline-block text-color transition duration-300"
                   rel="noreferrer noopener"
                   target="_blank"
                 >
-                  {liveUrl.label}
+                  {url.label}
                   <span className="relative bottom-1 block h-[1px] max-w-0 bg-color transition-all duration-500 group-hover:max-w-full"></span>
                 </a>
                 .

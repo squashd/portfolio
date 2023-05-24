@@ -3,18 +3,20 @@ import { LayoutConfig } from "@/types";
 export const layoutConfig: LayoutConfig = {
   mainNav: [
     {
+      title: "Hjem",
+      href: "/?section=start",
+    },
+    {
       title: "Portefølje",
       href: "/portefølje",
     },
     {
       title: "Kontakt",
-      href: "/#kontakt",
-      anchor: true,
+      href: "/?section=kontakt",
     },
     {
       title: "Mer om meg",
-      href: "/#om-meg",
-      anchor: true,
+      href: "/?section=om-meg",
     },
   ],
 };

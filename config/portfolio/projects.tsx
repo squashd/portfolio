@@ -40,7 +40,7 @@ const featuredProjects: Project[] = [
     description: "Min personlige side, bygget med Next.js og TailwindCSS.",
     icon: Icons.miniLogo,
     links: {
-      external: {
+      internal: {
         href: "/",
         label: "Tilbake til forsiden?",
         icon: Icons.link,
@@ -65,7 +65,7 @@ const featuredProjects: Project[] = [
       },
       external: {
         href: "https://irate.no",
-        label: "Se siden",
+        label: "Se irate-applikasjonen live",
         icon: Icons.link,
       },
     },
@@ -84,7 +84,7 @@ const featuredProjects: Project[] = [
       },
       external: {
         href: "https://odin.hjartland.dev",
-        label: "Se siden",
+        label: "Se sidene til Odin Revisited",
         icon: Icons.link,
       },
     },

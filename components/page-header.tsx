@@ -23,7 +23,7 @@ export const PageHeader = (props: PageHeaderProps) => {
         "pb-12 pt-24"
       )}
     >
-      <h1 className="font-heading text-4xl font-bold tracking-tight sm:text-5xl">
+      <h1 className="font-heading text-4xl font-bold sm:text-5xl">
         {props.header}
       </h1>
       <p className="mt-6 max-w-2xl text-base">{props.subheader}</p>

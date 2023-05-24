@@ -1,6 +1,6 @@
 import { featuredGallery } from "@/config/portfolio/gallery";
-import ProjectCard from "@/components/cards";
-import { SimplePageLayout } from "@/components/layouts";
+import { ProjectCard } from "@/components/cards";
+import { CardGrid, SimplePageLayout } from "@/components/layouts";
 
 const galleryItemList = featuredGallery;
 
@@ -20,11 +20,11 @@ export default function Galleri() {
     >
       <section className="mx-auto max-w-5xl">
         <h2 className="mb-4 text-3xl font-bold">Animasjoner og komponenter</h2>
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <CardGrid>
           {galleryItemList.map((galleryItem, index) => (
             <ProjectCard type="ProjectCard" key={index} project={galleryItem} />
           ))}
-        </div>
+        </CardGrid>
       </section>
     </SimplePageLayout>
   );

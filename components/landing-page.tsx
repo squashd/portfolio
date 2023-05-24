@@ -24,6 +24,7 @@ import {
   TypeScriptLogo,
 } from "@/assets/logos/logos";
 import { FancyLink } from "@/components/formatting";
+import { TooltipServer } from "@/components/tooltip";
 
 const InterSectionConfig = {
   root: null,
@@ -55,6 +56,7 @@ export const Intro = () => {
 
   return (
     <section
+      id="start"
       ref={introRef}
       className="flex min-h-full shrink-0 snap-center flex-col items-center justify-center text-left"
     >
@@ -133,12 +135,14 @@ export const Kontakt = () => {
                 type="external"
                 href="mailto:daniel@hjartland.com"
                 text="daniel@hjartland.com"
+                tooltip="Send meg en epost"
               />
               , eller ring meg på telefon:{" "}
               <FancyLink
                 type="external"
                 href="tel:94174754"
                 text="941 74 754"
+                tooltip="Ring meg"
               />
             </p>
             <div className="flex flex-col items-center gap-4">
@@ -213,13 +217,15 @@ export const AboutMe = () => {
           >
             <p className="text-left">
               Jeg har vært{" "}
-              <button
-                onClick={() => handleSquashClick()}
-                className="group relative inline-block text-color transition duration-300"
-              >
-                aktiv squashspiller.
-                <span className="relative bottom-1 block h-[1px] max-w-0 bg-color transition-all duration-500 group-hover:max-w-full"></span>
-              </button>{" "}
+              <TooltipServer tooltip="Se meg som squashspiller">
+                <button
+                  onClick={() => handleSquashClick()}
+                  className="group relative inline-block text-color transition duration-300"
+                >
+                  aktiv squashspiller.
+                  <span className="relative bottom-1 block h-[1px] max-w-0 bg-color transition-all duration-500 group-hover:max-w-full"></span>
+                </button>
+              </TooltipServer>{" "}
               Jeg har konkurrert i Europa som juniorspiller, og spilte på
               førstelaget ved Heriot-Watt University hvor jeg studerte
               matematikk.
@@ -231,14 +237,16 @@ export const AboutMe = () => {
             </p>
             <p className="text-left">
               Jeg er alltid ivrig etter å lære noe nytt og ta på meg{" "}
-              <button
-                onClick={() => handleSnowBoardClick()}
-                className="group relative inline-block text-color transition duration-300"
-              >
-                {" "}
-                nye utfordringer{" "}
-                <span className="relative bottom-1 block h-[1px] max-w-0 bg-color transition-all duration-500 group-hover:max-w-full"></span>
-              </button>
+              <TooltipServer tooltip={"Se meg ta nye utfordringer"}>
+                <button
+                  onClick={() => handleSnowBoardClick()}
+                  className="group relative inline-block text-color transition duration-300"
+                >
+                  {" "}
+                  nye utfordringer{" "}
+                  <span className="relative bottom-1 block h-[1px] max-w-0 bg-color transition-all duration-500 group-hover:max-w-full"></span>
+                </button>
+              </TooltipServer>
               . Jeg trives best når jeg gjør noe jeg aldri har gjort før.
             </p>
           </div>
@@ -339,8 +347,8 @@ export const Projects = () => {
               anbefaler jeg deg å se{" "}
               <FancyLink
                 href={"/portef%C3%B8lje"}
+                type="external"
                 text="porteføljen min"
-                type="internal"
               />
               .
             </p>
@@ -348,7 +356,7 @@ export const Projects = () => {
               Jeg har jobbet med{" "}
               <FancyLink
                 href={"/portef%C3%B8lje/prosjekter/merkelappen-butikk"}
-                type="internal"
+                type="external"
                 text="nettbutikk"
               />
               , satt opp{" "}
@@ -424,30 +432,36 @@ export const Tools = () => {
               Frontend
             </h3>
             <div className="flex gap-8">
-              <a
-                aria-label="Mer om tailwindcss"
-                href="https://tailwindcss.com/"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <TailwindLogo className="aspect-square h-10 transition hover:text-color sm:h-12 md:h-14" />
-              </a>
-              <a
-                aria-label="Mer om Typescript"
-                href="https://www.typescriptlang.org/"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <TypeScriptLogo className="aspect-square h-10 transition hover:text-color sm:h-12 md:h-14" />
-              </a>
-              <a
-                aria-label="Mer om NextJS"
-                href="https://nextjs.org/"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <NextJSLogo className="aspect-square h-10 transition hover:text-color sm:h-12 md:h-14" />
-              </a>
+              <TooltipServer tooltip="Les mer om TailwindCSS">
+                <a
+                  aria-label="Mer om tailwindcss"
+                  href="https://tailwindcss.com/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <TailwindLogo className="aspect-square h-10 transition hover:text-color sm:h-12 md:h-14" />
+                </a>
+              </TooltipServer>
+              <TooltipServer tooltip="Les mer om TypeScript">
+                <a
+                  aria-label="Mer om Typescript"
+                  href="https://www.typescriptlang.org/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <TypeScriptLogo className="aspect-square h-10 transition hover:text-color sm:h-12 md:h-14" />
+                </a>
+              </TooltipServer>
+              <TooltipServer tooltip="Les mer om NextJS">
+                <a
+                  aria-label="Mer om NextJS"
+                  href="https://nextjs.org/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <NextJSLogo className="aspect-square h-10 transition hover:text-color sm:h-12 md:h-14" />
+                </a>
+              </TooltipServer>
             </div>
           </div>
           <div className="sm group flex w-full flex-col items-center gap-4 rounded-lg px-4 py-4 sm:py-2">
@@ -455,30 +469,36 @@ export const Tools = () => {
               Backend
             </h3>
             <div className="flex gap-8">
-              <a
-                aria-label="Mer om MongoDB"
-                href="https://www.mongodb.com/"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <MongoDBLogo className="aspect-square h-10 transition hover:text-color sm:h-12 md:h-14" />
-              </a>
-              <a
-                aria-label="Mer om Prisma"
-                href="https://www.prisma.io/"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <PrismaLogo className="aspect-square h-10 transition hover:text-color sm:h-12 md:h-14" />
-              </a>
-              <a
-                aria-label="Mer om MySQL"
-                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <MySQLLogo className="aspect-square h-10 transition hover:text-color sm:h-12 md:h-14" />
-              </a>
+              <TooltipServer tooltip="Les mer om MongoDB">
+                <a
+                  aria-label="Mer om MongoDB"
+                  href="https://www.mongodb.com/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <MongoDBLogo className="aspect-square h-10 transition hover:text-color sm:h-12 md:h-14" />
+                </a>
+              </TooltipServer>
+              <TooltipServer tooltip="Les mer om Prisma">
+                <a
+                  aria-label="Mer om Prisma"
+                  href="https://www.prisma.io/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <PrismaLogo className="aspect-square h-10 transition hover:text-color sm:h-12 md:h-14" />
+                </a>
+              </TooltipServer>
+              <TooltipServer tooltip="Er du sikker på dette?">
+                <a
+                  aria-label="Mer om MySQL"
+                  href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <MySQLLogo className="aspect-square h-10 transition hover:text-color sm:h-12 md:h-14" />
+                </a>
+              </TooltipServer>
             </div>
           </div>
         </div>

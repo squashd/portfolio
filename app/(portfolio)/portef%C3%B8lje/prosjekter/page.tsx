@@ -1,6 +1,6 @@
 import { featuredProjects } from "@/config/portfolio/projects";
-import ProjectCard from "@/components/cards";
-import { SimplePageLayout } from "@/components/layouts";
+import { ProjectCard } from "@/components/cards";
+import { CardGrid, SimplePageLayout } from "@/components/layouts";
 import { H2 } from "@/components/page-header";
 
 export const metadata = {
@@ -8,7 +8,6 @@ export const metadata = {
   description: "Ting og tang jeg har laget.",
 };
 
-// TODO: Add more prosjekter once polished
 const projectsList = featuredProjects;
 
 export default async function Projects() {
@@ -21,11 +20,11 @@ export default async function Projects() {
             er mest fornøyd med."
       >
         <H2 header="Prosjekter og applikasjoner" />
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <CardGrid>
           {projectsList.map((project, index) => (
             <ProjectCard type="ProjectCard" key={index} project={project} />
           ))}
-        </div>
+        </CardGrid>
       </SimplePageLayout>
     </>
   );

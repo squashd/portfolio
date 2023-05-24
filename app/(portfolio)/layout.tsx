@@ -14,7 +14,13 @@ export default function RootLayout({
   return (
     <>
       <WidthWrapperFlex className="z-50 flex h-20 w-full items-center justify-between py-6">
-        <Link href="/" className="hidden items-center space-x-2 md:flex">
+        <Link
+          href={
+            layoutConfig.mainNav.find((nav) => nav.title === "Hjem")?.href ??
+            "/"
+          }
+          className="hidden items-center space-x-2 md:flex"
+        >
           <Icons.logo className="h-8" />
           <span className="sr-only">{siteConfig.name}</span>
         </Link>

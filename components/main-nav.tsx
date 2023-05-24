@@ -2,17 +2,13 @@
 
 import * as React from "react";
 import Link from "next/link";
-import {
-  useSelectedLayoutSegment,
-  useSelectedLayoutSegments,
-} from "next/navigation";
+import { useSelectedLayoutSegments } from "next/navigation";
 
 import { MainNavItem } from "@/types";
 import { cn } from "@/lib/utils";
 import { Icons } from "@/components/icons";
 import { MobileNav } from "@/components/mobile-nav";
 import { ModeToggle } from "@/components/mode-toggle";
-import { siteConfig } from "@/config/site";
 
 interface MainNavProps {
   items?: MainNavItem[];
@@ -61,7 +57,6 @@ export const BreadCrumb = () => {
 };
 
 export const MainNav = ({ items, children }: MainNavProps) => {
-  const segment = useSelectedLayoutSegment();
   const [showMobileMenu, setShowMobileMenu] = React.useState<boolean>(false);
 
   return (
@@ -76,9 +71,7 @@ export const MainNav = ({ items, children }: MainNavProps) => {
                   href={item.disabled ? "#" : item.href}
                   className={cn(
                     "flex items-center text-lg font-medium transition-colors hover:text-slate-950 dark:hover:text-slate-50/80 sm:text-sm",
-                    item.href.startsWith(`/${decodeURI(segment!)}`)
-                      ? "text-slate-950 dark:text-slate-50"
-                      : "text-slate-950/70 dark:text-slate-50/60",
+                    "text-slate-950/70 dark:text-slate-50/60",
                     item.disabled && "cursor-not-allowed opacity-80"
                   )}
                 >
@@ -91,9 +84,7 @@ export const MainNav = ({ items, children }: MainNavProps) => {
                 href={item.disabled ? "#" : item.href}
                 className={cn(
                   "flex items-center text-lg font-medium transition-colors hover:text-slate-950 dark:hover:text-slate-50/80 sm:text-sm",
-                  item.href.startsWith(`/${decodeURI(segment!)}`)
-                    ? "text-slate-950 dark:text-slate-50"
-                    : "text-slate-950/70 dark:text-slate-50/60",
+                  "text-slate-950/70 dark:text-slate-50/60",
                   item.disabled && "cursor-not-allowed opacity-80"
                 )}
               >

@@ -46,15 +46,32 @@ export type ProjectLink = {
   label: string;
   icon: Icon;
 };
+
 export type Project = {
   title: string;
   descriptiveLabel: string;
   description: string;
   icon: Icon;
   links?: {
-    github?: ProjectLink;
-    external?: ProjectLink;
-    internal?: ProjectLink;
-    readMore?: ProjectLink;
+    github?: {
+      href: string;
+      label: "Se mer på GitHub";
+      icon: Icons.github;
+    };
+    external?: {
+      href: string;
+      label: string;
+      icon: Icons.link;
+    };
+    internal?: {
+      href: string;
+      label: string;
+      icon: Icons.link;
+    };
+    readMore?: {
+      href: string;
+      label: "Les mer om prosjektet";
+      icon: Icons.book;
+    };
   };
 };

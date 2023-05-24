@@ -1,8 +1,8 @@
 import { featuredGallery } from "./galleri/page";
 import { featuredProjects } from "./prosjekter/page";
-import ProjectCard from "../../../components/cards";
+import { ProjectCard } from "@/components/cards";
 import { H2Link, PageHeader } from "@/components/page-header";
-import { Separator, WidthWrapperMargins } from "@/components/layouts";
+import { CardGrid, Separator, WidthWrapperMargins } from "@/components/layouts";
 
 export const metadata = {
   title: "Portefølje",
@@ -21,15 +21,15 @@ export default async function Projects() {
         />
         <Separator>
           <H2Link header="Prosjekter" href="/portef%C3%B8lje/prosjekter" />
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <CardGrid>
             {featuredProjects.map((project, index) => (
-              <ProjectCard type="ProjectCard" key={index} project={project} />
+              <ProjectCard key={index} project={project} type="ProjectCard" />
             ))}
-          </div>
+          </CardGrid>
         </Separator>
         <Separator>
           <H2Link header="Galleri" href="/portef%C3%B8lje/galleri" />
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <CardGrid>
             {featuredGallery.map((galleryItem, index) => (
               <ProjectCard
                 type="ProjectCard"
@@ -37,7 +37,7 @@ export default async function Projects() {
                 project={galleryItem}
               />
             ))}
-          </div>
+          </CardGrid>
         </Separator>
       </WidthWrapperMargins>
     </>

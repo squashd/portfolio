@@ -1,5 +1,6 @@
 import { featuredGames } from "@/config/portfolio/games";
-import ProjectCard from "@/components/cards";
+import { ProjectCard } from "@/components/cards";
+import { CardGrid } from "@/components/layouts";
 
 const gamesList = featuredGames;
 
@@ -24,11 +25,11 @@ export default function GamesPage() {
           </p>
         </header>
         <section className="mx-auto max-w-5xl">
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <CardGrid>
             {gamesList.map((game, index) => (
               <ProjectCard type="ProjectCard" key={index} project={game} />
             ))}
-          </div>
+          </CardGrid>
         </section>
       </div>
     </>

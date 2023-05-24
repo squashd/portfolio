@@ -43,3 +43,9 @@ export const SimplePageLayout = ({
 export const Separator = ({ children }: { children: React.ReactNode }) => (
   <section className="py-6">{children}</section>
 );
+
+export const CardGrid = ({ children }: { children: React.ReactNode }) => (
+  <div className="grid grid-cols-1 gap-4 gap-x-6 sm:grid-cols-2 lg:grid-cols-3">
+    {children}
+  </div>
+);
