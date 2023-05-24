@@ -95,6 +95,7 @@ export const Intro = () => {
               type="external"
               href="https://www.merkelappen.no"
               text="Merkelappen.no"
+              tooltip="Live-sidene til Merkelappen.no"
             />
             .
           </p>
@@ -274,6 +275,7 @@ export const Projects = () => {
                 href={"/portef%C3%B8lje"}
                 type="internal"
                 text="porteføljen min"
+                tooltip="Sjekk den da vel"
               />
               .
             </p>
@@ -283,12 +285,14 @@ export const Projects = () => {
                 href={"/portef%C3%B8lje/prosjekter/merkelappen-butikk"}
                 type="external"
                 text="nettbutikk"
+                tooltip="Les mer om prosjektet"
               />
               , satt opp{" "}
               <FancyLink
                 href={"/portef%C3%B8lje/prosjekter/merkelappen-admin"}
                 type="internal"
                 text="admin-panel"
+                tooltip="Les mer om prosjektet"
               />{" "}
               for ordrebehandling, jobbet med diverse integrasjoner, og holder
               på å utvikle en app for{" "}
@@ -296,6 +300,7 @@ export const Projects = () => {
                 href={"https://github.com/squashd/irate"}
                 type="external"
                 text="produkt-rating"
+                tooltip="Se koden på GitHub"
               />
               .
             </p>
