@@ -1,5 +1,12 @@
 import OrderExample from "@/components/project-components";
 import ProjectPage from "@/components/project-page";
+import {
+  BuzzWord,
+  H2,
+  P,
+  ParagraphsContainer,
+  Separator,
+} from "@/components/layouts";
 
 export default function Page() {
   return (
@@ -7,28 +14,64 @@ export default function Page() {
       <ProjectPage
         header="Adminsider for Merkelappen.no"
         subheader="Enkel ordrebehandling for merkelappen.no"
-        projectInfo={[
-          "Like viktig som å lage en god nettside for kundene, er det å lage en god løsning for de som skal håndtere ordrene. Når også betaling må sjekkes gjennom et tredjeparts API, så er det viktig å kunne enkelt sjekke status på betaling.",
-        ]}
         url={{ type: "private" }}
       >
-        <section className="py-12">
-          <div className="flex flex-col gap-4">
-            <h3 className="text-lg font-semibold">Eksempel komponent</h3>
+        <Separator>
+          <H2>Kort teknisk.</H2>
+          <ParagraphsContainer>
+            <P>
+              Frontend er bygget på <BuzzWord>NextJS</BuzzWord> og{" "}
+              <BuzzWord>TailwindCSS</BuzzWord>, <BuzzWord>MySQL</BuzzWord>{" "}
+              databasen i backend er koblet til frontend med{" "}
+              <BuzzWord>REST&nbsp;API</BuzzWord> bygget på NextJS sine API-ruter
+              og <BuzzWord>Prisma</BuzzWord> som ORM.
+            </P>
+            <P>
+              Det er satt i bruk <BuzzWord>CRON</BuzzWord> tjener for å håndtere
+              oppdatering av ordrestatus, samt automatisk sende
+              ordrebekreftelse. Automatisk <BuzzWord>loggføring</BuzzWord> av
+              alle hendelser, samt <BuzzWord>automatisk varsling</BuzzWord>{" "}
+              dersom noe går galt.
+            </P>
+            <P>
+              Jeg ønsket et dynamisk, rask og intuitiv{" "}
+              <BuzzWord>brukergrensesnitt</BuzzWord>, hvor man ikke kunne for
+              eksempel sende emailbekreftelse før ordren var ferdig behandlet,
+              eller endre status på en ordre som allerede var ferdig behandlet
+              og andre med integreringen.
+            </P>
+          </ParagraphsContainer>
+        </Separator>
+        <Separator>
+          <H2>Eksempel komponent</H2>
+          <Separator>
             <OrderExample />
-            <p className="">
+          </Separator>
+          <ParagraphsContainer>
+            <P>
               Et irritasjonsmoment for meg er når det ikke er tydelig når man
               trykker på en knapp at det skjer noe dersom en backendprosess er
               iverksatt. Derfor har jeg lagt til en spinner som vises når
               trykkark genereres, med dynamisk tekst som endres etterhvert som
               prosessen går fremover.
-            </p>
-            <p>
+            </P>
+            <P>
               Fordi ting kan gå galt under trykkprossessen, så fjernes ikke
               knappen før ordren er ferdig behandlet.
-            </p>
-          </div>
-        </section>
+            </P>
+          </ParagraphsContainer>
+        </Separator>
+        <Separator>
+          <H2>Om prosjektet</H2>
+          <ParagraphsContainer>
+            <P>
+              Like viktig som å lage en god nettside for kundene, er det å lage
+              en god løsning for de som skal håndtere ordrene. Når også betaling
+              må sjekkes gjennom et tredjeparts API, så er det viktig å kunne
+              enkelt sjekke status på betaling.
+            </P>
+          </ParagraphsContainer>
+        </Separator>
       </ProjectPage>
     </>
   );

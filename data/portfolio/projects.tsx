@@ -13,6 +13,8 @@ const featuredProjects: Project[] = [
       { tag: "Fullstack", weight: 120 },
       { tag: "Integrasjon", weight: 50 },
       { tag: "Backend", weight: 70 },
+      { tag: "Prisma", weight: 20 },
+      { tag: "MySQL", weight: 40 },
     ],
     links: {
       readMore: {
@@ -24,6 +26,37 @@ const featuredProjects: Project[] = [
         href: "https://merkelappen.no",
         label: "Se merkelappen live",
         icon: "link",
+      },
+    },
+  },
+  {
+    title: "iRate",
+    descriptiveLabel: "Rating App",
+    description: "En app laget for min far å kunne rate kaffekapsler.",
+    icon: "coffee",
+    tags: [
+      { tag: "NextJS", weight: 10 },
+      { tag: "TailwindCSS", weight: 10 },
+      { tag: "TypeScript", weight: 10 },
+      { tag: "Backend", weight: 8 },
+      { tag: "Frontend", weight: 3 },
+      { tag: "Fullstack", weight: 10 },
+    ],
+    links: {
+      github: {
+        href: "https://github.com/SQUASHD/irate",
+        label: "Se mer på GitHub",
+        icon: "github",
+      },
+      external: {
+        href: "https://irate.no",
+        label: "Se irate-applikasjonen live",
+        icon: "link",
+      },
+      readMore: {
+        href: "/portef%C3%B8lje/prosjekter/irate",
+        label: "Les mer om prosjektet",
+        icon: "book",
       },
     },
   },
@@ -71,32 +104,6 @@ const featuredProjects: Project[] = [
         href: "https://github.com/SQUASHD/portfolio",
         label: "Se mer på GitHub",
         icon: "github",
-      },
-    },
-  },
-  {
-    title: "iRate",
-    descriptiveLabel: "Rating App",
-    description: "En app laget for min far å kunne rate kaffekapsler.",
-    icon: "coffee",
-    tags: [
-      { tag: "NextJS", weight: 10 },
-      { tag: "TailwindCSS", weight: 10 },
-      { tag: "TypeScript", weight: 10 },
-      { tag: "Backend", weight: 8 },
-      { tag: "Frontend", weight: 3 },
-      { tag: "Fullstack", weight: 10 },
-    ],
-    links: {
-      github: {
-        href: "https://github.com/SQUASHD/irate",
-        label: "Se mer på GitHub",
-        icon: "github",
-      },
-      external: {
-        href: "https://irate.no",
-        label: "Se irate-applikasjonen live",
-        icon: "link",
       },
     },
   },

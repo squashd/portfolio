@@ -78,7 +78,7 @@ export default function OrderExample() {
         <tr>
           <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium sm:pl-6 lg:pl-8">
             <div
-              className={`${processingStateClassName} flex w-32 items-center justify-center rounded-lg p-2 font-bold`}
+              className={`${processingStateClassName} flex h-9 w-32 cursor-default items-center justify-center rounded-lg p-2 font-bold`}
             >
               <span className="bold uppercase text-white">
                 {processingState}
@@ -98,6 +98,7 @@ export default function OrderExample() {
           <td className="relative whitespace-nowrap py-4 pl-3 text-right text-sm font-medium">
             <div className="flex w-28 items-center justify-center">
               <Button
+                size="sm"
                 onClick={() => void handleProcessing()}
                 disabled={isProcessing}
                 className={cn(

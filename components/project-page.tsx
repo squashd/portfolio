@@ -6,7 +6,6 @@ interface SimpleProjectPageProps {
   subheader: string;
   duration?: string;
   children: React.ReactNode;
-  projectInfo: string[];
   url:
     | { type: "live"; label: string; href: string }
     | {
@@ -17,7 +16,6 @@ export default function ProjectPage({
   header,
   subheader,
   children,
-  projectInfo,
   url,
 }: SimpleProjectPageProps) {
   return (
@@ -26,14 +24,6 @@ export default function ProjectPage({
         <PageHeader type="Project" header={header} subheader={subheader} />
         {children}
         <section className="flex flex-col gap-12 pb-16">
-          <div className="flex flex-col gap-4">
-            <h2 className="text-2xl font-bold">Om prosjektet</h2>
-            {projectInfo.map((paragraph, index) => (
-              <p key={index} className="">
-                {paragraph}
-              </p>
-            ))}
-          </div>
           <div className="flex flex-col gap-4">
             <h3 className="text-lg font-semibold">Hvor kan jeg se siden?</h3>
             {url.type === "live" ? (

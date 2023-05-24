@@ -35,8 +35,8 @@ export const PageHeader = (props: PageHeaderProps) => {
   );
 };
 
-export const H2 = ({ header }: { header: string }) => (
-  <h2 className="mb-4 font-heading text-3xl">{header}</h2>
+export const H2 = ({ children }: { children: React.ReactNode }) => (
+  <h2 className="mb-4 font-heading text-3xl">{children}</h2>
 );
 export const H2Link = ({ header, href }: { header: string; href: string }) => (
   <Link
@@ -92,11 +92,11 @@ export const SimplePageLayout = ({
   );
 };
 
-export const Separator = ({ children }: { children?: React.ReactNode }) => (
+export const Separator = ({ children }: Wrapper) => (
   <div className="py-6">{children}</div>
 );
 
-export const CardGrid = ({ children }: { children: React.ReactNode }) => (
+export const CardGrid = ({ children }: Wrapper) => (
   <div className="grid grid-cols-1 gap-4 gap-x-6 sm:grid-cols-2 lg:grid-cols-3">
     {children}
   </div>
@@ -110,4 +110,18 @@ export const LoadingSkeleton = () => (
     </div>
     <Skeleton className="h-48 w-full" />
   </WidthWrapperFlex>
+);
+
+export const BuzzWord = ({ children }: Wrapper) => (
+  <span className="cursor-default font-medium text-black underline underline-offset-4 transition hover:text-color dark:text-slate-50 dark:hover:text-color">
+    {children}
+  </span>
+);
+
+export const ParagraphsContainer = ({ children }: Wrapper) => (
+  <div className="space-y-2 text-muted-foreground">{children}</div>
+);
+
+export const P = ({ children }: Wrapper) => (
+  <p className="leading-relaxed">{children}</p>
 );

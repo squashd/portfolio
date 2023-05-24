@@ -34,7 +34,7 @@ function ButtonLink(props: ButtonLinkProps) {
     <Link
       href={props.href}
       target={target}
-      className="group flex h-full w-full items-center justify-center rounded-lg bg-white/60 transition hover:bg-white/90 dark:bg-slate-300 dark:hover:bg-slate-400"
+      className="group flex h-full w-full items-center justify-center rounded-lg bg-white/60 transition hover:bg-white/90 dark:bg-slate-400 dark:hover:bg-slate-200"
     >
       <Icon className="h-4 text-slate-800" />
       <span className="sr-only">{props.label}</span>
@@ -69,16 +69,14 @@ export const ProjectCard = (props: ProjectCardProps) => {
     <SpotLightEffect>
       <Card className="group/card relative flex  h-full flex-col gap-2 px-4 pt-6 transition-all ease-in-out hover:cursor-default">
         <CardHeader className="flex w-full flex-col p-0">
-          <div className="flex flex-row items-center gap-2 leading-tight group-hover/card:text-white">
-            <div className="flex aspect-square h-12 w-12 items-center justify-center rounded-full border-2 border-black p-2 group-hover/card:border-white group-hover/card:text-white dark:border-slate-200  dark:group-hover/card:border-sky-400 dark:group-hover/card:text-sky-400">
-              <Icon className="h-8" />
+          <div className="flex flex-row items-center gap-2 leading-tight text-black dark:text-slate-50">
+            <div className="flex aspect-square h-12 w-12 items-center justify-center rounded-full border-2 border-black p-2 dark:border-slate-200">
+              <Icon className="h-8 text-black dark:text-slate-50" />
             </div>
 
             <h2>
               {project.title}
-              <span className="font-medium dark:group-hover/card:text-sky-400">
-                / {project.descriptiveLabel}
-              </span>
+              <span className="font-medium">/ {project.descriptiveLabel}</span>
             </h2>
           </div>
           <p className="">{project.description}</p>
@@ -105,16 +103,6 @@ export const ProjectCard = (props: ProjectCardProps) => {
                 />
               </TooltipServer>
             )}
-            {links?.github && (
-              <TooltipServer tooltip={links.github.label}>
-                <ButtonLink
-                  type="external"
-                  href={links.github.href}
-                  label={links.github.label}
-                  icon={links.github.icon}
-                />
-              </TooltipServer>
-            )}
             {links?.readMore && (
               <TooltipServer tooltip={links.readMore.label}>
                 <ButtonLink
@@ -122,6 +110,16 @@ export const ProjectCard = (props: ProjectCardProps) => {
                   href={links.readMore.href}
                   label={links.readMore.label}
                   icon={links.readMore.icon}
+                />
+              </TooltipServer>
+            )}
+            {links?.github && (
+              <TooltipServer tooltip={links.github.label}>
+                <ButtonLink
+                  type="external"
+                  href={links.github.href}
+                  label={links.github.label}
+                  icon={links.github.icon}
                 />
               </TooltipServer>
             )}

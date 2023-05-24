@@ -19,4 +19,6 @@ export const Tags = {
   Database: "Database",
   Animasjon: "Animasjon",
   Sideprosjekt: "Sideprosjekt",
+  MySQL: "MySQL",
+  Prisma: "Prisma",
 } as const;
