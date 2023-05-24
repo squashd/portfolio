@@ -24,6 +24,8 @@ import {
   Github,
   Coffee,
   BookOpen,
+  Plus,
+  Minus,
   Icon as LucideIcon,
 } from "lucide-react";
 
@@ -51,4 +53,6 @@ export const Icons = {
   merkelappen: MerkelappenMini,
   wordle: WordleMini,
   book: BookOpen,
+  plus: Plus,
+  minus: Minus,
 };

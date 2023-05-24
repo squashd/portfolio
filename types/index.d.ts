@@ -1,4 +1,5 @@
 import { Icon, Icons } from "@/components/icons";
+import { Tags } from "@/data/projects";
 
 export type NavItem = {
   title: string;
@@ -52,6 +53,10 @@ export type Project = {
   descriptiveLabel: string;
   description: string;
   icon: keyof typeof Icons;
+  tags: {
+    tag: keyof typeof Tags;
+    weight: number;
+  }[];
   links?: {
     github?: {
       href: string;

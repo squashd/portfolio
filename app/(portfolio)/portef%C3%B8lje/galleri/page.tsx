@@ -1,4 +1,4 @@
-import { featuredGallery } from "@/config/portfolio/gallery";
+import { featuredGallery } from "@/data/portfolio/gallery";
 import { ProjectCard } from "@/components/cards";
 import { CardGrid, SimplePageLayout } from "@/components/layouts";
 

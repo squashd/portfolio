@@ -6,6 +6,14 @@ const featuredProjects: Project[] = [
     descriptiveLabel: "Butikksider",
     description: "Nettbutikk integrert med Avarda Checkout.",
     icon: "merkelappen",
+    tags: [
+      { tag: "NextJS", weight: 100 },
+      { tag: "TailwindCSS", weight: 70 },
+      { tag: "TypeScript", weight: 100 },
+      { tag: "Fullstack", weight: 120 },
+      { tag: "Integrasjon", weight: 50 },
+      { tag: "Backend", weight: 70 },
+    ],
     links: {
       readMore: {
         href: "/portef%C3%B8lje/prosjekter/merkelappen-butikk",
@@ -25,6 +33,14 @@ const featuredProjects: Project[] = [
     description:
       "Adminsider for ordrebehandling og generering av trykkmateriale.",
     icon: "merkelappen",
+    tags: [
+      { tag: "NextJS", weight: 60 },
+      { tag: "TailwindCSS", weight: 40 },
+      { tag: "TypeScript", weight: 50 },
+      { tag: "Fullstack", weight: 60 },
+      { tag: "Integrasjon", weight: 80 },
+      { tag: "Backend", weight: 100 },
+    ],
     links: {
       readMore: {
         href: "/portef%C3%B8lje/prosjekter/merkelappen-admin",
@@ -38,6 +54,13 @@ const featuredProjects: Project[] = [
     descriptiveLabel: "Portefølje",
     description: "Min personlige side, bygget med Next.js og TailwindCSS.",
     icon: "miniLogo",
+    tags: [
+      { tag: "NextJS", weight: 20 },
+      { tag: "TailwindCSS", weight: 70 },
+      { tag: "TypeScript", weight: 100 },
+      { tag: "Frontend", weight: 100 },
+      { tag: "Design", weight: 100 },
+    ],
     links: {
       internal: {
         href: "/",
@@ -56,6 +79,14 @@ const featuredProjects: Project[] = [
     descriptiveLabel: "Rating App",
     description: "En app laget for min far å kunne rate kaffekapsler.",
     icon: "coffee",
+    tags: [
+      { tag: "NextJS", weight: 10 },
+      { tag: "TailwindCSS", weight: 10 },
+      { tag: "TypeScript", weight: 10 },
+      { tag: "Backend", weight: 8 },
+      { tag: "Frontend", weight: 3 },
+      { tag: "Fullstack", weight: 10 },
+    ],
     links: {
       github: {
         href: "https://github.com/SQUASHD/irate",
@@ -75,6 +106,14 @@ const featuredProjects: Project[] = [
     description:
       "En samling av mindre prosjekter fra The Odin Project gjort på nytt.",
     icon: "odin",
+    tags: [
+      { tag: "NextJS", weight: 10 },
+      { tag: "TailwindCSS", weight: 10 },
+      { tag: "TypeScript", weight: 10 },
+      { tag: "Frontend", weight: 10 },
+      { tag: "CMS", weight: 3 },
+      { tag: "Sideprosjekt", weight: 2 },
+    ],
     links: {
       github: {
         href: "https://github.com/SQUASHD/odin-revisited",

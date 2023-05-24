@@ -9,6 +9,9 @@ import { Project } from "@/types";
 import { TooltipServer } from "@/components/tooltip";
 import { Icon, Icons } from "@/components/icons";
 import { SpotLightEffect } from "@/components/spotlight";
+import { Tags } from "@/data/projects";
+import { TagManager } from "@/components/tags";
+import { Suspense } from "react";
 
 export type ProjectCardProps =
   | { type: "Loading" }
@@ -39,6 +42,20 @@ function ButtonLink(props: ButtonLinkProps) {
   );
 }
 
+export const Tag = ({ tag }: { tag: keyof typeof Tags }) => {
+  const tagValue = Tags[tag];
+  return (
+    <div className="cursor-default rounded-full bg-slate-50/50 px-2 py-1 text-xs text-slate-950 dark:bg-slate-400/50 dark:text-slate-50">
+      {tagValue}
+    </div>
+  );
+};
+export const TagContainer = ({ children }: { children: React.ReactNode }) => (
+  <div className="flex flex-wrap items-center justify-center gap-2">
+    {children}
+  </div>
+);
+
 export const ProjectCard = (props: ProjectCardProps) => {
   if (props.type === "Loading") return <Card className="animate-pulse" />;
 
@@ -46,25 +63,27 @@ export const ProjectCard = (props: ProjectCardProps) => {
   const { project } = props;
   const { links } = project;
 
+  const tagsOrderedByWeight = project.tags.sort((a, b) => b.weight - a.weight);
+
   return (
     <SpotLightEffect>
-      <Card className="group/card relative flex  h-full flex-col gap-2 space-y-4 px-6 py-4 transition-all ease-in-out hover:cursor-default">
-        <CardHeader className="flex flex-row items-center gap-2 p-0 leading-tight group-hover/card:text-white">
-          <div className="flex aspect-square h-12 w-12 items-center justify-center rounded-full border-2 border-black p-2 group-hover/card:border-white group-hover/card:text-white dark:border-slate-200  dark:group-hover/card:border-sky-400 dark:group-hover/card:text-sky-400">
-            <Icon className="h-8" />
-          </div>
+      <Card className="group/card relative flex  h-full flex-col gap-2 px-4 pt-6 transition-all ease-in-out hover:cursor-default">
+        <CardHeader className="flex w-full flex-col p-0">
+          <div className="flex flex-row items-center gap-2 leading-tight group-hover/card:text-white">
+            <div className="flex aspect-square h-12 w-12 items-center justify-center rounded-full border-2 border-black p-2 group-hover/card:border-white group-hover/card:text-white dark:border-slate-200  dark:group-hover/card:border-sky-400 dark:group-hover/card:text-sky-400">
+              <Icon className="h-8" />
+            </div>
 
-          <h2 className="">
-            {project.title}{" "}
-            <span className="font-medium dark:group-hover/card:text-sky-400">
-              / {project.descriptiveLabel}
-            </span>
-          </h2>
-        </CardHeader>
-        <CardContent className="flex-1 p-0">
+            <h2>
+              {project.title}
+              <span className="font-medium dark:group-hover/card:text-sky-400">
+                / {project.descriptiveLabel}
+              </span>
+            </h2>
+          </div>
           <p className="">{project.description}</p>
-        </CardContent>
-        <CardFooter className="flex items-center p-0 font-medium group-hover/card:text-white dark:group-hover/card:text-sky-400">
+        </CardHeader>
+        <CardContent className="m-0 flex items-center justify-center p-0">
           <div className="grid h-7 w-full grid-cols-3 gap-x-4">
             {links?.external && (
               <TooltipServer tooltip={links.external.label}>
@@ -107,6 +126,11 @@ export const ProjectCard = (props: ProjectCardProps) => {
               </TooltipServer>
             )}
           </div>
+        </CardContent>
+        <CardFooter className="flex w-full items-center justify-center border-t border-slate-50/40 py-2 font-medium group-hover/card:text-white dark:group-hover/card:text-sky-400">
+          <Suspense fallback="">
+            <TagManager tags={tagsOrderedByWeight} />
+          </Suspense>
         </CardFooter>
       </Card>
     </SpotLightEffect>

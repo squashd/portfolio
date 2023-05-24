@@ -1,4 +1,4 @@
-import { featuredGames } from "@/config/portfolio/games";
+import { featuredGames } from "@/data/portfolio/games";
 import { ProjectCard } from "@/components/cards";
 import { CardGrid } from "@/components/layouts";
 

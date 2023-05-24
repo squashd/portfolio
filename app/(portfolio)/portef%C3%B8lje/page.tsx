@@ -11,6 +11,8 @@ import {
 } from "@/components/ui/accordion";
 import { Icons } from "@/components/icons";
 import * as React from "react";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Suspense } from "react";
 
 export const metadata = {
   title: "Portefølje",
@@ -58,7 +60,12 @@ export default async function Projects() {
           <H2Link header="Prosjekter" href="/portef%C3%B8lje/prosjekter" />
           <CardGrid>
             {featuredProjects.map((project, index) => (
-              <ProjectCard key={index} project={project} type="ProjectCard" />
+              <Suspense
+                key={index}
+                fallback={<Skeleton className="h-full w-full" />}
+              >
+                <ProjectCard key={index} project={project} type="ProjectCard" />
+              </Suspense>
             ))}
           </CardGrid>
         </Separator>
