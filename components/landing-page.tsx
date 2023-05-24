@@ -652,7 +652,7 @@ export const LightningFast = () => {
       <div
         className={`${
           inView ? "animate-lightning" : "invisible"
-        } w-full bg-gradient-to-br from-sky-500 to-blue-900 bg-clip-text text-center text-6xl font-black uppercase text-transparent transition-transform dark:from-sky-300 dark:to-blue-700 sm:block`}
+        } w-full bg-gradient-to-br from-indigo-500 to-purple-700 bg-clip-text text-center text-6xl font-black uppercase text-transparent transition-transform dark:from-sky-300 dark:to-blue-700 sm:block`}
       >
         Lynrask
         <br className="sm:hidden" /> ytelse

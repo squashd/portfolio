@@ -1,5 +1,12 @@
 "use client";
 import { useEffect } from "react";
+import {
+  P,
+  ParagraphsContainer,
+  Separator,
+  SimplePageLayout,
+} from "@/components/layouts";
+import { FancyLink } from "@/components/formatting";
 
 const WORDS_ARRAY = [
   "Jeg skulle gjerne hatt en ny betalingsløsning. [Redacted] har økt prisene sine.",
@@ -70,32 +77,31 @@ export default function Page() {
   }, []);
 
   return (
-    <>
-      <div className="mx-auto max-w-5xl px-6">
-        <header className="max-w-2xl pt-48">
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-            Skrivemaskin effekt
-          </h1>
-          <p className="mt-6 text-base">
-            Inspirert av nettsidene til{" "}
-            <a
-              href={"https://www.dintero.com/"}
-              className="group relative inline-block text-color transition duration-300"
-              rel="noopener noreferrer"
-              target="_blank"
+    <SimplePageLayout
+      header="Skrivemaskin effekt"
+      subheader="Inspirert av nettsidene til Dintero"
+    >
+      <Separator>
+        <div className="typing h-36 w-full rounded-lg border border-zinc-600 bg-zinc-800 p-4 font-mono text-xl font-thin text-slate-50 after:inline after:animate-blink after:content-['|']"></div>
+      </Separator>
+      <Separator>
+        <ParagraphsContainer>
+          <P>
+            Det viser seg at alle bruker{" "}
+            <FancyLink
+              href="https://github.com/tameemsafi/typewriterjs#readme"
+              tooltip="GitHub repo for biblioteket"
+              type="external"
             >
-              dintero
-              <span className="relative bottom-1 block h-[1px] max-w-0 bg-color transition-all duration-500 group-hover:max-w-full"></span>
-            </a>
-            .
-          </p>
-        </header>
-        <section className="py-12">
-          <div className="mx-auto max-w-5xl">
-            <div className="typing h-96 w-full rounded-lg border-2 border-zinc-600 bg-zinc-800 p-4 font-mono text-xl font-thin text-slate-50 after:inline after:animate-blink after:content-['|']"></div>
-          </div>
-        </section>
-      </div>
-    </>
+              et bibliotek
+            </FancyLink>{" "}
+            for denne effekten, så derfor er den blinkende effekt av careten hos
+            alle andre en myk overgang. Det er jo ikke sånn det ser ut! Jeg har
+            gjort overgangen fra synlig til usynlig mer voldsom.
+          </P>
+          <P>Ser det bedre ut? Tja, det er jo en smakssak.</P>
+        </ParagraphsContainer>
+      </Separator>
+    </SimplePageLayout>
   );
 }

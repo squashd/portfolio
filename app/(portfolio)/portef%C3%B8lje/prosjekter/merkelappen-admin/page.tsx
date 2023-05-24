@@ -33,13 +33,6 @@ export default function Page() {
               alle hendelser, samt <BuzzWord>automatisk varsling</BuzzWord>{" "}
               dersom noe går galt.
             </P>
-            <P>
-              Jeg ønsket et dynamisk, rask og intuitiv{" "}
-              <BuzzWord>brukergrensesnitt</BuzzWord>, hvor man ikke kunne for
-              eksempel sende emailbekreftelse før ordren var ferdig behandlet,
-              eller endre status på en ordre som allerede var ferdig behandlet
-              og andre med integreringen.
-            </P>
           </ParagraphsContainer>
         </Separator>
         <Separator>

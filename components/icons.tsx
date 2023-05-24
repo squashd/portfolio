@@ -26,6 +26,7 @@ import {
   BookOpen,
   Plus,
   Minus,
+  Repeat,
   Icon as LucideIcon,
 } from "lucide-react";
 
@@ -55,4 +56,5 @@ export const Icons = {
   book: BookOpen,
   plus: Plus,
   minus: Minus,
+  repeat: Repeat,
 };

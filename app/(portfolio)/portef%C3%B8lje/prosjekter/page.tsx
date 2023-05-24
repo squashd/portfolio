@@ -19,7 +19,7 @@ export default async function Projects() {
             har jeg samlet noen av de prosjektene jeg har jobbet med, og som jeg
             er mest fornøyd med."
       >
-        <H2 header="Prosjekter og applikasjoner" />
+        <H2>Prosjekter og applikasjoner</H2>
         <CardGrid>
           {projectsList.map((project, index) => (
             <ProjectCard type="ProjectCard" key={index} project={project} />
