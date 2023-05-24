@@ -1,4 +1,4 @@
-import { featuredGallery } from "@/data/portfolio/gallery";
+import { featuredGallery } from "@/config/portfolio/gallery";
 import ProjectCard from "@/components/cards";
 import { SimplePageLayout } from "@/components/layouts";
 
@@ -22,16 +22,7 @@ export default function Galleri() {
         <h2 className="mb-4 text-3xl font-bold">Animasjoner og komponenter</h2>
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {galleryItemList.map((galleryItem, index) => (
-            <ProjectCard
-              type="ProjectCard"
-              key={index}
-              title={galleryItem.title}
-              description={galleryItem.description}
-              descriptiveLabel={galleryItem.descriptiveLabel}
-              icon={galleryItem.icon}
-              link={galleryItem.link}
-              external={galleryItem.external}
-            />
+            <ProjectCard type="ProjectCard" key={index} project={galleryItem} />
           ))}
         </div>
       </section>

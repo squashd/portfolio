@@ -1,4 +1,4 @@
-import { featuredProjects } from "@/data/portfolio/projects";
+import { featuredProjects } from "@/config/portfolio/projects";
 import ProjectCard from "@/components/cards";
 import { SimplePageLayout } from "@/components/layouts";
 import { H2 } from "@/components/page-header";
@@ -23,16 +23,7 @@ export default async function Projects() {
         <H2 header="Prosjekter og applikasjoner" />
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {projectsList.map((project, index) => (
-            <ProjectCard
-              type="ProjectCard"
-              key={index}
-              title={project.title}
-              description={project.description}
-              descriptiveLabel={project.descriptiveLabel}
-              icon={project.icon}
-              link={project.link}
-              external={project.external}
-            />
+            <ProjectCard type="ProjectCard" key={index} project={project} />
           ))}
         </div>
       </SimplePageLayout>

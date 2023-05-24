@@ -1,9 +1,10 @@
-import BreadCrumb, { MainNav } from "@/components/main-nav";
+import { BreadCrumb, MainNav } from "@/components/main-nav";
 import { layoutConfig } from "@/config/layout";
 import { Icons } from "@/components/icons";
 import { siteConfig } from "@/config/site";
 import Link from "next/link";
 import { WidthWrapperFlex } from "@/components/layouts";
+import * as React from "react";
 
 export default function RootLayout({
   children,

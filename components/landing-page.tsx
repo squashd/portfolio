@@ -28,7 +28,7 @@ import { FancyLink } from "@/components/formatting";
 const InterSectionConfig = {
   root: null,
   rootMargin: "0px",
-  threshold: 0.5,
+  threshold: 0.25,
 };
 
 export const SectionHeader = (props: {
@@ -56,7 +56,7 @@ export const Intro = () => {
   return (
     <section
       ref={introRef}
-      className="flex h-full snap-center flex-col items-center justify-center text-left"
+      className="flex min-h-full shrink-0 snap-center flex-col items-center justify-center text-left"
     >
       <div
         className={cn(
@@ -94,8 +94,8 @@ export const Intro = () => {
               type="external"
               href="https://www.merkelappen.no"
               text="Merkelappen.no"
-            />{" "}
-            og jeg gleder meg til å se hva fremtiden bringer!
+            />
+            .
           </p>
         </div>
       </div>
@@ -175,21 +175,313 @@ export const Kontakt = () => {
   );
 };
 
-export const LightningFast = () => {
-  const { ref, inView } = useInView(InterSectionConfig);
+export const AboutMe = () => {
+  const [showSquashImage, setShowSquashImage] = useState(false);
+  const [showSnowboardImage, setShowSnowboardImage] = useState(false);
+  const [aboutRef, aboutInView] = useInView(InterSectionConfig);
+
+  const handleSquashClick = () => {
+    setShowSquashImage(!showSquashImage);
+    setShowSnowboardImage(false);
+  };
+
+  const handleSnowBoardClick = () => {
+    setShowSnowboardImage(!showSnowboardImage);
+    setShowSquashImage(false);
+  };
 
   return (
     <section
-      ref={ref}
-      className="my-12 flex h-full snap-center flex-col items-center justify-center gap-8"
+      id="om-meg"
+      ref={aboutRef}
+      className="relative flex min-h-full w-screen shrink-0 snap-center flex-col items-center justify-center text-left"
     >
-      <div
-        className={`${
-          inView ? "animate-lightning" : "invisible"
-        } w-full bg-gradient-to-br from-sky-300 to-blue-700 bg-clip-text text-center text-6xl font-black uppercase text-transparent transition-transform sm:block`}
-      >
-        Lynrask
-        <br className="sm:hidden" /> ytelse
+      <div className="flex max-w-5xl flex-col items-center gap-8 px-6 md:flex-row">
+        <div className="flex w-full flex-col">
+          <SectionHeader
+            inView={aboutInView}
+            header="Mer om meg"
+            icon={Icons.info}
+          />
+          <div
+            className={cn(
+              aboutInView
+                ? "opacity-100 delay-200 duration-[2000ms]"
+                : "opacity-0",
+              "flex max-w-2xl flex-col gap-4  text-sm leading-tight text-muted-foreground sm:text-base"
+            )}
+          >
+            <p className="text-left">
+              Jeg har vært{" "}
+              <button
+                onClick={() => handleSquashClick()}
+                className="group relative inline-block text-color transition duration-300"
+              >
+                aktiv squashspiller.
+                <span className="relative bottom-1 block h-[1px] max-w-0 bg-color transition-all duration-500 group-hover:max-w-full"></span>
+              </button>{" "}
+              Jeg har konkurrert i Europa som juniorspiller, og spilte på
+              førstelaget ved Heriot-Watt University hvor jeg studerte
+              matematikk.
+            </p>
+            <p>
+              Jeg er trivia-gal og elsker pubquiz. Jeg er litt i overkant
+              konkurransemenneske når ingenting står på spill, men ellers veldig
+              avslappet.
+            </p>
+            <p className="text-left">
+              Jeg er alltid ivrig etter å lære noe nytt og ta på meg{" "}
+              <button
+                onClick={() => handleSnowBoardClick()}
+                className="group relative inline-block text-color transition duration-300"
+              >
+                {" "}
+                nye utfordringer{" "}
+                <span className="relative bottom-1 block h-[1px] max-w-0 bg-color transition-all duration-500 group-hover:max-w-full"></span>
+              </button>
+              . Jeg trives best når jeg gjør noe jeg aldri har gjort før.
+            </p>
+          </div>
+        </div>
+        {/* Images */}
+        <div
+          className={cn(
+            aboutInView
+              ? "opacity-100 duration-[2200ms] ease-in-out"
+              : "opacity-0",
+            "relative flex"
+          )}
+        >
+          <div className="group relative h-48 w-48 grow-0 overflow-hidden rounded-lg">
+            <Image
+              src={squashSaturated}
+              alt="Bilde av Daniel da han vant NM i Gutter Under 17 klassen"
+              className={cn(
+                showSquashImage ? "opacity-100 duration-500" : "opacity-0",
+                "absolute"
+              )}
+            />
+            <Image
+              src={squashUnsaturated}
+              alt="Bilde av Daniel da han vant NM i Gutter Under 17 klassen"
+              className={cn(
+                showSquashImage ? "opacity-100 duration-500" : "opacity-0",
+                "absolute group-hover:opacity-0"
+              )}
+            />
+            <Image
+              src={snowboardSaturated}
+              alt="Bilde av Daniel da han vant NM i Gutter Under 17 klassen"
+              className={cn(
+                showSnowboardImage ? "opacity-100 duration-500" : "opacity-0",
+                "absolute"
+              )}
+            />
+            <Image
+              src={snowboardUnsaturated}
+              alt="Bilde av Daniel da han vant NM i Gutter Under 17 klassen"
+              className={cn(
+                showSnowboardImage ? "opacity-100 duration-500" : "opacity-0",
+                "absolute group-hover:opacity-0"
+              )}
+            />
+            <Image
+              src={profilePicSaturated}
+              alt="Profilbildet mitt i farge"
+              className={cn(
+                !showSquashImage && !showSnowboardImage
+                  ? "opacity-100 duration-500"
+                  : "opacity-0",
+                "absolute"
+              )}
+            />
+            <Image
+              src={profilePicUnsaturated}
+              alt="Profilbildet mitt i svart-hvitt"
+              className={cn(
+                !showSquashImage && !showSnowboardImage
+                  ? "opacity-100 duration-500"
+                  : "opacity-0",
+                "absolute group-hover:opacity-0"
+              )}
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export const Projects = () => {
+  const [projectsRef, projectsInView] = useInView(InterSectionConfig);
+  return (
+    <section
+      ref={projectsRef}
+      className="relative flex min-h-full shrink-0 snap-center flex-col items-center justify-center text-left"
+    >
+      <div className="flex max-w-5xl flex-col items-center gap-8 px-6 lg:flex-row">
+        <div className="flex w-full flex-col">
+          <SectionHeader
+            header="Mine prosjekter"
+            inView={projectsInView}
+            icon={Icons.projects}
+          />
+          <div
+            className={cn(
+              projectsInView
+                ? " opacity-100 delay-200 duration-[2000ms]"
+                : "opacity-0",
+              "flex max-w-2xl flex-col gap-4 text-sm leading-tight text-muted-foreground sm:text-base"
+            )}
+          >
+            <p className="">
+              Om du er nysgjerrig på hvilke prosjekter jeg har jobbet med, så
+              anbefaler jeg deg å se{" "}
+              <FancyLink
+                href={"/portef%C3%B8lje"}
+                text="porteføljen min"
+                type="internal"
+              />
+              .
+            </p>
+            <p className="text-left">
+              Jeg har jobbet med{" "}
+              <FancyLink
+                href={"/portef%C3%B8lje/prosjekter/merkelappen-butikk"}
+                type="internal"
+                text="nettbutikk"
+              />
+              , satt opp{" "}
+              <FancyLink
+                href={"/portef%C3%B8lje/prosjekter/merkelappen-admin"}
+                type="internal"
+                text="admin-panel"
+              />{" "}
+              for ordrebehandling, jobbet med diverse integrasjoner, og holder
+              på å utvikle en app for{" "}
+              <FancyLink
+                href={"https://github.com/squashd/irate"}
+                type="external"
+                text="produkt-rating"
+              />
+              .
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export const Tools = () => {
+  const [toolsRef, toolsInView] = useInView(InterSectionConfig);
+  return (
+    <section
+      ref={toolsRef}
+      className="relative flex min-h-full shrink-0 snap-center flex-col items-center justify-center text-left"
+    >
+      <div className="flex max-w-5xl flex-col items-center gap-8 px-6 lg:flex-row">
+        <div className="flex w-full flex-col">
+          <SectionHeader
+            icon={Icons.tools}
+            header="Mine verktøy"
+            inView={toolsInView}
+          />
+          <div
+            className={cn(
+              toolsInView
+                ? "opacity-100 delay-200 duration-[2000ms]"
+                : "opacity-0",
+              "flex max-w-2xl flex-col gap-4 text-sm leading-tight  text-muted-foreground sm:text-base"
+            )}
+          >
+            <p className="">
+              Jeg utvikler applikasjoner og nettsider ved hjelp av blant annet
+              TypeScript, NextJS, Prisma, MySQL/MongoDB og Express.
+            </p>
+            <p className="text-left">
+              Jeg er alltid interessert i å høre om dine behov og ønsker, og vil
+              bruke min erfaring og kunnskap til å lage noe som passer perfekt
+              for deg.
+            </p>
+            <p className="text-left">
+              Hvis du vil vite mer om disse teknologiene, kan du trykke på
+              ikonene <span className="hidden lg:inline-block">til høyre.</span>
+              <span className="inline-block lg:hidden">under.</span>
+            </p>
+          </div>
+        </div>
+        <div
+          className={cn(
+            toolsInView
+              ? "opacity-100 duration-[2200ms] ease-in-out"
+              : "opacity-0",
+            "flex w-full max-w-xs flex-col items-center gap-2 sm:max-w-xl sm:flex-row sm:gap-6 lg:w-auto lg:flex-col"
+          )}
+        >
+          <div className="group flex w-full flex-col items-center gap-4 rounded-lg px-4 py-4 sm:py-2">
+            <h3 className="hidden w-full border-b border-primary pb-2 text-center font-bold uppercase transition group-hover:text-color sm:block">
+              Frontend
+            </h3>
+            <div className="flex gap-8">
+              <a
+                aria-label="Mer om tailwindcss"
+                href="https://tailwindcss.com/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <TailwindLogo className="aspect-square h-10 transition hover:text-color sm:h-12 md:h-14" />
+              </a>
+              <a
+                aria-label="Mer om Typescript"
+                href="https://www.typescriptlang.org/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <TypeScriptLogo className="aspect-square h-10 transition hover:text-color sm:h-12 md:h-14" />
+              </a>
+              <a
+                aria-label="Mer om NextJS"
+                href="https://nextjs.org/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <NextJSLogo className="aspect-square h-10 transition hover:text-color sm:h-12 md:h-14" />
+              </a>
+            </div>
+          </div>
+          <div className="sm group flex w-full flex-col items-center gap-4 rounded-lg px-4 py-4 sm:py-2">
+            <h3 className="hidden w-full border-b border-primary pb-2 text-center font-bold uppercase transition group-hover:text-color sm:block">
+              Backend
+            </h3>
+            <div className="flex gap-8">
+              <a
+                aria-label="Mer om MongoDB"
+                href="https://www.mongodb.com/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <MongoDBLogo className="aspect-square h-10 transition hover:text-color sm:h-12 md:h-14" />
+              </a>
+              <a
+                aria-label="Mer om Prisma"
+                href="https://www.prisma.io/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <PrismaLogo className="aspect-square h-10 transition hover:text-color sm:h-12 md:h-14" />
+              </a>
+              <a
+                aria-label="Mer om MySQL"
+                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <MySQLLogo className="aspect-square h-10 transition hover:text-color sm:h-12 md:h-14" />
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -323,317 +615,21 @@ export const ResponsiveDesign = () => {
   );
 };
 
-export const AboutMe = () => {
-  const [showSquashImage, setShowSquashImage] = useState(false);
-  const [showSnowboardImage, setShowSnowboardImage] = useState(false);
-  const [aboutRef, aboutInView] = useInView(InterSectionConfig);
-
-  const handleSquashClick = () => {
-    setShowSquashImage(!showSquashImage);
-    setShowSnowboardImage(false);
-  };
-
-  const handleSnowBoardClick = () => {
-    setShowSnowboardImage(!showSnowboardImage);
-    setShowSquashImage(false);
-  };
+export const LightningFast = () => {
+  const { ref, inView } = useInView(InterSectionConfig);
 
   return (
     <section
-      id="om-meg"
-      ref={aboutRef}
-      className="relative flex h-full w-screen snap-center flex-col items-center justify-center text-left"
+      ref={ref}
+      className="my-12 flex h-full snap-center flex-col items-center justify-center gap-8"
     >
-      <div className="flex max-w-5xl flex-col items-center gap-8 px-6 md:flex-row">
-        <div className="flex w-full flex-col">
-          <SectionHeader
-            inView={aboutInView}
-            header="Mer om meg"
-            icon={Icons.info}
-          />
-          <div
-            className={cn(
-              aboutInView
-                ? "opacity-100 delay-200 duration-[2000ms]"
-                : "opacity-0",
-              "flex max-w-2xl flex-col gap-4  text-sm leading-tight text-muted-foreground sm:text-base"
-            )}
-          >
-            <p className="text-left">
-              Jeg har vært{" "}
-              <button
-                onClick={() => handleSquashClick()}
-                className="group relative inline-block text-color transition duration-300"
-              >
-                aktiv squashspiller.
-                <span className="relative bottom-1 block h-[1px] max-w-0 bg-color transition-all duration-500 group-hover:max-w-full"></span>
-              </button>{" "}
-              Jeg har konkurrert i Europa som juniorspiller, og spilte på
-              førstelaget ved Heriot-Watt University hvor jeg studerte
-              matematikk.
-            </p>
-            <p>
-              Jeg er trivia-gal og elsker pubquiz. Jeg er litt i overkant
-              konkurransemenneske når ingenting står på spill, men ellers veldig
-              avslappet.
-            </p>
-            <p className="text-left">
-              Jeg er alltid ivrig etter å lære noe nytt og ta på meg{" "}
-              <button
-                onClick={() => handleSnowBoardClick()}
-                className="group relative inline-block text-color transition duration-300"
-              >
-                {" "}
-                nye utfordringer{" "}
-                <span className="relative bottom-1 block h-[1px] max-w-0 bg-color transition-all duration-500 group-hover:max-w-full"></span>
-              </button>
-              . Jeg trives best når jeg gjør noe jeg aldri har gjort før.
-            </p>
-          </div>
-        </div>
-        {/* Images */}
-        <div
-          className={cn(
-            aboutInView
-              ? "opacity-100 duration-[2200ms] ease-in-out"
-              : "opacity-0",
-            "relative flex"
-          )}
-        >
-          <div className="group relative h-48 w-48 grow-0 overflow-hidden rounded-lg">
-            <Image
-              src={squashSaturated}
-              alt="Bilde av Daniel da han vant NM i Gutter Under 17 klassen"
-              className={cn(
-                showSquashImage ? "opacity-100 duration-500" : "opacity-0",
-                "absolute"
-              )}
-            />
-            <Image
-              src={squashUnsaturated}
-              alt="Bilde av Daniel da han vant NM i Gutter Under 17 klassen"
-              className={cn(
-                showSquashImage ? "opacity-100 duration-500" : "opacity-0",
-                "absolute group-hover:opacity-0"
-              )}
-            />
-            <Image
-              src={snowboardSaturated}
-              alt="Bilde av Daniel da han vant NM i Gutter Under 17 klassen"
-              className={cn(
-                showSnowboardImage ? "opacity-100 duration-500" : "opacity-0",
-                "absolute"
-              )}
-            />
-            <Image
-              src={snowboardUnsaturated}
-              alt="Bilde av Daniel da han vant NM i Gutter Under 17 klassen"
-              className={cn(
-                showSnowboardImage ? "opacity-100 duration-500" : "opacity-0",
-                "absolute group-hover:opacity-0"
-              )}
-            />
-            <Image
-              src={profilePicSaturated}
-              alt="Profilbildet mitt i farge"
-              className={cn(
-                !showSquashImage && !showSnowboardImage
-                  ? "opacity-100 duration-500"
-                  : "opacity-0",
-                "absolute"
-              )}
-            />
-            <Image
-              src={profilePicUnsaturated}
-              alt="Profilbildet mitt i svart-hvitt"
-              className={cn(
-                !showSquashImage && !showSnowboardImage
-                  ? "opacity-100 duration-500"
-                  : "opacity-0",
-                "absolute group-hover:opacity-0"
-              )}
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-export const Projects = () => {
-  const [projectsRef, projectsInView] = useInView(InterSectionConfig);
-  return (
-    <section
-      ref={projectsRef}
-      className="relative flex h-full snap-center flex-col items-center justify-center text-left"
-    >
-      <div className="flex max-w-5xl flex-col items-center gap-8 px-6 lg:flex-row">
-        <div className="flex w-full flex-col">
-          <SectionHeader
-            header="Mine prosjekter"
-            inView={projectsInView}
-            icon={Icons.projects}
-          />
-          <div
-            className={cn(
-              projectsInView
-                ? " opacity-100 delay-200 duration-[2000ms]"
-                : "opacity-0",
-              "flex max-w-2xl flex-col gap-4 text-sm leading-tight text-muted-foreground sm:text-base"
-            )}
-          >
-            <p className="">
-              Om du er nysgjerrig på hvilke prosjekter jeg har jobbet med, så
-              anbefaler jeg deg å se{" "}
-              <FancyLink
-                href={"/portef%C3%B8lje"}
-                text="porteføljen min"
-                type="internal"
-              />
-              .
-            </p>
-            <p className="text-left">
-              Jeg har jobbet med{" "}
-              <FancyLink
-                href={"/portef%C3%B8lje/prosjekter/merkelappen-butikk"}
-                type="internal"
-                text="nettbutikk"
-              />
-              , satt opp{" "}
-              <FancyLink
-                href={"/portef%C3%B8lje/prosjekter/merkelappen-admin"}
-                type="internal"
-                text="admin-panel"
-              />{" "}
-              for ordrebehandling, jobbet med diverse integrasjoner, og holder
-              på å utvikle en app for{" "}
-              <FancyLink
-                href={"https://github.com/squashd/irate"}
-                type="external"
-                text="produkt-rating"
-              />
-              .
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-export const Tools = () => {
-  const [toolsRef, toolsInView] = useInView({
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.1,
-  });
-  return (
-    <section
-      ref={toolsRef}
-      className="relative flex h-full snap-center flex-col items-center justify-center text-left"
-    >
-      <div className="flex max-w-5xl flex-col items-center gap-8 px-6 lg:flex-row">
-        <div className="flex w-full flex-col">
-          <SectionHeader
-            icon={Icons.tools}
-            header="Mine verktøy"
-            inView={toolsInView}
-          />
-          <div
-            className={cn(
-              toolsInView
-                ? "opacity-100 delay-200 duration-[2000ms]"
-                : "opacity-0",
-              "flex max-w-2xl flex-col gap-4 text-sm leading-tight  text-muted-foreground sm:text-base"
-            )}
-          >
-            <p className="">
-              Jeg utvikler applikasjoner og nettsider ved hjelp av blant annet
-              TypeScript, NextJS, Prisma, MySQL/MongoDB og Express.
-            </p>
-            <p className="text-left">
-              Jeg er alltid interessert i å høre om dine behov og ønsker, og vil
-              bruke min erfaring og kunnskap til å lage noe som passer perfekt
-              for deg.
-            </p>
-            <p className="text-left">
-              Hvis du vil vite mer om disse teknologiene, kan du trykke på
-              ikonene <span className="hidden lg:inline-block">til høyre.</span>
-              <span className="inline-block lg:hidden">under.</span>
-            </p>
-          </div>
-        </div>
-        <div
-          className={cn(
-            toolsInView
-              ? "opacity-100 duration-[2200ms] ease-in-out"
-              : "opacity-0",
-            "flex w-full max-w-xs flex-col items-center gap-2 sm:max-w-xl sm:flex-row sm:gap-6 lg:w-auto lg:flex-col"
-          )}
-        >
-          <div className="group flex w-full flex-col items-center gap-4 rounded-lg px-4 py-4 sm:py-2">
-            <h3 className="hidden w-full border-b border-primary pb-2 text-center font-bold uppercase transition group-hover:text-color sm:block">
-              Frontend
-            </h3>
-            <div className="flex gap-8">
-              <a
-                aria-label="Mer om tailwindcss"
-                href="https://tailwindcss.com/"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <TailwindLogo className="aspect-square h-10 transition hover:text-color sm:h-12 md:h-14" />
-              </a>
-              <a
-                aria-label="Mer om Typescript"
-                href="https://www.typescriptlang.org/"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <TypeScriptLogo className="aspect-square h-10 transition hover:text-color sm:h-12 md:h-14" />
-              </a>
-              <a
-                aria-label="Mer om NextJS"
-                href="https://nextjs.org/"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <NextJSLogo className="aspect-square h-10 transition hover:text-color sm:h-12 md:h-14" />
-              </a>
-            </div>
-          </div>
-          <div className="sm group flex w-full flex-col items-center gap-4 rounded-lg px-4 py-4 sm:py-2">
-            <h3 className="hidden w-full border-b border-primary pb-2 text-center font-bold uppercase transition group-hover:text-color sm:block">
-              Backend
-            </h3>
-            <div className="flex gap-8">
-              <a
-                aria-label="Mer om MongoDB"
-                href="https://www.mongodb.com/"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <MongoDBLogo className="aspect-square h-10 transition hover:text-color sm:h-12 md:h-14" />
-              </a>
-              <a
-                aria-label="Mer om Prisma"
-                href="https://www.prisma.io/"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <PrismaLogo className="aspect-square h-10 transition hover:text-color sm:h-12 md:h-14" />
-              </a>
-              <a
-                aria-label="Mer om MySQL"
-                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <MySQLLogo className="aspect-square h-10 transition hover:text-color sm:h-12 md:h-14" />
-              </a>
-            </div>
-          </div>
-        </div>
+      <div
+        className={`${
+          inView ? "animate-lightning" : "invisible"
+        } w-full bg-gradient-to-br from-sky-500 to-blue-900 bg-clip-text text-center text-6xl font-black uppercase text-transparent transition-transform dark:from-sky-300 dark:to-blue-700 sm:block`}
+      >
+        Lynrask
+        <br className="sm:hidden" /> ytelse
       </div>
     </section>
   );

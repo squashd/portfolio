@@ -8,12 +8,12 @@ export const layoutConfig: LayoutConfig = {
     },
     {
       title: "Kontakt",
-      href: "/kontakt",
+      href: "/#kontakt",
       anchor: true,
     },
     {
       title: "Mer om meg",
-      href: "/om-meg",
+      href: "/#om-meg",
       anchor: true,
     },
   ],

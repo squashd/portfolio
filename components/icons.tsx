@@ -23,6 +23,7 @@ import {
   Contact,
   Github,
   Coffee,
+  BookOpen,
   Icon as LucideIcon,
 } from "lucide-react";
 
@@ -49,4 +50,5 @@ export const Icons = {
   odin: OdinRevisited,
   merkelappen: MerkelappenMini,
   wordle: WordleMini,
+  book: BookOpen,
 };

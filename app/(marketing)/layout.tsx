@@ -19,7 +19,7 @@ export default function LandingLayout({
         </Link>
         <MainNav items={layoutConfig.mainNav} />
       </WidthWrapperFlex>
-      <main className="h-full">{children}</main>
+      <main className="h-full scroll-smooth">{children}</main>
     </>
   );
 }

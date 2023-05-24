@@ -13,9 +13,6 @@ export default function LightningAnimationPage() {
         type="PageHeader"
       />
       <LightningFast />
-      <article className="prose pb-12">
-        <CodeBlock />
-      </article>
     </WidthWrapperMargins>
   );
 }
