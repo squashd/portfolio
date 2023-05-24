@@ -46,7 +46,7 @@ export const SpotLightEffect = (props: SpotLightProps) => {
       onBlur={handleBlur}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="relative overflow-hidden rounded-lg border border-indigo-400 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-indigo-300 via-purple-400 to-indigo-400 px-6 py-4 text-card-foreground shadow-md dark:border-slate-800 dark:bg-slate-900 dark:from-slate-900 dark:via-slate-900 dark:to-slate-900"
+      className="relative overflow-hidden rounded-lg border border-indigo-400 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-indigo-300 via-purple-400 to-indigo-400 text-card-foreground shadow-md dark:border-slate-800 dark:bg-slate-900 dark:from-slate-900 dark:via-slate-900 dark:to-slate-900"
     >
       <div
         className="pointer-events-none invisible absolute -inset-px opacity-0 transition duration-300 dark:visible"

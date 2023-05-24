@@ -48,7 +48,7 @@ export const ProjectCard = (props: ProjectCardProps) => {
 
   return (
     <SpotLightEffect>
-      <Card className="group/card relative flex h-full flex-col gap-2 space-y-4 transition-all ease-in-out hover:cursor-default">
+      <Card className="group/card relative flex  h-full flex-col gap-2 space-y-4 px-6 py-4 transition-all ease-in-out hover:cursor-default">
         <CardHeader className="flex flex-row items-center gap-2 p-0 leading-tight">
           <div className="flex aspect-square h-12 w-12 items-center justify-center rounded-full border-2 border-black p-2 group-hover/card:border-white group-hover/card:text-white dark:border-slate-200  dark:group-hover/card:border-sky-400 dark:group-hover/card:text-sky-400">
             <Icon className="h-8" />
