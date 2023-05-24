@@ -5,6 +5,9 @@ type SpotLightProps = {
   children: React.ReactNode;
 };
 
+// Credit: Julien Thibeaut
+// Source: https://www.julienthibeaut.xyz/blog/create-modern-spotlight-effect-with-react-css
+
 export const SpotLightEffect = (props: SpotLightProps) => {
   const divRef = useRef<HTMLDivElement>(null);
   const [isFocused, setIsFocused] = useState(false);
