@@ -49,10 +49,17 @@ export const SpotLightEffect = (props: SpotLightProps) => {
       className="relative overflow-hidden rounded-lg border border-indigo-400 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-indigo-300 via-purple-400 to-indigo-400 text-card-foreground shadow-sm dark:border-slate-800 dark:bg-slate-900 dark:from-slate-900 dark:via-slate-900 dark:to-slate-900"
     >
       <div
-        className="pointer-events-none absolute -inset-px opacity-0 transition duration-300"
+        className="pointer-events-none invisible absolute -inset-px opacity-0 transition duration-300 dark:visible"
         style={{
           opacity,
           background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(255,255,255,.06), transparent 40%)`,
+        }}
+      />
+      <div
+        className="pointer-events-none absolute -inset-px opacity-0 transition duration-300 dark:invisible"
+        style={{
+          opacity,
+          background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgb(139, 92, 246,0.6), transparent 40%)`,
         }}
       />
       {props.children}
