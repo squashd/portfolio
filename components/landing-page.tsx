@@ -272,7 +272,7 @@ export const Projects = () => {
               anbefaler jeg deg å se{" "}
               <FancyLink
                 href={"/portef%C3%B8lje"}
-                type="external"
+                type="internal"
                 text="porteføljen min"
               />
               .
