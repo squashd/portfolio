@@ -1,7 +1,7 @@
 import { featuredProjects } from "@/config/portfolio/projects";
 import { ProjectCard } from "@/components/cards";
 import { CardGrid, SimplePageLayout } from "@/components/layouts";
-import { H2 } from "@/components/page-header";
+import { H2 } from "@/components/layouts";
 
 export const metadata = {
   title: "Prosjekter",

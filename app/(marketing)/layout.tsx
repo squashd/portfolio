@@ -13,7 +13,7 @@ export default function LandingLayout({
 }) {
   return (
     <>
-      <WidthWrapperFlex className="fixed z-50 flex h-20 w-full max-w-5xl items-center justify-between py-6">
+      <WidthWrapperFlex className="fixed z-50 flex w-full max-w-5xl items-center justify-between pb-2 pt-8">
         <Link
           href={
             layoutConfig.mainNav.find((nav) => nav.title === "Hjem")?.href ??

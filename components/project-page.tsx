@@ -1,4 +1,4 @@
-import { PageHeader } from "@/components/page-header";
+import { PageHeader } from "@/components/layouts";
 import { WidthWrapperMargins } from "@/components/layouts";
 
 interface SimpleProjectPageProps {

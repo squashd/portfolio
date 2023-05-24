@@ -1,8 +1,7 @@
 "use client";
 import { LightningFast } from "@/components/landing-page";
-import { PageHeader } from "@/components/page-header";
+import { PageHeader } from "@/components/layouts";
 import { WidthWrapperMargins } from "@/components/layouts";
-import CodeBlock from "./CodeBlock.mdx";
 
 export default function LightningAnimationPage() {
   return (

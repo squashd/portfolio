@@ -1,7 +1,7 @@
 import { featuredGallery } from "./galleri/page";
 import { featuredProjects } from "./prosjekter/page";
 import { ProjectCard } from "@/components/cards";
-import { H2Link, PageHeader } from "@/components/page-header";
+import { H2Link, PageHeader } from "@/components/layouts";
 import { CardGrid, Separator, WidthWrapperMargins } from "@/components/layouts";
 import {
   Accordion,
