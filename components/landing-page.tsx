@@ -4,7 +4,6 @@ import { useInView } from "react-intersection-observer";
 
 import { Icon, Icons } from "@/components/icons";
 import { cn } from "@/lib/utils";
-import { FrownIcon } from "@/assets/Icons";
 import { GitHubIcon, LinkedInIcon } from "@/assets/SocialIcons";
 
 import profilePicUnsaturated from "@/assets/images/profile.jpg";
@@ -99,80 +98,6 @@ export const Intro = () => {
             />
             .
           </p>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-export const Kontakt = () => {
-  const [contactRef, contactInView] = useInView(InterSectionConfig);
-  return (
-    <section
-      id={"kontakt"}
-      ref={contactRef}
-      className="relative flex h-full snap-center flex-col items-center justify-center text-left"
-    >
-      <div className="flex max-w-5xl flex-col items-center gap-8 px-6 lg:flex-row">
-        <div className="flex w-full flex-col">
-          <SectionHeader
-            header="Ta kontakt"
-            inView={contactInView}
-            icon={Icons.contact}
-          />
-          <div
-            className={cn(
-              contactInView
-                ? " opacity-100 delay-200 duration-[2000ms]"
-                : "opacity-0",
-              "flex max-w-2xl flex-col gap-4 text-sm leading-tight text-muted-foreground sm:text-base"
-            )}
-          >
-            <p className="">
-              Om du har et prosjekt du ønsker å gjennomføre, eller bare vil slå
-              av en prat, kan du sende meg en epost på:{" "}
-              <FancyLink
-                type="external"
-                href="mailto:daniel@hjartland.com"
-                text="daniel@hjartland.com"
-                tooltip="Send meg en epost"
-              />
-              , eller ring meg på telefon:{" "}
-              <FancyLink
-                type="external"
-                href="tel:94174754"
-                text="941 74 754"
-                tooltip="Ring meg"
-              />
-            </p>
-            <div className="flex flex-col items-center gap-4">
-              <p className="w-full text-left">
-                Ellers er jeg tilgjengelig på LinkedIn og GitHub – det meste av
-                nytt arbeid er dessverre privat{" "}
-                <FrownIcon className="inline-block w-4 text-slate-950 dark:text-slate-50" />{" "}
-                Men ønsker du å se hva jeg har gjort tidligere kan jeg ordne
-                tilgang.
-              </p>
-              <div className="flex gap-2">
-                <a
-                  aria-label="LinkedIn"
-                  href="https://www.linkedin.com/in/daniel-hjartland-7745b81a/"
-                  target="_blank"
-                  className="group relative inline-block text-slate-950 dark:text-slate-50"
-                >
-                  <LinkedInIcon className="aspect-square w-12  transition duration-300 hover:text-color" />{" "}
-                </a>
-                <a
-                  aria-label="GitHub"
-                  href="https://github.com/SQUASHD"
-                  target="_blank"
-                  className="group relative inline-block text-slate-950 dark:text-slate-50"
-                >
-                  <GitHubIcon className="aspect-square w-12 transition duration-300 hover:text-color" />
-                </a>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -499,6 +424,82 @@ export const Tools = () => {
                   <MySQLLogo className="aspect-square h-10 transition hover:text-color sm:h-12 md:h-14" />
                 </a>
               </TooltipServer>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export const Kontakt = () => {
+  const [contactRef, contactInView] = useInView(InterSectionConfig);
+  return (
+    <section
+      id={"kontakt"}
+      ref={contactRef}
+      className="relative flex h-full snap-center flex-col items-center justify-center text-left"
+    >
+      <div className="flex max-w-5xl flex-col items-center gap-8 px-6 lg:flex-row">
+        <div className="flex w-full flex-col">
+          <SectionHeader
+            header="Ta kontakt"
+            inView={contactInView}
+            icon={Icons.contact}
+          />
+          <div
+            className={cn(
+              contactInView
+                ? " opacity-100 delay-200 duration-[2000ms]"
+                : "opacity-0",
+              "flex max-w-2xl flex-col gap-4 text-sm leading-tight text-muted-foreground sm:text-base"
+            )}
+          >
+            <p className="">
+              Om du har et prosjekt du ønsker å gjennomføre, eller bare vil slå
+              av en prat, kan du sende meg en epost på:{" "}
+              <FancyLink
+                type="external"
+                href="mailto:daniel@hjartland.com"
+                text="daniel@hjartland.com"
+                tooltip="Send meg en epost"
+              />
+              , eller ring meg på telefon:{" "}
+              <FancyLink
+                type="external"
+                href="tel:94174754"
+                text="941 74 754"
+                tooltip="Ring meg"
+              />
+            </p>
+            <div className="flex flex-col items-center gap-4">
+              <p className="w-full text-left">
+                Ellers er jeg tilgjengelig på LinkedIn og GitHub – mye av nytt
+                arbeid er privat, men det er også noe open-source. Ønsker du å
+                se hva jeg har gjort tidligere kan jeg ordne tilgang.
+              </p>
+              <div className="flex gap-2">
+                <TooltipServer tooltip="Du finner meg på LinkedIn">
+                  <a
+                    aria-label="LinkedIn"
+                    href="https://www.linkedin.com/in/daniel-hjartland-7745b81a/"
+                    target="_blank"
+                    className="group relative inline-block text-slate-950 dark:text-slate-50"
+                  >
+                    <LinkedInIcon className="aspect-square w-12  transition duration-300 hover:text-color" />{" "}
+                  </a>
+                </TooltipServer>
+                <TooltipServer tooltip="Mer av arbeidet mitt finnes på GitHub">
+                  <a
+                    aria-label="GitHub"
+                    href="https://github.com/SQUASHD"
+                    target="_blank"
+                    className="group relative inline-block text-slate-950 dark:text-slate-50"
+                  >
+                    <GitHubIcon className="aspect-square w-12 transition duration-300 hover:text-color" />
+                  </a>
+                </TooltipServer>
+              </div>
             </div>
           </div>
         </div>
