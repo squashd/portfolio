@@ -127,7 +127,7 @@ export const ProjectCard = (props: ProjectCardProps) => {
             )}
           </div>
         </CardContent>
-        <CardFooter className="flex w-full items-center justify-center border-t border-slate-50/40 py-2 font-medium group-hover/card:text-white dark:group-hover/card:text-sky-400">
+        <CardFooter className="flex w-full items-center justify-center border-t border-black/50 py-2 font-medium group-hover/card:text-white dark:border-slate-50/40 dark:group-hover/card:text-sky-400">
           <Suspense fallback="">
             <TagManager tags={tagsOrderedByWeight} />
           </Suspense>
