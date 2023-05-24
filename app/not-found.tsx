@@ -9,17 +9,17 @@ export default function NotFound() {
           <p className="mt-4 text-xl font-light tracking-tight">
             Fant ikke siden
           </p>
-          <h1 className="mb-6 text-7xl font-bold">404</h1>
+          <h1 className="mb-6 font-heading text-7xl">404</h1>
           <Dog404 />
-          <p className="mt-6 text-base leading-7 text-gray-400">
+          <p className="mt-6 text-base leading-7 text-muted-foreground">
             Beklager, men den siden finnes ikke
           </p>
           <div className="mt-10 flex items-center justify-center">
             <Link
               href="/"
-              className="rounded-md bg-color px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm transition ease-out hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600"
+              className="rounded-md bg-color px-3.5 py-2.5 text-sm font-semibold text-slate-50 shadow-sm transition ease-out hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-color dark:text-slate-950 dark:hover:opacity-80"
             >
-              Tilbake til forsiden
+              Ta meg hjem, Balto
             </Link>
           </div>
         </div>
