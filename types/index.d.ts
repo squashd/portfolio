@@ -51,27 +51,27 @@ export type Project = {
   title: string;
   descriptiveLabel: string;
   description: string;
-  icon: Icon;
+  icon: keyof typeof Icons;
   links?: {
     github?: {
       href: string;
       label: "Se mer på GitHub";
-      icon: Icons.github;
+      icon: keyof typeof Icons;
     };
     external?: {
       href: string;
       label: string;
-      icon: Icons.link;
+      icon: keyof typeof Icons;
     };
     internal?: {
       href: string;
       label: string;
-      icon: Icons.link;
+      icon: keyof typeof Icons;
     };
     readMore?: {
       href: string;
       label: "Les mer om prosjektet";
-      icon: Icons.book;
+      icon: keyof typeof Icons;
     };
   };
 };

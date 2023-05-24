@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/card";
 import { Project } from "@/types";
 import { TooltipServer } from "@/components/tooltip";
-import { Icon } from "@/components/icons";
+import { Icon, Icons } from "@/components/icons";
 
 export type ProjectCardProps =
   | { type: "Loading" }
@@ -20,9 +20,10 @@ type ButtonLinkProps = {
   type: "internal" | "external";
   href: string;
   label: string;
-  icon: Icon;
+  icon: keyof typeof Icons;
 };
 function ButtonLink(props: ButtonLinkProps) {
+  const Icon = Icons[props.icon];
   let target: string;
   props.type === "external" ? (target = "_blank") : (target = "_self");
   return (
@@ -31,7 +32,7 @@ function ButtonLink(props: ButtonLinkProps) {
       target={target}
       className="group flex h-full w-full items-center justify-center rounded-lg bg-white/60 transition hover:bg-white/90 dark:bg-slate-300 dark:hover:bg-slate-400"
     >
-      <props.icon className="h-4 text-slate-800" />
+      <Icon className="h-4 text-slate-800" />
       <span className="sr-only">{props.label}</span>
     </Link>
   );
@@ -40,6 +41,7 @@ function ButtonLink(props: ButtonLinkProps) {
 export const ProjectCard = (props: ProjectCardProps) => {
   if (props.type === "Loading") return <Card className="animate-pulse" />;
 
+  const Icon = Icons[props.project.icon];
   const { project } = props;
   const { links } = project;
 
@@ -47,7 +49,7 @@ export const ProjectCard = (props: ProjectCardProps) => {
     <Card className="group/card relative flex flex-col gap-2 space-y-4 rounded-xl px-6 py-4 shadow-md transition-all ease-in-out hover:cursor-default">
       <CardHeader className="flex flex-row items-center gap-2 p-0 leading-tight">
         <div className="flex aspect-square h-12 w-12 items-center justify-center rounded-full border-2 border-black p-2 group-hover/card:border-white group-hover/card:text-white dark:border-slate-200  dark:group-hover/card:border-sky-400 dark:group-hover/card:text-sky-400">
-          <project.icon className="h-8" />
+          <Icon className="h-8" />
         </div>
 
         <h2 className="">
