@@ -8,6 +8,7 @@ import {
 import { Project } from "@/types";
 import { TooltipServer } from "@/components/tooltip";
 import { Icon, Icons } from "@/components/icons";
+import { SpotLightEffect } from "@/components/spotlight";
 
 export type ProjectCardProps =
   | { type: "Loading" }
@@ -46,66 +47,68 @@ export const ProjectCard = (props: ProjectCardProps) => {
   const { links } = project;
 
   return (
-    <Card className="group/card relative flex flex-col gap-2 space-y-4 rounded-xl px-6 py-4 shadow-md transition-all ease-in-out hover:cursor-default">
-      <CardHeader className="flex flex-row items-center gap-2 p-0 leading-tight">
-        <div className="flex aspect-square h-12 w-12 items-center justify-center rounded-full border-2 border-black p-2 group-hover/card:border-white group-hover/card:text-white dark:border-slate-200  dark:group-hover/card:border-sky-400 dark:group-hover/card:text-sky-400">
-          <Icon className="h-8" />
-        </div>
+    <SpotLightEffect>
+      <Card className="group/card relative flex flex-col gap-2 space-y-4 rounded-xl px-6 py-4 shadow-md transition-all ease-in-out hover:cursor-default">
+        <CardHeader className="flex flex-row items-center gap-2 p-0 leading-tight">
+          <div className="flex aspect-square h-12 w-12 items-center justify-center rounded-full border-2 border-black p-2 group-hover/card:border-white group-hover/card:text-white dark:border-slate-200  dark:group-hover/card:border-sky-400 dark:group-hover/card:text-sky-400">
+            <Icon className="h-8" />
+          </div>
 
-        <h2 className="">
-          {project.title}{" "}
-          <span className="font-medium group-hover/card:text-white dark:group-hover/card:text-sky-400">
-            / {project.descriptiveLabel}
-          </span>
-        </h2>
-      </CardHeader>
-      <CardContent className="flex-1 p-0">
-        <p className="">{project.description}</p>
-      </CardContent>
-      <CardFooter className="flex items-center p-0 font-medium group-hover/card:text-white dark:group-hover/card:text-sky-400">
-        <div className="grid h-7 w-full grid-cols-3 gap-x-4">
-          {links?.external && (
-            <TooltipServer tooltip={links.external.label}>
-              <ButtonLink
-                type="external"
-                href={links.external.href}
-                label={links.external.label}
-                icon={links.external.icon}
-              />
-            </TooltipServer>
-          )}
-          {links?.internal && (
-            <TooltipServer tooltip={links.internal.label}>
-              <ButtonLink
-                type="internal"
-                href={links.internal.href}
-                label={links.internal.label}
-                icon={links.internal.icon}
-              />
-            </TooltipServer>
-          )}
-          {links?.github && (
-            <TooltipServer tooltip={links.github.label}>
-              <ButtonLink
-                type="external"
-                href={links.github.href}
-                label={links.github.label}
-                icon={links.github.icon}
-              />
-            </TooltipServer>
-          )}
-          {links?.readMore && (
-            <TooltipServer tooltip={links.readMore.label}>
-              <ButtonLink
-                type="internal"
-                href={links.readMore.href}
-                label={links.readMore.label}
-                icon={links.readMore.icon}
-              />
-            </TooltipServer>
-          )}
-        </div>
-      </CardFooter>
-    </Card>
+          <h2 className="">
+            {project.title}{" "}
+            <span className="font-medium group-hover/card:text-white dark:group-hover/card:text-sky-400">
+              / {project.descriptiveLabel}
+            </span>
+          </h2>
+        </CardHeader>
+        <CardContent className="flex-1 p-0">
+          <p className="">{project.description}</p>
+        </CardContent>
+        <CardFooter className="flex items-center p-0 font-medium group-hover/card:text-white dark:group-hover/card:text-sky-400">
+          <div className="grid h-7 w-full grid-cols-3 gap-x-4">
+            {links?.external && (
+              <TooltipServer tooltip={links.external.label}>
+                <ButtonLink
+                  type="external"
+                  href={links.external.href}
+                  label={links.external.label}
+                  icon={links.external.icon}
+                />
+              </TooltipServer>
+            )}
+            {links?.internal && (
+              <TooltipServer tooltip={links.internal.label}>
+                <ButtonLink
+                  type="internal"
+                  href={links.internal.href}
+                  label={links.internal.label}
+                  icon={links.internal.icon}
+                />
+              </TooltipServer>
+            )}
+            {links?.github && (
+              <TooltipServer tooltip={links.github.label}>
+                <ButtonLink
+                  type="external"
+                  href={links.github.href}
+                  label={links.github.label}
+                  icon={links.github.icon}
+                />
+              </TooltipServer>
+            )}
+            {links?.readMore && (
+              <TooltipServer tooltip={links.readMore.label}>
+                <ButtonLink
+                  type="internal"
+                  href={links.readMore.href}
+                  label={links.readMore.label}
+                  icon={links.readMore.icon}
+                />
+              </TooltipServer>
+            )}
+          </div>
+        </CardFooter>
+      </Card>
+    </SpotLightEffect>
   );
 };
