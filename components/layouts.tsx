@@ -73,7 +73,7 @@ export const WidthWrapperFlex = ({ children, className }: Wrapper) => {
 };
 export const WidthWrapperMargins = ({ children, className }: Wrapper) => {
   return (
-    <div className={cn("mx-auto w-full max-w-5xl px-6", className)}>
+    <div className={cn("mx-auto w-full max-w-5xl px-6 pb-16", className)}>
       {children}
     </div>
   );
