@@ -1,16 +1,13 @@
-import Image from "next/image";
-
-import mobile from "@/assets/images/merkelappen/merkelappen_(iPhone 12 Pro).jpg";
-import sm from "@/assets/images/merkelappen/merkelappen(Tailwind sm).jpg";
-import md from "@/assets/images/merkelappen/merkelappen(Tailwind md).jpg";
-import lg from "@/assets/images/merkelappen/merkelappen_(Tailwind lg).jpg";
+import mobil from "@/public/images/merkelappen/merkelappen-mobil.png";
 import {
   BuzzWord,
   H2,
   ParagraphsContainer,
   Separator,
   ProjectPage,
+  P,
 } from "@/components/layouts";
+import { MobilePreview } from "@/components/previews";
 
 export default function Page() {
   return (
@@ -26,61 +23,27 @@ export default function Page() {
         duration="NOV 2022 - NÅ"
       >
         <Separator>
-          <H2>Om prosjektet</H2>
-          <ParagraphsContainer>
-            <p className="leading-relaxed">
-              Høsten 2022 kom merkelappen.no søkende etter hjelp i å fikse en
-              bug i programmet som lager trykkark. Det viste seg imidlertid at
-              løsningen de hadde fått av tidligere utvikler ikke hadde den
-              nødvendige funksjonaliteten som trengtes for å generere estetisk
-              og produksjonsklare trykkark.
-            </p>
-            <p className="leading-relaxed">
-              Sidene var bygget med Wordpress og Woocommerce, men var både trege
-              og ikke-responsive. Når det ble klart at det måtte lages et nytt
-              og skreddersydd program så ble jeg også bedt om å redesigne
-              sidene. De er nå bygget med NextJS og er både raske og responsive.
-            </p>
-          </ParagraphsContainer>
-        </Separator>
-        <Separator>
-          <div className="flex flex-wrap justify-center gap-8">
-            <div className="flex-shrink-0 overflow-hidden rounded-lg">
-              <Image
-                src={mobile}
-                alt="mobile view"
-                className="w-auto max-w-xl"
-                loading="eager"
-                priority={true}
-              />
+          <div className="mx-auto max-w-7xl lg:flex lg:items-center lg:gap-x-10">
+            <div className="mx-auto max-w-2xl lg:mx-0 lg:flex-auto">
+              <H2>Om prosjektet</H2>
+              <ParagraphsContainer>
+                <P>
+                  Høsten 2022 kom merkelappen.no søkende etter hjelp i å fikse
+                  en bug i programmet som lager trykkark. Det viste seg
+                  imidlertid at løsningen de hadde fått av tidligere utvikler
+                  ikke hadde den nødvendige funksjonaliteten som trengtes for å
+                  generere estetisk og produksjonsklare trykkark.
+                </P>
+                <P>
+                  Sidene var bygget med Wordpress og Woocommerce, men var både
+                  trege og ikke-responsive. Når det ble klart at det måtte lages
+                  et nytt og skreddersydd program så ble jeg også bedt om å
+                  redesigne sidene. De er nå bygget med NextJS og er både raske
+                  og responsive.
+                </P>
+              </ParagraphsContainer>
             </div>
-            <div className="flex-shrink-0 overflow-hidden rounded-lg">
-              <Image
-                src={sm}
-                alt="small view"
-                className="w-auto max-w-xl"
-                loading="eager"
-                priority={true}
-              />
-            </div>
-            <div className="flex-shrink-0 overflow-hidden rounded-lg">
-              <Image
-                src={md}
-                alt="medium view"
-                className="w-auto max-w-xl"
-                loading="eager"
-                priority={true}
-              />
-            </div>
-            <div className="flex-shrink-0 overflow-hidden rounded-lg">
-              <Image
-                src={lg}
-                alt="large view"
-                className="w-auto max-w-xl"
-                loading="eager"
-                priority={true}
-              />
-            </div>
+            <MobilePreview type="StaticImage" src={mobil} alt="" />
           </div>
         </Separator>
         <Separator>

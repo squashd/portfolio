@@ -6,6 +6,8 @@ import {
   ParagraphsContainer,
   Separator,
 } from "@/components/layouts";
+import { MobilePreview } from "@/components/previews";
+import mobil from "@/public/images/irate/irate-mobil.png";
 
 export default function irateProjectPage() {
   return (
@@ -20,22 +22,28 @@ export default function irateProjectPage() {
         }}
       >
         <Separator>
-          <H2>Om prosjektet</H2>
-          <ParagraphsContainer>
-            <P>
-              Dette er et <BuzzWord>sideprosjekt</BuzzWord> som jeg jobber med
-              på fritiden.
-            </P>
-            <P>
-              Faren min kjøpte altfor mange Nespresso&reg; kaffekapsler på en
-              gang og mistet oversikt over hvilke kapsler han i det hele tatt
-              likte.
-            </P>
-            <P>
-              Det er ikke ofte noen kommer med et såpass løselig problem som jeg
-              kan overkomplisere med en webapplikasjon, så jeg grep sjansen.
-            </P>
-          </ParagraphsContainer>
+          <div className="mx-auto max-w-7xl lg:flex lg:items-center lg:gap-x-10">
+            <div className="mx-auto max-w-2xl lg:mx-0 lg:flex-auto">
+              <H2>Om prosjektet</H2>
+              <ParagraphsContainer>
+                <P>
+                  Dette er et <BuzzWord>sideprosjekt</BuzzWord> som jeg jobber
+                  med på fritiden.
+                </P>
+                <P>
+                  Faren min kjøpte altfor mange Nespresso&reg; kaffekapsler på
+                  en gang og mistet oversikt over hvilke kapsler han i det hele
+                  tatt likte.
+                </P>
+                <P>
+                  Det er ikke ofte noen kommer med et såpass løselig problem som
+                  jeg kan overkomplisere med en webapplikasjon, så jeg grep
+                  sjansen.
+                </P>
+              </ParagraphsContainer>
+            </div>
+            <MobilePreview type="StaticImage" src={mobil} alt="" />
+          </div>
         </Separator>
         <Separator>
           <H2>Kort teknisk.</H2>
