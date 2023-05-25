@@ -176,7 +176,7 @@ export const ProjectPage = ({
                 <FancyLink
                   type="external"
                   href={url.href}
-                  tooltip={`Se live sidene på ${url.href}`}
+                  tooltip={`Se live sidene på ${url.label}`}
                 >
                   {url.label}
                 </FancyLink>
