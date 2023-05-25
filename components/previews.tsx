@@ -1,4 +1,6 @@
 import Image, { StaticImageData } from "next/image";
+import React, { Suspense } from "react";
+import { Loading } from "@/components/loading";
 
 type PreviewProps =
   | {
@@ -43,13 +45,17 @@ export const MobilePreview = (props: PreviewProps) => (
         transform="translate(24 24)"
         clipPath="url(#2ade4387-9c63-4fc4-b754-10e687a0d332)"
       >
-        {props.type === "NextImage" && (
-          <Image src={props.src} alt={props.alt} />
-        )}
-        {props.type === "StaticImage" && (
-          <Image src={props.src} alt={props.alt} />
-        )}
-        {props.type === "href" && <img src={props.src} alt={props.alt} />}
+        <Suspense fallback={<Loading />}>
+          {(props.type === "NextImage" || props.type === "StaticImage") && (
+            <Image
+              src={props.src}
+              priority={true}
+              placeholder={"blur"}
+              alt={props.alt}
+            />
+          )}
+          {props.type === "href" && <img src={props.src} alt={props.alt} />}
+        </Suspense>
       </foreignObject>
     </svg>
   </div>
@@ -58,31 +64,37 @@ export const MobilePreview = (props: PreviewProps) => (
 export const DesktopPreview = (props: PreviewProps) => (
   <div className="relative overflow-hidden">
     <div className="w-full">
-      {props.type === "NextImage" && (
-        <Image
-          src={props.src}
-          alt={props.alt}
-          className="mb-[-12%] rounded-xl shadow-2xl ring-1 ring-white/10"
-          width={2432}
-          height={1442}
-        />
-      )}
-      {props.type === "StaticImage" && (
-        <Image
-          src={props.src}
-          alt={props.alt}
-          className="mb-[-12%] rounded-xl shadow-2xl ring-1 ring-white/10"
-        />
-      )}
-      {props.type === "href" && (
-        <img
-          src={props.src}
-          alt={props.alt}
-          className="mb-[-12%] rounded-xl shadow-2xl ring-1 ring-white/10"
-          width={2432}
-          height={1442}
-        />
-      )}
+      <Suspense fallback={<Loading />}>
+        {props.type === "NextImage" && (
+          <Image
+            src={props.src}
+            alt={props.alt}
+            width={2432}
+            height={1442}
+            priority={true}
+            placeholder={"blur"}
+            className="mb-[-12%] rounded-xl shadow-2xl ring-1 ring-white/10"
+          />
+        )}
+        {props.type === "StaticImage" && (
+          <Image
+            src={props.src}
+            alt={props.alt}
+            priority={true}
+            placeholder={"blur"}
+            className="mb-[-12%] rounded-xl shadow-2xl ring-1 ring-white/10"
+          />
+        )}
+        {props.type === "href" && (
+          <img
+            src={props.src}
+            alt={props.alt}
+            className="mb-[-12%] rounded-xl shadow-2xl ring-1 ring-white/10"
+            width={2432}
+            height={1442}
+          />
+        )}
+      </Suspense>
       <div className="relative" aria-hidden="true">
         <div className="absolute -inset-x-20 bottom-0 bg-gradient-to-t from-slate-50 pt-[7%] dark:from-slate-950" />
       </div>

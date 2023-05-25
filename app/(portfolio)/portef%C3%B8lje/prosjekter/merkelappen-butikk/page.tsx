@@ -47,7 +47,11 @@ export default function Page() {
               </>
             }
             mobilePreview={
-              <MobilePreview type="StaticImage" src={mobil} alt="" />
+              <MobilePreview
+                type="StaticImage"
+                src={mobil}
+                alt="Sidene til merkelappen.no"
+              />
             }
           />
         </Separator>
