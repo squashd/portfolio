@@ -30,18 +30,22 @@ export default function Page() {
                 <H2>Om prosjektet</H2>
                 <ParagraphsContainer>
                   <P>
-                    Høsten 2022 kom merkelappen.no søkende etter hjelp i å fikse
-                    en bug i programmet som lager trykkark. Det viste seg
-                    imidlertid at løsningen de hadde fått av tidligere utvikler
-                    ikke hadde den nødvendige funksjonaliteten som trengtes for
-                    å generere estetisk og produksjonsklare trykkark.
+                    Høsten 2022 kom <BuzzWord>merkelappen.no</BuzzWord> søkende
+                    etter hjelp i å fikse en bug i programmet som lager
+                    trykkark. Det viste seg imidlertid at løsningen de hadde
+                    fått av tidligere utvikler ikke hadde den nødvendige
+                    funksjonaliteten som trengtes for å generere{" "}
+                    <BuzzWord>estetisk</BuzzWord> og{" "}
+                    <BuzzWord>produksjonsklare</BuzzWord> trykkark.
                   </P>
                   <P>
                     Sidene var bygget med Wordpress og Woocommerce, men var både
                     trege og ikke-responsive. Når det ble klart at det måtte
-                    lages et nytt og skreddersydd program så ble jeg også bedt
-                    om å redesigne sidene. De er nå bygget med NextJS og er både
-                    raske og responsive.
+                    lages et nytt og <BuzzWord>skreddersydd</BuzzWord> program
+                    så ble jeg også bedt om å redesigne sidene. De er nå bygget
+                    med <BuzzWord>NextJS</BuzzWord> og er både{" "}
+                    <BuzzWord>raske</BuzzWord> og{" "}
+                    <BuzzWord>responsive</BuzzWord>.
                   </P>
                 </ParagraphsContainer>
               </>

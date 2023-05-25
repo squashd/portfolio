@@ -38,8 +38,8 @@ export default function irateProjectPage() {
                   </P>
                   <P>
                     Det er ikke ofte noen kommer med et såpass løselig problem
-                    som jeg kan overkomplisere med en webapplikasjon, så jeg
-                    grep sjansen.
+                    som jeg kan overkomplisere med en{" "}
+                    <BuzzWord>webapplikasjon</BuzzWord>, så jeg grep sjansen.
                   </P>
                 </ParagraphsContainer>
               </>
@@ -53,7 +53,7 @@ export default function irateProjectPage() {
           <H2>Kort teknisk.</H2>
           <ParagraphsContainer>
             <P>
-              Applikasjon er bygget på <BuzzWord>NextJS/React</BuzzWord> og{" "}
+              Applikasjonen er bygget på <BuzzWord>NextJS/React</BuzzWord> og{" "}
               <BuzzWord>TailwindCSS</BuzzWord> i frontend. Databasene i backend
               er en kombinasjon av <BuzzWord>PostgreSQL</BuzzWord> og{" "}
               <BuzzWord>Redis</BuzzWord> som er koblet direkte til{" "}
