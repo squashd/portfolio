@@ -283,7 +283,7 @@ export const Projects = () => {
               Jeg har jobbet med{" "}
               <FancyLink
                 href={"/portef%C3%B8lje/prosjekter/merkelappen-butikk"}
-                type="external"
+                type="internal"
                 text="nettbutikk"
                 tooltip="Les mer om prosjektet"
               />
