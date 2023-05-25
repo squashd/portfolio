@@ -6,6 +6,7 @@ import {
   Separator,
   ProjectPage,
   P,
+  MobileIntroWrapper,
 } from "@/components/layouts";
 import { MobilePreview } from "@/components/previews";
 
@@ -23,28 +24,32 @@ export default function Page() {
         duration="NOV 2022 - NÅ"
       >
         <Separator>
-          <div className="mx-auto max-w-7xl lg:flex lg:items-center lg:gap-x-10">
-            <div className="mx-auto max-w-2xl lg:mx-0 lg:flex-auto">
-              <H2>Om prosjektet</H2>
-              <ParagraphsContainer>
-                <P>
-                  Høsten 2022 kom merkelappen.no søkende etter hjelp i å fikse
-                  en bug i programmet som lager trykkark. Det viste seg
-                  imidlertid at løsningen de hadde fått av tidligere utvikler
-                  ikke hadde den nødvendige funksjonaliteten som trengtes for å
-                  generere estetisk og produksjonsklare trykkark.
-                </P>
-                <P>
-                  Sidene var bygget med Wordpress og Woocommerce, men var både
-                  trege og ikke-responsive. Når det ble klart at det måtte lages
-                  et nytt og skreddersydd program så ble jeg også bedt om å
-                  redesigne sidene. De er nå bygget med NextJS og er både raske
-                  og responsive.
-                </P>
-              </ParagraphsContainer>
-            </div>
-            <MobilePreview type="StaticImage" src={mobil} alt="" />
-          </div>
+          <MobileIntroWrapper
+            intro={
+              <>
+                <H2>Om prosjektet</H2>
+                <ParagraphsContainer>
+                  <P>
+                    Høsten 2022 kom merkelappen.no søkende etter hjelp i å fikse
+                    en bug i programmet som lager trykkark. Det viste seg
+                    imidlertid at løsningen de hadde fått av tidligere utvikler
+                    ikke hadde den nødvendige funksjonaliteten som trengtes for
+                    å generere estetisk og produksjonsklare trykkark.
+                  </P>
+                  <P>
+                    Sidene var bygget med Wordpress og Woocommerce, men var både
+                    trege og ikke-responsive. Når det ble klart at det måtte
+                    lages et nytt og skreddersydd program så ble jeg også bedt
+                    om å redesigne sidene. De er nå bygget med NextJS og er både
+                    raske og responsive.
+                  </P>
+                </ParagraphsContainer>
+              </>
+            }
+            mobilePreview={
+              <MobilePreview type="StaticImage" src={mobil} alt="" />
+            }
+          />
         </Separator>
         <Separator>
           <H2>Kort teknisk.</H2>
