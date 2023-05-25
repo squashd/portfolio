@@ -27,7 +27,9 @@ export const PageHeader = (props: PageHeaderProps) => {
       <h1 className="font-heading text-4xl font-bold sm:text-5xl">
         {props.header}
       </h1>
-      <p className="mt-6 max-w-2xl text-base">{props.subheader}</p>
+      <p className="mt-6 max-w-2xl text-base text-muted-foreground">
+        {props.subheader}
+      </p>
       {props.type === "Project" && props.duration && (
         <p className="text-light text-sm text-color">{props.duration}</p>
       )}

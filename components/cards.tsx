@@ -45,7 +45,7 @@ function ButtonLink(props: ButtonLinkProps) {
 export const Tag = ({ tag }: { tag: keyof typeof Tags }) => {
   const tagValue = Tags[tag];
   return (
-    <div className="cursor-default rounded-full bg-slate-50/50 px-2 py-1 text-xs text-slate-950 dark:bg-slate-400/50 dark:text-slate-50">
+    <div className="cursor-default rounded-full bg-slate-200/50 px-2 py-1 text-xs text-slate-950 dark:bg-slate-400/50 dark:text-slate-200">
       {tagValue}
     </div>
   );
@@ -69,9 +69,9 @@ export const ProjectCard = (props: ProjectCardProps) => {
     <SpotLightEffect>
       <Card className="group/card relative flex  h-full flex-col gap-2 px-4 pt-6 transition-all ease-in-out hover:cursor-default">
         <CardHeader className="flex w-full flex-col p-0">
-          <div className="flex flex-row items-center gap-2 leading-tight text-black dark:text-slate-50">
+          <div className="flex flex-row items-center gap-2 leading-tight text-black dark:text-slate-200">
             <div className="flex aspect-square h-12 w-12 items-center justify-center rounded-full border-2 border-black p-2 dark:border-slate-200">
-              <Icon className="h-8 text-black dark:text-slate-50" />
+              <Icon className="h-8 text-black dark:text-slate-200" />
             </div>
 
             <h2>
@@ -79,7 +79,9 @@ export const ProjectCard = (props: ProjectCardProps) => {
               <span className="font-medium">/ {project.descriptiveLabel}</span>
             </h2>
           </div>
-          <p className="">{project.description}</p>
+          <p className="text-black dark:text-muted-foreground">
+            {project.description}
+          </p>
         </CardHeader>
         <CardContent className="m-0 flex items-center justify-center p-0">
           <div className="grid h-7 w-full grid-cols-3 gap-x-4">
@@ -125,7 +127,7 @@ export const ProjectCard = (props: ProjectCardProps) => {
             )}
           </div>
         </CardContent>
-        <CardFooter className="flex w-full items-center justify-center border-t border-black/50 py-2 font-medium group-hover/card:text-white dark:border-slate-50/40 dark:group-hover/card:text-sky-400">
+        <CardFooter className="flex w-full items-center justify-center border-t border-black/50 py-2 font-medium group-hover/card:text-white dark:border-slate-200/40 dark:group-hover/card:text-sky-400">
           <Suspense fallback="">
             <TagManager tags={tagsOrderedByWeight} />
           </Suspense>
