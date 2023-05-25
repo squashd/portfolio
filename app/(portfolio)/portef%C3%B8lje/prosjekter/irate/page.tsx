@@ -1,4 +1,4 @@
-import ProjectPage from "@/components/project-page";
+import { ProjectPage } from "@/components/layouts";
 import {
   BuzzWord,
   H2,

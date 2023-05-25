@@ -4,12 +4,12 @@ import mobile from "@/assets/images/merkelappen/merkelappen_(iPhone 12 Pro).jpg"
 import sm from "@/assets/images/merkelappen/merkelappen(Tailwind sm).jpg";
 import md from "@/assets/images/merkelappen/merkelappen(Tailwind md).jpg";
 import lg from "@/assets/images/merkelappen/merkelappen_(Tailwind lg).jpg";
-import ProjectPage from "@/components/project-page";
 import {
   BuzzWord,
   H2,
   ParagraphsContainer,
   Separator,
+  ProjectPage,
 } from "@/components/layouts";
 
 export default function Page() {

@@ -2,6 +2,7 @@ import { LinkIcon } from "@/assets/Icons";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Skeleton } from "@/components/ui/skeleton";
+import { FancyLink } from "@/components/formatting";
 
 type PageHeaderProps =
   | {
@@ -143,3 +144,53 @@ export const ParagraphsContainer = (props: Wrapper) => (
 export const P = ({ children }: Wrapper) => (
   <p className="leading-relaxed">{children}</p>
 );
+
+interface SimpleProjectPageProps {
+  header: string;
+  subheader: string;
+  duration?: string;
+  children: React.ReactNode;
+  url:
+    | { type: "live"; label: string; href: string }
+    | {
+        type: "private";
+      };
+}
+export const ProjectPage = ({
+  header,
+  subheader,
+  children,
+  url,
+}: SimpleProjectPageProps) => {
+  return (
+    <>
+      <WidthWrapperMargins>
+        <PageHeader type="Project" header={header} subheader={subheader} />
+        {children}
+        <Separator>
+          <H3>Hvor kan jeg se siden?</H3>
+          <ParagraphsContainer>
+            {url.type === "live" ? (
+              <P>
+                Sidene er live på{" "}
+                <FancyLink
+                  type="external"
+                  href={url.href}
+                  tooltip={`Se live sidene live på ${url.href}`}
+                >
+                  {url.label}
+                </FancyLink>
+                .
+              </P>
+            ) : (
+              <P>
+                Sidene er dessverre ikke tilgjengelige for offentlig visning,
+                men om ønskelig kan jeg vise dem frem på et møte.
+              </P>
+            )}
+          </ParagraphsContainer>
+        </Separator>
+      </WidthWrapperMargins>
+    </>
+  );
+};

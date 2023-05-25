@@ -1,9 +1,9 @@
-import ProjectPage from "@/components/project-page";
 import {
   BuzzWord,
   H2,
   P,
   ParagraphsContainer,
+  ProjectPage,
   Separator,
 } from "@/components/layouts";
 import dynamic from "next/dynamic";
