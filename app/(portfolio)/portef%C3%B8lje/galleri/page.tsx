@@ -1,6 +1,11 @@
 import { featuredGallery } from "@/data/portfolio/gallery";
 import { ProjectCard } from "@/components/cards";
-import { CardGrid, SimplePageLayout } from "@/components/layouts";
+import {
+  CardGrid,
+  H2,
+  Separator,
+  SimplePageLayout,
+} from "@/components/layouts";
 
 const galleryItemList = featuredGallery;
 
@@ -18,14 +23,14 @@ export default function Galleri() {
               gjenskape den. Andre ganger er det bare noe jeg har lyst til å
               lage."
     >
-      <section className="mx-auto max-w-5xl">
-        <h2 className="mb-4 text-3xl font-bold">Animasjoner og komponenter</h2>
+      <Separator>
+        <H2>Animasjoner og komponenter</H2>
         <CardGrid>
           {galleryItemList.map((galleryItem, index) => (
             <ProjectCard type="ProjectCard" key={index} project={galleryItem} />
           ))}
         </CardGrid>
-      </section>
+      </Separator>
     </SimplePageLayout>
   );
 }

@@ -12,13 +12,31 @@ export default function irateProjectPage() {
     <>
       <ProjectPage
         header="Rating applikasjon"
-        subheader="Applikasjon for å gi tilbakemelding på en skala fra 1 til 10."
+        subheader="Applikasjon for å gi tilbakemelding på produkter."
         url={{
           type: "live",
           href: "https://irate.no",
           label: "irate.no",
         }}
       >
+        <Separator>
+          <H2>Om prosjektet</H2>
+          <ParagraphsContainer>
+            <P>
+              Dette er et <BuzzWord>sideprosjekt</BuzzWord> som jeg jobber med
+              på fritiden.
+            </P>
+            <P>
+              Faren min kjøpte altfor mange Nespresso&reg; kaffekapsler på en
+              gang og mistet oversikt over hvilke kapsler han i det hele tatt
+              likte.
+            </P>
+            <P>
+              Det er ikke ofte noen kommer med et såpass løselig problem som jeg
+              kan overkomplisere med en webapplikasjon, så jeg grep sjansen.
+            </P>
+          </ParagraphsContainer>
+        </Separator>
         <Separator>
           <H2>Kort teknisk.</H2>
           <ParagraphsContainer>
@@ -37,24 +55,6 @@ export default function irateProjectPage() {
               <BuzzWord>Server Actions</BuzzWord> er blitt tatt i bruk for
               direkte kommunikasjon med databasene, med Zod for{" "}
               <BuzzWord>input validering</BuzzWord>.
-            </P>
-          </ParagraphsContainer>
-        </Separator>
-        <Separator>
-          <H2>Om prosjektet</H2>
-          <ParagraphsContainer>
-            <P>
-              Dette er et <BuzzWord>sideprosjekt</BuzzWord> som jeg jobber med
-              på fritiden.
-            </P>
-            <P>
-              Faren min kjøpte altfor mange Nespresso&reg; kaffekapsler på en
-              gang og mistet oversikt over hvilke kapsler han i det hele tatt
-              likte.
-            </P>
-            <P>
-              Det er ikke ofte noen kommer med et så såpass løselig problem som
-              jeg kan overkomplisere med en webapplikasjon, så jeg grep sjansen.
             </P>
           </ParagraphsContainer>
         </Separator>

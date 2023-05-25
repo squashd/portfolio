@@ -17,21 +17,13 @@ export default function Page() {
         url={{ type: "private" }}
       >
         <Separator>
-          <H2>Kort teknisk.</H2>
+          <H2>Om prosjektet</H2>
           <ParagraphsContainer>
             <P>
-              Frontend er bygget på <BuzzWord>NextJS</BuzzWord> og{" "}
-              <BuzzWord>TailwindCSS</BuzzWord>, <BuzzWord>MySQL</BuzzWord>{" "}
-              databasen i backend er koblet til frontend med{" "}
-              <BuzzWord>REST&nbsp;API</BuzzWord> bygget på NextJS sine API-ruter
-              og <BuzzWord>Prisma</BuzzWord> som ORM.
-            </P>
-            <P>
-              Det er satt i bruk <BuzzWord>CRON</BuzzWord> tjener for å håndtere
-              oppdatering av ordrestatus, samt automatisk sende
-              ordrebekreftelse. Automatisk <BuzzWord>loggføring</BuzzWord> av
-              alle hendelser, samt <BuzzWord>automatisk varsling</BuzzWord>{" "}
-              dersom noe går galt.
+              Like viktig som å lage en god nettside for kundene, er det å lage
+              en god løsning for de som skal håndtere ordrene. Når også betaling
+              må sjekkes gjennom et tredjeparts API, så er det viktig å kunne
+              enkelt sjekke status på betaling.
             </P>
           </ParagraphsContainer>
         </Separator>
@@ -55,13 +47,22 @@ export default function Page() {
           </ParagraphsContainer>
         </Separator>
         <Separator>
-          <H2>Om prosjektet</H2>
+          <H2>Kort teknisk.</H2>
           <ParagraphsContainer>
             <P>
-              Like viktig som å lage en god nettside for kundene, er det å lage
-              en god løsning for de som skal håndtere ordrene. Når også betaling
-              må sjekkes gjennom et tredjeparts API, så er det viktig å kunne
-              enkelt sjekke status på betaling.
+              Frontend er bygget på <BuzzWord>NextJS</BuzzWord> og{" "}
+              <BuzzWord>TailwindCSS</BuzzWord>, <BuzzWord>MySQL</BuzzWord>{" "}
+              databasen i backend er koblet til frontend med{" "}
+              <BuzzWord>REST&nbsp;API</BuzzWord> bygget på NextJS sine API-ruter
+              og <BuzzWord>Prisma</BuzzWord> som ORM.
+            </P>
+            <P>
+              Det er satt i bruk <BuzzWord>CRON</BuzzWord> tjener for å håndtere
+              oppdatering av ordrestatus, samt automatisk sende
+              ordrebekreftelse. Det er også lagt til automatisk{" "}
+              <BuzzWord>loggføring</BuzzWord> av alle hendelser, samt{" "}
+              <BuzzWord>automatisk varsling</BuzzWord> dersom noe går galt eller
+              det oppstår feil i et API endepunkt det ikke bør oppstå feil i.
             </P>
           </ParagraphsContainer>
         </Separator>

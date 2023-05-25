@@ -38,18 +38,22 @@ export const PageHeader = (props: PageHeaderProps) => {
 export const H2 = ({ children }: { children: React.ReactNode }) => (
   <h2 className="mb-4 font-heading text-3xl">{children}</h2>
 );
+
+export const H3 = ({ children }: { children: React.ReactNode }) => (
+  <h3 className="mb-4 font-heading text-2xl">{children}</h3>
+);
 export const H2Link = ({ header, href }: { header: string; href: string }) => (
   <Link
     href={href}
     className="group relative inline-block transition duration-300"
   >
-    <h2 className="mb-4 font-heading text-3xl">
+    <H2>
       {header}{" "}
       <span>
         <LinkIcon className="inline-block w-6" />
       </span>{" "}
       <span className="relative bottom-1 block h-[1px] max-w-0 bg-current transition-all duration-500 group-hover:max-w-full"></span>
-    </h2>
+    </H2>
   </Link>
 );
 
@@ -92,13 +96,18 @@ export const SimplePageLayout = ({
   );
 };
 
-export const Separator = ({ children }: Wrapper) => (
-  <div className="py-6">{children}</div>
+export const Separator = (props: Wrapper) => (
+  <div className={cn("py-6", props.className)}>{props.children}</div>
 );
 
-export const CardGrid = ({ children }: Wrapper) => (
-  <div className="grid grid-cols-1 gap-4 gap-x-6 sm:grid-cols-2 lg:grid-cols-3">
-    {children}
+export const CardGrid = (props: Wrapper) => (
+  <div
+    className={cn(
+      "grid grid-cols-1 gap-4 gap-x-6 sm:grid-cols-2 lg:grid-cols-3",
+      props.className
+    )}
+  >
+    {props.children}
   </div>
 );
 
@@ -112,14 +121,21 @@ export const LoadingSkeleton = () => (
   </WidthWrapperFlex>
 );
 
-export const BuzzWord = ({ children }: Wrapper) => (
-  <span className="cursor-default font-medium text-black underline underline-offset-4 transition hover:text-color dark:text-slate-50 dark:hover:text-color">
-    {children}
+export const BuzzWord = (props: Wrapper) => (
+  <span
+    className={cn(
+      "cursor-default font-medium text-black underline underline-offset-4 transition hover:text-color dark:text-slate-50 dark:hover:text-color",
+      props.className
+    )}
+  >
+    {props.children}
   </span>
 );
 
-export const ParagraphsContainer = ({ children }: Wrapper) => (
-  <div className="space-y-2 text-muted-foreground">{children}</div>
+export const ParagraphsContainer = (props: Wrapper) => (
+  <div className={cn("space-y-2 text-muted-foreground", props.className)}>
+    {props.children}
+  </div>
 );
 
 export const P = ({ children }: Wrapper) => (

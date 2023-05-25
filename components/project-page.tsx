@@ -1,5 +1,12 @@
-import { PageHeader } from "@/components/layouts";
+import {
+  H3,
+  P,
+  PageHeader,
+  ParagraphsContainer,
+  Separator,
+} from "@/components/layouts";
 import { WidthWrapperMargins } from "@/components/layouts";
+import { FancyLink } from "@/components/formatting";
 
 interface SimpleProjectPageProps {
   header: string;
@@ -23,31 +30,29 @@ export default function ProjectPage({
       <WidthWrapperMargins>
         <PageHeader type="Project" header={header} subheader={subheader} />
         {children}
-        <section className="flex flex-col gap-12 pb-16">
-          <div className="flex flex-col gap-4">
-            <h3 className="text-lg font-semibold">Hvor kan jeg se siden?</h3>
+        <Separator>
+          <H3>Hvor kan jeg se siden?</H3>
+          <ParagraphsContainer>
             {url.type === "live" ? (
-              <p className="">
+              <P>
                 Sidene er live på{" "}
-                <a
+                <FancyLink
+                  type="external"
                   href={url.href}
-                  className="group relative inline-block text-color transition duration-300"
-                  rel="noreferrer noopener"
-                  target="_blank"
+                  tooltip={`Se ${header.toLowerCase()} live`}
                 >
                   {url.label}
-                  <span className="relative bottom-1 block h-[1px] max-w-0 bg-color transition-all duration-500 group-hover:max-w-full"></span>
-                </a>
+                </FancyLink>
                 .
-              </p>
+              </P>
             ) : (
-              <p className="">
+              <P>
                 Sidene er dessverre ikke tilgjengelige for offentlig visning,
                 men om ønskelig kan jeg vise dem frem på et møte.
-              </p>
+              </P>
             )}
-          </div>
-        </section>
+          </ParagraphsContainer>
+        </Separator>
       </WidthWrapperMargins>
     </>
   );
