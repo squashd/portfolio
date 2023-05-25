@@ -35,7 +35,7 @@ export default function Page() {
                     trykkark. Det viste seg imidlertid at løsningen de hadde
                     fått av tidligere utvikler ikke hadde den nødvendige
                     funksjonaliteten som trengtes for å generere{" "}
-                    <BuzzWord>estetisk</BuzzWord> og{" "}
+                    <BuzzWord>estetiske</BuzzWord> og{" "}
                     <BuzzWord>produksjonsklare</BuzzWord> trykkark.
                   </P>
                   <P>
