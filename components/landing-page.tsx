@@ -2,7 +2,6 @@
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
 
-import { Icon, Icons } from "@/components/icons";
 import { cn } from "@/lib/utils";
 import { GitHubIcon, LinkedInIcon } from "@/assets/SocialIcons";
 
@@ -31,11 +30,7 @@ const InterSectionConfig = {
   threshold: 0.1,
 };
 
-export const SectionHeader = (props: {
-  inView: boolean;
-  header: string;
-  icon: Icon;
-}) => {
+export const SectionHeader = (props: { inView: boolean; header: string }) => {
   return (
     <h2
       className={cn(
@@ -45,7 +40,6 @@ export const SectionHeader = (props: {
         `mb-2 flex max-w-2xl items-center gap-3 whitespace-nowrap font-heading text-2xl after:h-[1px] after:bg-primary after:content-[""] sm:text-3xl`
       )}
     >
-      <props.icon className="aspect-square h-6 shrink-0" />
       {props.header}
     </h2>
   );
@@ -128,11 +122,7 @@ export const AboutMe = () => {
     >
       <div className="flex max-w-5xl flex-col items-center gap-8 px-6 md:flex-row">
         <div className="flex w-full flex-col">
-          <SectionHeader
-            inView={aboutInView}
-            header="Mer om meg"
-            icon={Icons.info}
-          />
+          <SectionHeader inView={aboutInView} header="Mer om meg" />
           <div
             className={cn(
               aboutInView
@@ -255,11 +245,7 @@ export const Projects = () => {
     >
       <div className="flex max-w-5xl flex-col items-center gap-8 px-6 lg:flex-row">
         <div className="flex w-full flex-col">
-          <SectionHeader
-            header="Mine prosjekter"
-            inView={projectsInView}
-            icon={Icons.projects}
-          />
+          <SectionHeader header="Mine prosjekter" inView={projectsInView} />
           <div
             className={cn(
               projectsInView
@@ -320,11 +306,7 @@ export const Tools = () => {
     >
       <div className="flex max-w-5xl flex-col items-center gap-8 px-6 lg:flex-row">
         <div className="flex w-full flex-col">
-          <SectionHeader
-            icon={Icons.tools}
-            header="Mine verktøy"
-            inView={toolsInView}
-          />
+          <SectionHeader header="Mine verktøy" inView={toolsInView} />
           <div
             className={cn(
               toolsInView
@@ -447,11 +429,7 @@ export const Kontakt = () => {
     >
       <div className="flex max-w-5xl flex-col items-center gap-8 px-6 lg:flex-row">
         <div className="flex w-full flex-col">
-          <SectionHeader
-            header="Ta kontakt"
-            inView={contactInView}
-            icon={Icons.contact}
-          />
+          <SectionHeader header="Ta kontakt" inView={contactInView} />
           <div
             className={cn(
               contactInView
