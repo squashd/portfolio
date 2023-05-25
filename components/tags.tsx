@@ -2,15 +2,29 @@
 
 import { Project } from "@/types";
 import { useEffect, useState } from "react";
-import { Tag, TagContainer } from "@/components/cards";
 import { Icons } from "@/components/icons";
+import { Tags } from "@/data/projects";
 
 interface TagManager {
   tags: Project["tags"];
 }
 
+const Tag = ({ tag }: { tag: keyof typeof Tags }) => {
+  const tagValue = Tags[tag];
+  return (
+    <div className="cursor-default rounded-full bg-slate-200/50 px-2 py-1 text-xs text-slate-950 dark:bg-slate-400/50 dark:text-slate-200">
+      {tagValue}
+    </div>
+  );
+};
+const TagContainer = ({ children }: { children: React.ReactNode }) => (
+  <div className="flex flex-wrap items-center justify-center gap-2">
+    {children}
+  </div>
+);
+
 const DEFAULT_NUMBER_OF_TAGS = 3;
-export const TagManager = ({ tags }: TagManager) => {
+const TagManager = ({ tags }: TagManager) => {
   const [showAll, setShowAll] = useState(false);
   const [tagAmount, setTagAmount] = useState(DEFAULT_NUMBER_OF_TAGS);
   const [tagsToRender, setTagsToRender] = useState<typeof tags | null>(null);
@@ -56,3 +70,5 @@ export const TagManager = ({ tags }: TagManager) => {
     </TagContainer>
   );
 };
+
+export default TagManager;

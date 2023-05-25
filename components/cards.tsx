@@ -9,9 +9,9 @@ import { Project } from "@/types";
 import { TooltipServer } from "@/components/tooltip";
 import { Icon, Icons } from "@/components/icons";
 import { SpotLightEffect } from "@/components/spotlight";
-import { Tags } from "@/data/projects";
-import { TagManager } from "@/components/tags";
+
 import { Suspense } from "react";
+import dynamic from "next/dynamic";
 
 export type ProjectCardProps =
   | { type: "Loading" }
@@ -42,19 +42,9 @@ function ButtonLink(props: ButtonLinkProps) {
   );
 }
 
-export const Tag = ({ tag }: { tag: keyof typeof Tags }) => {
-  const tagValue = Tags[tag];
-  return (
-    <div className="cursor-default rounded-full bg-slate-200/50 px-2 py-1 text-xs text-slate-950 dark:bg-slate-400/50 dark:text-slate-200">
-      {tagValue}
-    </div>
-  );
-};
-export const TagContainer = ({ children }: { children: React.ReactNode }) => (
-  <div className="flex flex-wrap items-center justify-center gap-2">
-    {children}
-  </div>
-);
+const TagManager = dynamic(() => import("../components/tags"), {
+  loading: () => <div className="animate-pulse" />,
+});
 
 export const ProjectCard = (props: ProjectCardProps) => {
   if (props.type === "Loading") return <Card className="animate-pulse" />;

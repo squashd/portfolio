@@ -1,4 +1,3 @@
-import OrderExample from "@/components/project-components";
 import ProjectPage from "@/components/project-page";
 import {
   BuzzWord,
@@ -7,6 +6,9 @@ import {
   ParagraphsContainer,
   Separator,
 } from "@/components/layouts";
+import dynamic from "next/dynamic";
+
+const OrderExample = dynamic(() => import("@/components/project-components"));
 
 export default function Page() {
   return (

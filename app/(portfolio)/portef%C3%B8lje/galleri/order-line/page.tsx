@@ -1,6 +1,7 @@
-import OrderExample from "@/components/project-components";
 import { Separator, SimplePageLayout } from "@/components/layouts";
+import dynamic from "next/dynamic";
 
+const OrderExample = dynamic(() => import("@/components/project-components"));
 export default function OrderLinePage() {
   return (
     <SimplePageLayout

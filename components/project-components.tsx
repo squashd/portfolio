@@ -9,7 +9,7 @@ const processingStatesClassNameMap = {
   DONE: "bg-green-500",
   ERROR: "bg-red-500",
 };
-export default function OrderExample() {
+const OrderExample = () => {
   const [isProcessing, setIsProcessing] = useState<boolean>(false);
   const [processingState, setProcessingState] = useState<
     "PROCESSING" | "PENDING" | "DONE" | "ERROR"
@@ -124,4 +124,6 @@ export default function OrderExample() {
       </tbody>
     </table>
   );
-}
+};
+
+export default OrderExample;
