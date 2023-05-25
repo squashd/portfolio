@@ -21,4 +21,7 @@ export const Tags = {
   Sideprosjekt: "Sideprosjekt",
   MySQL: "MySQL",
   Prisma: "Prisma",
+  "REST API": "REST API",
+  SecOps: "SecOps",
+  Redis: "Redis",
 } as const;

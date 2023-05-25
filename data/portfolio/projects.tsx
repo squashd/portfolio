@@ -15,6 +15,9 @@ const featuredProjects: Project[] = [
       { tag: "Backend", weight: 70 },
       { tag: "Prisma", weight: 20 },
       { tag: "MySQL", weight: 40 },
+      { tag: "REST API", weight: 30 },
+      { tag: "UI", weight: 30 },
+      { tag: "Integrasjon", weight: 50 },
     ],
     links: {
       readMore: {
@@ -35,12 +38,17 @@ const featuredProjects: Project[] = [
     description: "En app laget for min far å kunne rate kaffekapsler.",
     icon: "coffee",
     tags: [
-      { tag: "NextJS", weight: 10 },
-      { tag: "TailwindCSS", weight: 10 },
-      { tag: "TypeScript", weight: 10 },
-      { tag: "Backend", weight: 8 },
-      { tag: "Frontend", weight: 3 },
-      { tag: "Fullstack", weight: 10 },
+      { tag: "NextJS", weight: 100 },
+      { tag: "React", weight: 100 },
+      { tag: "TailwindCSS", weight: 70 },
+      { tag: "TypeScript", weight: 100 },
+      { tag: "Backend", weight: 60 },
+      { tag: "Frontend", weight: 60 },
+      { tag: "Fullstack", weight: 100 },
+      { tag: "UI", weight: 40 },
+      { tag: "Redis", weight: 10 },
+      { tag: "Prisma", weight: 20 },
+      { tag: "MySQL", weight: 40 },
     ],
     links: {
       github: {
@@ -73,6 +81,12 @@ const featuredProjects: Project[] = [
       { tag: "Fullstack", weight: 60 },
       { tag: "Integrasjon", weight: 80 },
       { tag: "Backend", weight: 100 },
+      { tag: "Prisma", weight: 80 },
+      { tag: "MySQL", weight: 50 },
+      { tag: "REST API", weight: 90 },
+      { tag: "UI", weight: 80 },
+      { tag: "SecOps", weight: 20 },
+      { tag: "Integrasjon", weight: 50 },
     ],
     links: {
       readMore: {
