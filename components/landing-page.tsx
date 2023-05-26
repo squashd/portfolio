@@ -82,9 +82,9 @@ export const Intro = () => {
               "relative my-2 max-w-md text-sm text-muted-foreground sm:max-w-lg sm:text-lg md:max-w-2xl"
             )}
           >
-            Jeg er en fremoverlent junior-utvikler på 27 år som brenner for
-            faget. Jeg jobber primært med Typescript i Node.js og React (gjerne
-            Next.js). Akkurat nå jobber jeg med spennende prosjekter hos{" "}
+            Jeg er en utvikler som brenner for faget. Jeg jobber primært med
+            Typescript i Node.js og React (gjerne Next.js). Akkurat nå jobber
+            jeg med spennende prosjekter hos{" "}
             <FancyLink
               type="external"
               href="https://www.merkelappen.no"
