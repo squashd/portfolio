@@ -60,7 +60,7 @@ export const MainNav = ({ items, children }: MainNavProps) => {
   const [showMobileMenu, setShowMobileMenu] = React.useState<boolean>(false);
 
   return (
-    <div className="flex gap-6">
+    <div className="flex gap-3">
       {items?.length ? (
         <nav className="hidden gap-4 md:flex">
           {items?.map((item, index) => {
@@ -85,8 +85,12 @@ export const MainNav = ({ items, children }: MainNavProps) => {
         className="flex items-center md:hidden"
         onClick={() => setShowMobileMenu(!showMobileMenu)}
       >
-        {showMobileMenu ? <Icons.close /> : <Icons.menu />}
-        <span className="font-bold">Menu</span>
+        {showMobileMenu ? (
+          <Icons.close className="h-4" />
+        ) : (
+          <Icons.menu className="h-4" />
+        )}
+        <span className="font-bold">Meny</span>
       </button>
       {showMobileMenu && items && (
         <MobileNav items={items}>{children}</MobileNav>
