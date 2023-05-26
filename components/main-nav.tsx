@@ -62,30 +62,17 @@ export const MainNav = ({ items, children }: MainNavProps) => {
   return (
     <div className="flex gap-6">
       {items?.length ? (
-        <nav className="hidden gap-6 md:flex">
+        <nav className="hidden gap-4 md:flex">
           {items?.map((item, index) => {
-            if (item.anchor)
-              return (
-                <a
-                  key={index}
-                  href={item.disabled ? "#" : item.href}
-                  className={cn(
-                    "flex items-center text-lg font-medium transition-colors hover:text-slate-950 dark:hover:text-slate-50/80 sm:text-sm",
-                    "text-slate-950/70 dark:text-slate-50/60",
-                    item.disabled && "cursor-not-allowed opacity-80"
-                  )}
-                >
-                  {item.title}
-                </a>
-              );
             return (
               <Link
                 key={index}
                 href={item.disabled ? "#" : item.href}
                 className={cn(
-                  "flex items-center text-lg font-medium transition-colors hover:text-slate-950 dark:hover:text-slate-50/80 sm:text-sm",
+                  "relative flex items-center text-sm font-medium transition-colors hover:text-slate-950 dark:hover:text-slate-50/80",
                   "text-slate-950/70 dark:text-slate-50/60",
-                  item.disabled && "cursor-not-allowed opacity-80"
+                  item.disabled && "cursor-not-allowed opacity-80",
+                  "after:absolute after:bottom-1 after:block after:h-[2px] after:w-0 after:w-full after:max-w-0 after:rounded-full after:bg-color after:transition-all after:content-[''] after:hover:max-w-full"
                 )}
               >
                 {item.title}
