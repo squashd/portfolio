@@ -25,9 +25,7 @@ export const PageHeader = (props: PageHeaderProps) => {
         "pb-6 pt-16 sm:pt-24"
       )}
     >
-      <h1 className="font-heading text-4xl font-bold sm:text-5xl">
-        {props.header}
-      </h1>
+      <h1 className="font-heading text-4xl sm:text-5xl">{props.header}</h1>
       <p className="mt-6 max-w-2xl text-base text-muted-foreground">
         {props.subheader}
       </p>
@@ -117,7 +115,7 @@ export const CardGrid = (props: Wrapper) => (
 export const LoadingSkeleton = () => (
   <WidthWrapperFlex>
     <div className={cn("max-w-xl", "pb-6 pt-24")}>
-      <Skeleton className="h-16 w-full font-heading text-4xl font-bold sm:text-5xl" />
+      <Skeleton className="h-16 w-full font-heading text-4xl sm:text-5xl" />
       <Skeleton className="mt-6 h-8 w-full max-w-2xl text-base" />
     </div>
     <Skeleton className="h-48 w-full" />
