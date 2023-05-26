@@ -226,7 +226,6 @@ export const AboutMe = () => {
             />
             <Image
               src={profilePicUnsaturated}
-              loading="lazy"
               alt="Profilbildet mitt i svart-hvitt"
               className={cn(
                 !showSquashImage && !showSnowboardImage
