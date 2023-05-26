@@ -13,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <>
-      <WidthWrapperFlex className="z-50 flex w-full items-center justify-between pb-3 pt-8">
+      <WidthWrapperFlex className="z-50 flex w-full items-center justify-between pb-2 pt-4">
         <Link
           href={
             layoutConfig.mainNav.find((nav) => nav.title === "Hjem")?.href ??

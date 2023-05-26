@@ -22,7 +22,7 @@ export const PageHeader = (props: PageHeaderProps) => {
       className={cn(
         props.type === "PageHeader" && "max-w-2xl",
         props.type === "Project" && "max-w-xl",
-        "pb-6 pt-24"
+        "pb-6 pt-16 sm:pt-24"
       )}
     >
       <h1 className="font-heading text-4xl font-bold sm:text-5xl">
