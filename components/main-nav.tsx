@@ -31,7 +31,7 @@ export const BreadCrumb = () => {
             className="group relative inline-block transition duration-300"
           >
             Hjem
-            <span className="relative bottom-1 block h-[1px] max-w-0 bg-current transition-all duration-500 group-hover:max-w-full"></span>
+            <span className="relative bottom-1 block h-[2px] max-w-0 rounded-full bg-current transition-all duration-500 group-hover:max-w-full"></span>
           </Link>
         </li>
       ) : null}
@@ -43,7 +43,7 @@ export const BreadCrumb = () => {
               className="group relative inline-block transition duration-300"
             >
               {decodeURI(segment).replace("-", " ")}
-              <span className="relative bottom-1 block h-[1px] max-w-0 bg-current transition-all duration-500 group-hover:max-w-full"></span>
+              <span className="relative bottom-1 block h-[2px] max-w-0 rounded-full bg-current transition-all duration-500 group-hover:max-w-full"></span>
             </Link>
           ) : (
             <span className="text-color">

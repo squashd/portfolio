@@ -139,7 +139,7 @@ export const AboutMe = () => {
                   className="group relative inline-block font-medium text-color transition duration-300"
                 >
                   aktiv squashspiller.
-                  <span className="relative bottom-1 block h-[2px] max-w-0 bg-color transition-all duration-500 group-hover:max-w-full"></span>
+                  <span className="relative bottom-1 block h-[2px] max-w-0 rounded-full bg-color transition-all duration-500 group-hover:max-w-full"></span>
                 </button>
               </TooltipServer>{" "}
               Jeg har konkurrert i Europa som juniorspiller, og spilte på
@@ -160,7 +160,7 @@ export const AboutMe = () => {
                 >
                   {" "}
                   nye utfordringer{" "}
-                  <span className="relative bottom-1 block h-[2px] max-w-0 bg-color transition-all duration-500 group-hover:max-w-full"></span>
+                  <span className="relative bottom-1 block h-[2px] max-w-0 rounded-full bg-color transition-all duration-500 group-hover:max-w-full"></span>
                 </button>
               </TooltipServer>
               . Jeg trives best når jeg gjør noe jeg aldri har gjort før.
