@@ -179,6 +179,7 @@ export const AboutMe = () => {
           <div className="group relative h-48 w-48 grow-0 overflow-hidden rounded-lg">
             <Image
               src={squashSaturated}
+              loading="lazy"
               alt="Bilde av Daniel da han vant NM i Gutter Under 17 klassen"
               className={cn(
                 showSquashImage ? "opacity-100 duration-500" : "opacity-0",
@@ -187,6 +188,7 @@ export const AboutMe = () => {
             />
             <Image
               src={squashUnsaturated}
+              loading="lazy"
               alt="Bilde av Daniel da han vant NM i Gutter Under 17 klassen"
               className={cn(
                 showSquashImage ? "opacity-100 duration-500" : "opacity-0",
@@ -195,6 +197,7 @@ export const AboutMe = () => {
             />
             <Image
               src={snowboardSaturated}
+              loading="lazy"
               alt="Bilde av Daniel da han vant NM i Gutter Under 17 klassen"
               className={cn(
                 showSnowboardImage ? "opacity-100 duration-500" : "opacity-0",
@@ -203,6 +206,7 @@ export const AboutMe = () => {
             />
             <Image
               src={snowboardUnsaturated}
+              loading="lazy"
               alt="Bilde av Daniel da han vant NM i Gutter Under 17 klassen"
               className={cn(
                 showSnowboardImage ? "opacity-100 duration-500" : "opacity-0",
@@ -211,6 +215,7 @@ export const AboutMe = () => {
             />
             <Image
               src={profilePicSaturated}
+              loading="lazy"
               alt="Profilbildet mitt i farge"
               className={cn(
                 !showSquashImage && !showSnowboardImage
@@ -221,6 +226,7 @@ export const AboutMe = () => {
             />
             <Image
               src={profilePicUnsaturated}
+              loading="lazy"
               alt="Profilbildet mitt i svart-hvitt"
               className={cn(
                 !showSquashImage && !showSnowboardImage
