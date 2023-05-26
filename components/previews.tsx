@@ -49,7 +49,6 @@ export const MobilePreview = (props: PreviewProps) => (
           {(props.type === "NextImage" || props.type === "StaticImage") && (
             <Image
               src={props.src}
-              priority={true}
               loading="lazy"
               placeholder={"blur"}
               alt={props.alt}
@@ -72,7 +71,6 @@ export const DesktopPreview = (props: PreviewProps) => (
             alt={props.alt}
             width={2432}
             height={1442}
-            priority={true}
             loading="lazy"
             placeholder={"blur"}
             className="mb-[-12%] rounded-xl shadow-2xl ring-1 ring-white/10"
@@ -82,7 +80,6 @@ export const DesktopPreview = (props: PreviewProps) => (
           <Image
             src={props.src}
             alt={props.alt}
-            priority={true}
             loading="lazy"
             placeholder={"blur"}
             className="mb-[-12%] rounded-xl shadow-2xl ring-1 ring-white/10"
