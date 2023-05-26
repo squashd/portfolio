@@ -21,11 +21,11 @@ export const FancyLink = (props: FancyLinkProps) => {
       <Link
         href={props.href}
         target={target}
-        className="group relative inline-block text-color transition duration-300"
+        className="group relative inline-block font-medium text-color transition duration-300"
       >
         {props.children && <>{props.children} </>}
         {props.text && <>{props.text} </>}
-        <span className="relative bottom-1 block h-[1px] max-w-0 bg-color transition-all duration-500 group-hover:max-w-full"></span>
+        <span className="relative bottom-1 block h-[2px] max-w-0 bg-color transition-all duration-500 group-hover:max-w-full"></span>
       </Link>
     </TooltipServer>
   );

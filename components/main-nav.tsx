@@ -72,7 +72,7 @@ export const MainNav = ({ items, children }: MainNavProps) => {
                   "relative flex items-center text-sm font-medium transition-colors hover:text-slate-950 dark:hover:text-slate-50/80",
                   "text-slate-950/70 dark:text-slate-50/60",
                   item.disabled && "cursor-not-allowed opacity-80",
-                  "after:absolute after:bottom-1 after:block after:h-[2px] after:w-0 after:w-full after:max-w-0 after:rounded-full after:bg-color after:transition-all after:content-[''] after:hover:max-w-full"
+                  "after:absolute after:bottom-1 after:block after:h-[2px] after:w-0 after:w-full after:max-w-0 after:rounded-full after:bg-color after:transition-all after:duration-500 after:content-[''] after:hover:max-w-full"
                 )}
               >
                 {item.title}
