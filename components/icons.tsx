@@ -27,6 +27,7 @@ import {
   Plus,
   Minus,
   Repeat,
+  Menu,
   Icon as LucideIcon,
 } from "lucide-react";
 
@@ -57,4 +58,5 @@ export const Icons = {
   plus: Plus,
   minus: Minus,
   repeat: Repeat,
+  menu: Menu,
 };
