@@ -198,8 +198,8 @@ type MobileIntro = {
   mobilePreview: React.ReactNode;
 };
 export const MobileIntroWrapper = (props: MobileIntro) => (
-  <div className="mx-auto max-w-full lg:flex lg:items-center lg:gap-x-10">
-    <div className="max-w-full lg:flex-auto">{props.intro}</div>
+  <div className="mx-auto max-w-7xl lg:flex lg:items-center lg:gap-x-10">
+    <div className="w-full lg:max-w-2xl lg:flex-auto">{props.intro}</div>
     {props.mobilePreview}
   </div>
 );
