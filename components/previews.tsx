@@ -19,11 +19,11 @@ type PreviewProps =
       alt: string;
     };
 export const MobilePreview = (props: PreviewProps) => (
-  <div className="mt-16 sm:mt-24">
+  <div className="mt-16">
     <svg
       viewBox="0 0 366 729"
       role="img"
-      className="mx-auto w-[22.875rem] max-w-full drop-shadow-xl"
+      className="mx-auto w-80 max-w-full drop-shadow-xl"
     >
       <title>App screenshot</title>
       <defs>
