@@ -82,16 +82,9 @@ export const Intro = () => {
               "relative my-2 max-w-md text-sm text-muted-foreground sm:max-w-lg sm:text-lg md:max-w-2xl"
             )}
           >
-            Jeg er en utvikler som brenner for faget. Jeg jobber primært med
-            Typescript i Node.js og React (gjerne Next.js). Akkurat nå jobber
-            jeg med spennende prosjekter hos{" "}
-            <FancyLink
-              type="external"
-              href="https://www.merkelappen.no"
-              text="Merkelappen.no"
-              tooltip="Live-sidene til Merkelappen.no"
-            />
-            .
+            Jeg er en utvikler som brenner for faget. Jeg liker Go, C#,
+            TypeScript og Python, men uansett hva det er så velger jeg riktig
+            verktøy for oppgaven.
           </p>
         </div>
       </div>
@@ -321,102 +314,15 @@ export const Tools = () => {
             )}
           >
             <p className="">
-              Jeg utvikler applikasjoner og nettsider ved hjelp av blant annet
-              TypeScript, NextJS, Prisma, MySQL/MongoDB og Express.
+              Som en utvikler med teft for både frontend og backend, tilbyr jeg
+              skreddersydde digitale løsninger. Jeg har erfaring med React og
+              NextJS for engasjerende brukeopplevelser, kombinert med robust
+              backend med ASP.NET Core og Go.
             </p>
             <p className="text-left">
-              Jeg er alltid interessert i å høre om dine behov og ønsker, og vil
-              bruke min erfaring og kunnskap til å lage noe som passer perfekt
-              for deg.
+              Mitt fokus er på å skape sikre, effektive og brukervennlige
+              applikasjoner som oppfyller dine unike forretningsbehov.
             </p>
-            <p className="text-left">
-              Hvis du vil vite mer om disse teknologiene, kan du trykke på
-              ikonene <span className="hidden lg:inline-block">til høyre.</span>
-              <span className="inline-block lg:hidden">under.</span>
-            </p>
-          </div>
-        </div>
-        <div
-          className={cn(
-            toolsInView
-              ? "opacity-100 duration-[2200ms] ease-in-out"
-              : "opacity-0",
-            "flex w-full max-w-xs flex-col items-center gap-2 sm:max-w-xl sm:flex-row sm:gap-6 lg:w-auto lg:flex-col"
-          )}
-        >
-          <div className="group flex w-full flex-col items-center gap-4 rounded-lg px-4 py-4 sm:py-2">
-            <h3 className="hidden w-full border-b border-primary pb-2 text-center font-bold uppercase transition group-hover:text-color sm:block">
-              Frontend
-            </h3>
-            <div className="flex gap-8">
-              <TooltipServer tooltip="Les mer om TailwindCSS">
-                <a
-                  aria-label="Mer om tailwindcss"
-                  href="https://tailwindcss.com/"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <TailwindLogo className="aspect-square h-10 transition hover:text-color sm:h-12 md:h-14" />
-                </a>
-              </TooltipServer>
-              <TooltipServer tooltip="Les mer om TypeScript">
-                <a
-                  aria-label="Mer om Typescript"
-                  href="https://www.typescriptlang.org/"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <TypeScriptLogo className="aspect-square h-10 transition hover:text-color sm:h-12 md:h-14" />
-                </a>
-              </TooltipServer>
-              <TooltipServer tooltip="Les mer om NextJS">
-                <a
-                  aria-label="Mer om NextJS"
-                  href="https://nextjs.org/"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <NextJSLogo className="aspect-square h-10 transition hover:text-color sm:h-12 md:h-14" />
-                </a>
-              </TooltipServer>
-            </div>
-          </div>
-          <div className="sm group flex w-full flex-col items-center gap-4 rounded-lg px-4 py-4 sm:py-2">
-            <h3 className="hidden w-full border-b border-primary pb-2 text-center font-bold uppercase transition group-hover:text-color sm:block">
-              Backend
-            </h3>
-            <div className="flex gap-8">
-              <TooltipServer tooltip="Les mer om MongoDB">
-                <a
-                  aria-label="Mer om MongoDB"
-                  href="https://www.mongodb.com/"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <MongoDBLogo className="aspect-square h-10 transition hover:text-color sm:h-12 md:h-14" />
-                </a>
-              </TooltipServer>
-              <TooltipServer tooltip="Les mer om Prisma">
-                <a
-                  aria-label="Mer om Prisma"
-                  href="https://www.prisma.io/"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <PrismaLogo className="aspect-square h-10 transition hover:text-color sm:h-12 md:h-14" />
-                </a>
-              </TooltipServer>
-              <TooltipServer tooltip="Er du sikker på dette?">
-                <a
-                  aria-label="Mer om MySQL"
-                  href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <MySQLLogo className="aspect-square h-10 transition hover:text-color sm:h-12 md:h-14" />
-                </a>
-              </TooltipServer>
-            </div>
           </div>
         </div>
       </div>
