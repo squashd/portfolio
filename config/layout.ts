@@ -4,7 +4,7 @@ export const layoutConfig: LayoutConfig = {
   mainNav: [
     {
       title: "Hjem",
-      href: "/?section=start",
+      href: "/#start",
     },
     {
       title: "Portefølje",
@@ -12,11 +12,11 @@ export const layoutConfig: LayoutConfig = {
     },
     {
       title: "Kontakt",
-      href: "/?section=kontakt",
+      href: "/#kontakt",
     },
     {
       title: "Mer om meg",
-      href: "/?section=om-meg",
+      href: "/#om-meg",
     },
   ],
 };
