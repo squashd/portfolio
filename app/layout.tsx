@@ -14,8 +14,8 @@ const fontHeading = localFont({
 });
 
 export const metadata = {
-  title: "Hjartland | Fullstack utvikler",
-  description: "Fullstack utvikler",
+  title: "Hjartland | Software Engineer",
+  description: "Software Engineer",
 };
 
 const BackgroundPattern = () => (
