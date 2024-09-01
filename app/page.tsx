@@ -1,4 +1,5 @@
 import { FancyLink } from "@/components/formatting";
+import { GitHubIcon, LinkedInIcon } from "@/components/social-icons";
 
 export default function LandingPage() {
   return (
@@ -20,6 +21,25 @@ export default function LandingPage() {
             Boot.dev
           </FancyLink>
         </p>
+        <div className="flex items-center gap-2">
+          <a
+            href="https://github.com/squashd"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <GitHubIcon className="aspect-square w-10 hover:text-rose-500" />
+            <span className="sr-only">GitHub</span>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/daniel-hjartland/"
+            className="group"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <LinkedInIcon className="aspect-square w-10 hover:text-rose-500" />
+            <span className="sr-only">LinkedIn</span>
+          </a>
+        </div>
       </div>
     </div>
   );
