@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { TooltipServer } from "@/components/tooltip";
 
 type FancyLinkProps = {
   type: "internal" | "external";
@@ -17,16 +16,14 @@ export const FancyLink = (props: FancyLinkProps) => {
 
   props.type === "external" ? (target = "_blank") : (target = "_self");
   return (
-    <TooltipServer tooltip={tooltip}>
-      <Link
-        href={props.href}
-        target={target}
-        className="group relative inline-block font-medium text-color transition duration-300"
-      >
-        {props.children && <>{props.children} </>}
-        {props.text && <>{props.text} </>}
-        <span className="relative bottom-1 block h-[2px] max-w-0 bg-color transition-all duration-500 group-hover:max-w-full"></span>
-      </Link>
-    </TooltipServer>
+    <Link
+      href={props.href}
+      target={target}
+      className="group relative inline-block font-bold text-rose-400 transition duration-300"
+    >
+      {props.children && <>{props.children} </>}
+      {props.text !== undefined && <>{props.text} </>}
+      <span className="relative bottom-1 block h-[2px] max-w-0 bg-rose-400 transition-all duration-500 group-hover:max-w-full"></span>
+    </Link>
   );
 };

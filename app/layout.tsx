@@ -2,7 +2,6 @@ import { Inter as FontSans } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import * as React from "react";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -21,37 +20,20 @@ export const metadata = {
 
 const BackgroundPattern = () => (
   <svg
-    className="fixed inset-0 -z-10 h-full w-full stroke-slate-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)] dark:stroke-slate-900"
-    aria-hidden="true"
+    className="pointer-events-none fixed z-10 h-full w-full opacity-70 mix-blend-soft-light"
+    xmlns="http://www.w3.org/2000/svg"
+    width="100%"
+    height="100%"
   >
-    <defs>
-      <pattern
-        id="83fd4e5a-9d52-42fc-97b6-718e5d7ee527"
-        width={200}
-        height={200}
-        x="50%"
-        y={-64}
-        patternUnits="userSpaceOnUse"
-      >
-        <path d="M100 200V.5M.5 .5H200" fill="none" />
-      </pattern>
-    </defs>
-    <svg
-      x="50%"
-      y={-64}
-      className="overflow-visible fill-slate-200 dark:fill-slate-900"
-    >
-      <path
-        d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M299.5 800h201v201h-201Z"
-        strokeWidth={0}
-      />
-    </svg>
-    <rect
-      width="100%"
-      height="100%"
-      strokeWidth={0}
-      fill="url(#83fd4e5a-9d52-42fc-97b6-718e5d7ee527)"
-    />
+    <filter id="noise">
+      <feTurbulence
+        type="fractalNoise"
+        baseFrequency="0.60"
+        numOctaves="4"
+        stitchTiles="stitch"
+      ></feTurbulence>
+    </filter>
+    <rect width="100%" height="100%" filter="url(#noise)"></rect>
   </svg>
 );
 
@@ -61,10 +43,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="no" className="h-full" suppressHydrationWarning>
+    <html lang="no" className="h-full">
       <body
         className={cn(
-          "slate-50 h-full font-sans text-slate-800 antialiased dark:bg-slate-950 dark:text-slate-100",
+          "z-50 h-full overscroll-y-none bg-zinc-900 font-sans text-rose-400 antialiased",
           fontSans.variable,
           fontHeading.variable
         )}
