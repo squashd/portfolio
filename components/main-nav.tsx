@@ -8,7 +8,6 @@ import { MainNavItem } from "@/types";
 import { cn } from "@/lib/utils";
 import { Icons } from "@/components/icons";
 import { MobileNav } from "@/components/mobile-nav";
-import { ModeToggle } from "@/components/mode-toggle";
 
 interface MainNavProps {
   items?: MainNavItem[];
@@ -18,7 +17,7 @@ interface MainNavProps {
 export const BreadCrumb = () => {
   const segments = useSelectedLayoutSegments();
 
-  const compoundedSegments = segments.map((segment, index) => {
+  const compoundedSegments = segments.map((_, index) => {
     return decodeURI(segments.slice(0, index + 1).join("/"));
   });
 
@@ -95,7 +94,6 @@ export const MainNav = ({ items, children }: MainNavProps) => {
       {showMobileMenu && items && (
         <MobileNav items={items}>{children}</MobileNav>
       )}
-      <ModeToggle />
     </div>
   );
 };

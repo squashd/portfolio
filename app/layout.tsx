@@ -1,5 +1,3 @@
-import { Analytics } from "@vercel/analytics/react";
-import Providers from "@/app/providers";
 import { Inter as FontSans } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -71,11 +69,8 @@ export default function RootLayout({
           fontHeading.variable
         )}
       >
-        <Providers>
-          <BackgroundPattern />
-          {children}
-        </Providers>
-        <Analytics />
+        <BackgroundPattern />
+        {children}
       </body>
     </html>
   );

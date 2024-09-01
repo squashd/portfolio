@@ -27,7 +27,7 @@ const DEFAULT_NUMBER_OF_TAGS = 3;
 const TagManager = ({ tags }: TagManager) => {
   const [showAll, setShowAll] = useState(false);
   const [tagAmount, setTagAmount] = useState(DEFAULT_NUMBER_OF_TAGS);
-  const [tagsToRender, setTagsToRender] = useState<typeof tags | null>(null);
+  const [tagsToRender, setTagsToRender] = useState<typeof tags>();
   const storedTags = tags;
   const handleToggleClick = () => {
     if (showAll) {

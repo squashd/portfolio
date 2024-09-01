@@ -1,8 +1,5 @@
-import { featuredGallery } from "./galleri/page";
-import { featuredProjects } from "./prosjekter/page";
-import { ProjectCard } from "@/components/cards";
 import { H2Link, PageHeader } from "@/components/layouts";
-import { CardGrid, Separator, WidthWrapperMargins } from "@/components/layouts";
+import { Separator, WidthWrapperMargins } from "@/components/layouts";
 import {
   Accordion,
   AccordionContent,
@@ -11,8 +8,6 @@ import {
 } from "@/components/ui/accordion";
 import { Icons } from "@/components/icons";
 import * as React from "react";
-import { Skeleton } from "@/components/ui/skeleton";
-import { Suspense } from "react";
 
 export const metadata = {
   title: "Portefølje",
@@ -51,35 +46,12 @@ export default async function Projects() {
       <WidthWrapperMargins>
         <PageHeader
           type="PageHeader"
-          header="Ting jeg har laget"
-          subheader="Som freelancer og student – samt ellers i fritiden – har jeg har
-            jobbet på en rekke prosjekter. Her er noen av de."
+          header="Stuff I've made I guess"
+          subheader="Stuff and shit"
         />
         <SymbolLegend />
         <Separator>
-          <H2Link header="Prosjekter" href="/portef%C3%B8lje/prosjekter" />
-          <CardGrid>
-            {featuredProjects.map((project, index) => (
-              <Suspense
-                key={index}
-                fallback={<Skeleton className="h-full w-full" />}
-              >
-                <ProjectCard key={index} project={project} type="ProjectCard" />
-              </Suspense>
-            ))}
-          </CardGrid>
-        </Separator>
-        <Separator>
-          <H2Link header="Galleri" href="/portef%C3%B8lje/galleri" />
-          <CardGrid>
-            {featuredGallery.map((galleryItem, index) => (
-              <ProjectCard
-                type="ProjectCard"
-                key={index}
-                project={galleryItem}
-              />
-            ))}
-          </CardGrid>
+          <H2Link header="Projects" href="/projects" />
         </Separator>
       </WidthWrapperMargins>
     </>

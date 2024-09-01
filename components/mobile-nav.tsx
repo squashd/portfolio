@@ -4,9 +4,18 @@ import Link from "next/link";
 import { MainNavItem } from "@/types";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
-import useLockBody from "@/hooks/use-lock-body";
 import { Icons } from "@/components/icons";
 
+// @see https://usehooks.com/useLockBodyScroll.
+function useLockBody() {
+  React.useLayoutEffect((): (() => void) => {
+    const originalStyle: string = window.getComputedStyle(
+      document.body
+    ).overflow;
+    document.body.style.overflow = "hidden";
+    return () => (document.body.style.overflow = originalStyle);
+  }, []);
+}
 interface MobileNavProps {
   items: MainNavItem[];
   children?: React.ReactNode;
