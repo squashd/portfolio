@@ -19,11 +19,11 @@ export const FancyLink = (props: FancyLinkProps) => {
     <Link
       href={props.href}
       target={target}
-      className="group relative inline-block font-bold text-rose-400 transition duration-300"
+      className="group relative inline-block font-bold text-rose-400 transition duration-300 hover:text-rose-500"
     >
       {props.children && <>{props.children} </>}
       {props.text !== undefined && <>{props.text} </>}
-      <span className="relative bottom-1 block h-[2px] max-w-0 bg-rose-400 transition-all duration-500 group-hover:max-w-full"></span>
+      <span className="relative bottom-1 block h-[2px] max-w-0 bg-rose-500 transition-all duration-500 group-hover:max-w-full"></span>
     </Link>
   );
 };

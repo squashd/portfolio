@@ -27,7 +27,7 @@ export default function LandingPage() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <GitHubIcon className="aspect-square w-10 hover:text-rose-500" />
+            <GitHubIcon className="aspect-square w-10 transition hover:text-rose-500" />
             <span className="sr-only">GitHub</span>
           </a>
           <a
@@ -36,7 +36,7 @@ export default function LandingPage() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <LinkedInIcon className="aspect-square w-10 hover:text-rose-500" />
+            <LinkedInIcon className="aspect-square w-10 transition hover:text-rose-500" />
             <span className="sr-only">LinkedIn</span>
           </a>
         </div>
